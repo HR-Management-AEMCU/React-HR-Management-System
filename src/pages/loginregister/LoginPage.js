@@ -55,7 +55,7 @@ const LoginPage = () => {
         .then((data) => {
           console.log(data.token); 
           setTimeout(() => {
-            navigate("/homepage"); // 2 saniye sonra login sayfasına yönlendir
+            navigate("/homepage"); 
           }, 3000);
         })
         .catch((error) => {

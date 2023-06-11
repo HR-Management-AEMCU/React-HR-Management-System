@@ -103,10 +103,10 @@ const Loginpage = () => {
         if (response.ok) {
           toast.success("Kayıt başarılı! Login Sayfasına Yönlendiriliyorsunuz...", { autoClose: 2000 });
           setTimeout(() => {
-            navigate("/login"); // 2 saniye sonra login sayfasına yönlendir
+            navigate("/login"); 
           }, 4000);
         } else {
-          throw new Error("Kayit başarisiz"); // İstek başarısızsa hata fırlat
+          throw new Error("Kayit başarisiz"); 
         }
       })
       .catch((error) => {
