@@ -54,6 +54,7 @@ const LoginPage = () => {
         })
         .then((data) => {
           console.log(data.token); 
+          localStorage.setItem('token', data.token)
           setTimeout(() => {
             navigate("/homepage"); 
           }, 3000);
