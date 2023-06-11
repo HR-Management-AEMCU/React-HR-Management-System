@@ -34,7 +34,7 @@ const LoginPage = () => {
     }
   
   
-      fetch("http://localhost:8060/api/v1/auth/login", {
+      fetch("http://localhost:8090/api/v1/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -46,6 +46,7 @@ const LoginPage = () => {
       })
         .then((response) => {
           if (response.ok) {
+            toast.success("Login Başarılı! Anasayfaya Yönlendiriliyorsunuz...", { autoClose: 2000 });
             return response.json(); 
           } else {
             throw new Error("Giriş başarısız"); 
@@ -53,7 +54,9 @@ const LoginPage = () => {
         })
         .then((data) => {
           console.log(data.token); 
-          navigate("/homepage"); // Homepage'a yönlendir
+          setTimeout(() => {
+            navigate("/homepage"); // 2 saniye sonra login sayfasına yönlendir
+          }, 3000);
         })
         .catch((error) => {
           toast.error("Kayıt başarısız.Lütfen daha sonra deneyiniz...", { autoClose: 3000 });
@@ -65,7 +68,7 @@ const LoginPage = () => {
   return (
    <div className='engenel'>
 
-<div class="container">
+<div className="container">
 <ToastContainer />
 <div className="abc">
      <h1 style={{color: 'hsl(218, 81%, 95%)'}}>
@@ -73,13 +76,12 @@ const LoginPage = () => {
        <span style={{color: 'hsl(218, 81%, 75%)'}}>for your business</span>
      </h1>
    </div>
-	<div class="screen">
-		<div class="screen__content">
-			<form class="login" onSubmit={handleSubmit}>
-				<div class="login__field">
-					<i class="login__icon fas fa-user"></i>
-					<input type="text" class="login__input" placeholder="Email" required
-                    fullWidth
+	<div className="screen">
+		<div className="screen__content">
+			<form className="login" onSubmit={handleSubmit}>
+				<div className="login__field">
+					<i className="login__icon fas fa-user"></i>
+					<input type="text" className="login__input" placeholder="Email" required
                     id="email"
                     label="Email Address"
                     name="email"
@@ -87,11 +89,10 @@ const LoginPage = () => {
                     autoFocus/>
                     
 				</div>
-				<div class="login__field">
-					<i class="login__icon fas fa-lock"></i>
-					<input type="password" class="login__input" placeholder="Password"
+				<div className="login__field">
+					<i className="login__icon fas fa-lock"></i>
+					<input type="password" className="login__input" placeholder="Password"
                     required
-                    fullWidth
                     name="password"
                     label="Password"
                     type="password"
@@ -99,14 +100,12 @@ const LoginPage = () => {
                     autoComplete="current-password"/>
                     
 				</div>
-
-                 
                     <div className="forgot">
                      <a href="#" className='forgota'>Forgot password?</a>
                         </div>
-				<button class="button login__submit">
-					<span class="button__text">Sign In</span>
-					<i class="button__icon fas fa-chevron-right"></i>
+				<button className="button login__submit">
+					<span className="button__text">Sign In</span>
+					<i className="button__icon fas fa-chevron-right"></i>
 				</button>	
                 <div className='link'>
         <div className="signup-link">
@@ -116,11 +115,11 @@ const LoginPage = () => {
 			</form>
 			
 		</div>
-		<div class="screen__background">
-			<span class="screen__background__shape screen__background__shape4"></span>
-			<span class="screen__background__shape screen__background__shape3"></span>		
-			<span class="screen__background__shape screen__background__shape2"></span>
-			<span class="screen__background__shape screen__background__shape1"></span>
+		<div className="screen__background">
+			<span className="screen__background__shape screen__background__shape4"></span>
+			<span className="screen__background__shape screen__background__shape3"></span>		
+			<span className="screen__background__shape screen__background__shape2"></span>
+			<span className="screen__background__shape screen__background__shape1"></span>
 		</div>		
 	</div>
     

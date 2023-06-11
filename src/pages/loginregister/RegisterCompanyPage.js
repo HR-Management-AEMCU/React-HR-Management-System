@@ -84,7 +84,7 @@ const Loginpage = () => {
   }
 
   
-    fetch("http://localhost:8060/api/v1/auth/register-user", {
+    fetch("http://localhost:8090/api/v1/auth/register-manager", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -95,11 +95,16 @@ const Loginpage = () => {
         email: data.get("email"),
         password: data.get("password"),
         repassword: data.get("repassword"),
+        companyName: data.get("companyname"),
+        taxNumber: data.get("taxnumber"),
       }),
     })
       .then((response) => {
         if (response.ok) {
-          navigate("/login"); // Kayıt başarılıysa login sayfasına yönlendir
+          toast.success("Kayıt başarılı! Login Sayfasına Yönlendiriliyorsunuz...", { autoClose: 2000 });
+          setTimeout(() => {
+            navigate("/login"); // 2 saniye sonra login sayfasına yönlendir
+          }, 4000);
         } else {
           throw new Error("Kayit başarisiz"); // İstek başarısızsa hata fırlat
         }
@@ -115,6 +120,8 @@ const Loginpage = () => {
       email: data.get("email"),
       password: data.get("password"),
       repassword: data.get("repassword"),
+      companyName: data.get("companyname"),
+      taxNumber: data.get("taxnumber"),
     });
   };
     
