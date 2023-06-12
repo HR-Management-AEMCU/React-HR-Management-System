@@ -56,7 +56,7 @@ const LoginPage = () => {
           console.log(data.token); 
           localStorage.setItem('token', data.token)
           setTimeout(() => {
-            navigate("/homepage"); 
+            window.location.href = "http://localhost:3002/ecommerce";
           }, 3000);
         })
         .catch((error) => {
