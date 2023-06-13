@@ -1,11 +1,18 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import LoginPage from './pages/loginregisterpages/usercompanyloginregister/LoginPage';
-import RegisterUserPage from './pages/loginregisterpages/usercompanyloginregister/RegisterUserPage';
-import RegisterCompanyPage from './pages/loginregisterpages/usercompanyloginregister/RegisterCompanyPage';
-import AdminLoginPage from './pages/loginregisterpages/adminloginregister/LoginAdminPage'
-import AdminRegisterPage from './pages/loginregisterpages/adminloginregister/AdminRegisterPage';
-import AdminHomePage from './pages/homepages/adminhomepage/AdminHomePage';
-import Home from './pages/homepages/userhomepage/Home';
+/*Manager Imports*/
+import LoginPage from './pages/manager/visitormanagerloginregister/LoginPage';
+import RegisterUserPage from './pages/manager/visitormanagerloginregister/RegisterUserPage';
+import RegisterCompanyPage from './pages/manager/visitormanagerloginregister/RegisterCompanyPage';
+import ManagerHome from './pages/manager/managerhomepage/Home';
+
+
+/*Admin imports*/ 
+import AdminLoginPage from './pages/admin/adminloginregister/LoginAdminPage'
+import AdminRegisterPage from './pages/admin/adminloginregister/AdminRegisterPage';
+import AdminHome from './pages/admin/adminhomepage/Home';
+
+
+
 /*import Profile from "./pages/profile/Profile";
 import List from "./pages/list/List";
 import Add from "./pages/add/Add";
@@ -19,13 +26,13 @@ function App() {
     <BrowserRouter>
     <Routes>
     <Route path="/">
-            <Route index element={<Home />} />
+            <Route index element={<ManagerHome />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterUserPage />} />
             <Route path="/registercompany" element={<RegisterCompanyPage />} />
             <Route path="/adminlogin" element={<AdminLoginPage />} />
             <Route path="/adminregister" element={<AdminRegisterPage />} />
-            <Route path="/adminhomepage" element={<AdminHomePage />} />
+            <Route path="/adminhomepage" element={<AdminHome />} />
 {/* 
             <Route path="forgot" element={<Forgot />} />
             <Route path="profile">
