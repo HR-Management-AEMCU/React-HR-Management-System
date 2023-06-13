@@ -1,4 +1,4 @@
-React Setuo-->
+React Setup-->
 ### `npx create-react-app .`
 React Project Start
 ### `npm start`
