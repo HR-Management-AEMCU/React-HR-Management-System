@@ -36,37 +36,59 @@ const AdminLoginPage = () => {
     }
   
   
-      fetch("http://localhost:8090/api/v1/auth/login-admin", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: data.get("email"),
-          password: data.get("password"),
-        }),
+    fetch("http://localhost:8090/api/v1/auth/login-admin", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    email: data.get("email"),
+    password: data.get("password"),
+  }),
+})
+  .then((response) => {
+    if (response.ok) {
+      toast.success("Login Başarılı! Anasayfaya Yönlendiriliyorsunuz...", { autoClose: 2000 });
+      return response.json(); 
+    } else {
+      throw new Error("Giriş başarısız"); 
+    }
+  })
+  .then((data) => {
+    console.log(data.token); 
+    localStorage.setItem('token', data.token);
+    
+    // Farklı bir URL'in local storage'ına token değerini kaydetmek
+    fetch("http://localhost:3002/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        token: data.token,
+      }),
+    })
+      .then((response) => {
+        if (response.ok) {
+          console.log("Token başarıyla kaydedildi");
+        } else {
+          throw new Error("Token kaydedilemedi");
+        }
       })
-        .then((response) => {
-          if (response.ok) {
-            toast.success("Login Başarılı! Anasayfaya Yönlendiriliyorsunuz...", { autoClose: 2000 });
-            return response.json(); 
-          } else {
-            throw new Error("Giriş başarısız"); 
-          }
-        })
-        .then((data) => {
-          console.log(data.token); 
-          localStorage.setItem('token', data.token)
-          
-          setTimeout(() => {
-            navigate("/adminhomepage"); 
-          }, 3000);
-        })
-        .catch((error) => {
-          toast.error("Oturum açma başarısız.Lütfen daha sonra deneyiniz...", { autoClose: 3000 });
-          console.error(error);
-        });
-    };
+      .catch((error) => {
+        console.error(error);
+      });
+
+    setTimeout(() => {
+      navigate("/adminhomepage"); 
+    }, 3000);
+  })
+  .catch((error) => {
+    toast.error("Oturum açma başarısız.Lütfen daha sonra deneyiniz...", { autoClose: 3000 });
+    console.error(error);
+  });
+};
+
 
 
 
