@@ -1,8 +1,8 @@
-React Kurulum-->
+React Setuo-->
 ### `npx create-react-app .`
-React Proje Başlatma
+React Project Start
 ### `npm start`
-Router Projeye dahil etme
+Router Dom install
 ### `npm install react-router-dom`
-Toastify projeye dahil etme
+Toastify install
 ### `npm install react-toastify`
