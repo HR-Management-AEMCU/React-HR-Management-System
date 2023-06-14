@@ -48,7 +48,7 @@ const Welcome = () => {
           </p>
         </div>
         <div className="welcome-right-side">
-          <img src={Person} alt="" />
+          <img src="https://img.freepik.com/free-vector/usability-testing-concept-illustration_114360-1571.jpg?w=740&t=st=1686684064~exp=1686684664~hmac=eebe291b4539a9855754656724b38a5e26febd284d193d3a07d02a4c4e8b7d38" alt="" />
         </div>
       </div>
     </div>

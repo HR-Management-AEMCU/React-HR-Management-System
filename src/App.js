@@ -10,11 +10,11 @@ import ManagerHome from './pages/manager/managerhomepage/Home';
 import AdminLoginPage from './pages/admin/adminloginregister/LoginAdminPage'
 import AdminRegisterPage from './pages/admin/adminloginregister/AdminRegisterPage';
 import AdminHome from './pages/admin/adminhomepage/Home';
-
+import List from "./pages/admin/adminmanagerlist/List";
 
 
 /*import Profile from "./pages/profile/Profile";
-import List from "./pages/list/List";
+
 import Add from "./pages/add/Add";
 import Single from "./pages/single/Single";
 import AdvanceList from "./pages/advancelist/AdvanceList";
@@ -26,13 +26,24 @@ function App() {
     <BrowserRouter>
     <Routes>
     <Route path="/">
-            <Route index element={<ManagerHome />} />
+            <Route index element={<LoginPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterUserPage />} />
             <Route path="/registercompany" element={<RegisterCompanyPage />} />
+
+            <Route path="/managerhome" element={<ManagerHome />} />
+            
+
             <Route path="/adminlogin" element={<AdminLoginPage />} />
             <Route path="/adminregister" element={<AdminRegisterPage />} />
-            <Route path="/adminhomepage" element={<AdminHome />} />
+            <Route path="/adminhome" element={<AdminHome />} />
+            <Route path="manager">
+              <Route index element={<List />} />
+            {/*  <Route path=":managerId" element={<Single />} />*/}
+             {/* <Route path="new" element={<New />} />*/}
+            </Route>
+
+
 {/* 
             <Route path="forgot" element={<Forgot />} />
             <Route path="profile">

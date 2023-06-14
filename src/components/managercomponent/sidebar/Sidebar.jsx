@@ -49,7 +49,7 @@ const token = localStorage.getItem("token");
         <div className="sidebar">
           <div className="sidebar__top">
             <Link to="/" style={{ textDecoration: "none" }}>
-              <span className="sidebar__top--logo">HumanCo</span>
+              <span className="sidebar__top--logo">HRGenius</span>
             </Link>
           </div>
           <hr />
@@ -57,7 +57,7 @@ const token = localStorage.getItem("token");
             <div className="sidebar__center--avatar">
               <img
                 src={
-                    "https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg"
+                    "https://img.freepik.com/free-psd/3d-illustration-bald-person-with-glasses_23-2149436184.jpg?w=740&t=st=1686683631~exp=1686684231~hmac=4c005a1a584be365cc846b64f33c8edd1bbf329a29ab0f99171aca5b8a237ec9"
                 }
                 alt="avatar"
               />
@@ -74,7 +74,7 @@ const token = localStorage.getItem("token");
                 <Link to="/login" style={{ textDecoration: "none" }}>
                   <div className="dasboard__item">
                     <DashboardIcon className="icon" />
-                    <span>LOGIN</span>
+                    <span>fdsfsdfsd</span>
                   </div>
                 </Link>
               </div>
