@@ -12,7 +12,8 @@ import AdminRegisterPage from './pages/admin/adminloginregister/AdminRegisterPag
 import AdminHome from './pages/admin/adminhomepage/Home';
 import List from "./pages/admin/adminmanagerlist/List";
 
-
+/*visitor import*/
+import VisitorHome from './pages/visitor/Home'
 /*import Profile from "./pages/profile/Profile";
 
 import Add from "./pages/add/Add";
@@ -37,6 +38,7 @@ function App() {
             <Route path="/adminlogin" element={<AdminLoginPage />} />
             <Route path="/adminregister" element={<AdminRegisterPage />} />
             <Route path="/adminhome" element={<AdminHome />} />
+            <Route path="/visitorhome" element={<VisitorHome />} />
             <Route path="manager">
               <Route index element={<List />} />
             {/*  <Route path=":managerId" element={<Single />} />*/}
