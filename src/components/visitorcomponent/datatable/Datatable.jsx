@@ -23,20 +23,29 @@ const Datatable = () => {
       status:""
     },
   ]);
-  useEffect(()=>{
-    fetch('http://localhost:8060/api/v1/user-profile/role-manager-status-inactive',{
+  useEffect(() => {
+    fetch('http://localhost:8070/companies-list', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
       },
-    }).then(data => data.json())
-    .then(data =>{
-        setManager(data);
-        console.log(data);
-        const userIds = data.map(x => x.userId); // Tüm kullanıcı profillerinden userId'leri alın
-        localStorage.setItem('userIds', JSON.stringify(userIds)); // userIds'yi localStorage'e JSON formatında kaydedin
-    });
-},[]);
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        const formattedData = data.map((item) => ({
+          companyId: item.companyId,
+          companyName: item.companyName,
+          companyLogoUrl: item.companyLogoUrl,
+        }));
+        // Verileri istenen şekilde formatlayarak duruma kaydetmek
+        setManager(formattedData);
+        console.log(formattedData);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
+  
 
 /*
   useEffect(() => {
