@@ -1,4 +1,4 @@
-import "./widget.scss";
+import "./widget2.scss";
 import ManageAccountsOutlinedIcon from "@mui/icons-material/ManageAccountsOutlined";
 import BadgeOutlinedIcon from "@mui/icons-material/BadgeOutlined";
 import AccessibilityNewOutlinedIcon from "@mui/icons-material/AccessibilityNewOutlined";

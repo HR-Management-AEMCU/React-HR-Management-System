@@ -20,29 +20,29 @@ import Best from "../../../components/admincomponent/best-list/Best";
 const Home = () => {
  /* const { isSidebarVisible } = useContext(SidebarContext);*/
   return (
-    <div className="home">
+    <div className="homeadmin">
       {/*isSidebarVisible &&*/ <Sidebar />}
-      <div className="homeContainer">
+      <div className="homeContaineradmin">
         <Navbar />
         <Welcome />
-        <div className="widgets">
+        <div className="widgetsadmin">
           <Widget type="active" />
           <Widget type="retired" />
           <Widget type="total" />
           <Widget type="laik" />
         </div>
-        <div className="widgets">
+        <div className="widgetsadmin">
           <Widget type="active" />
           <Widget type="retired" />
           <Widget type="total" />
           <Widget type="laik" />
         </div>
-        <div className="charts">
+        <div className="chartsadmin">
           <WidgetNewEmployee />
           {/*<Salary className={isSidebarVisible ? "" : "salary-expanded"} />*/}
           {/*<Maps />*/}
         </div>
-        <div className="charts">
+        <div className="chartsadmin">
           {/*<Best />*/}
           {/*<ProjectTime />*/}
         </div>

@@ -31,8 +31,8 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       <div className="top">
-        <Link to="/" style={{ textDecoration: "none" }}>
-          <span className="logo">HumanCo</span>
+        <Link to="/adminhome" style={{ textDecoration: "none" }}>
+          <span className="logo">HRGenius-Admin</span>
         </Link>
       </div>
       <hr />
@@ -44,7 +44,7 @@ const Sidebar = () => {
               src={
                 admin.image
                   ? admin.image
-                  : "https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg"
+                  : "https://img.freepik.com/free-vector/mysterious-mafia-man-wearing-hat_52683-34829.jpg?w=740&t=st=1686683447~exp=1686684047~hmac=00cbe99cc22a9e3863bf10587e2ad55e1d53a9b3b6e9bc96d49cab86cc129417"
               }
               className="avatar"
             />

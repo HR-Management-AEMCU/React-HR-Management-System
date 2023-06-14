@@ -21,8 +21,8 @@ const AdminLoginPage = () => {
         return;
       }
       
-      if (email.length > 20) {
-        toast.error('Email adresi maksimum 20 karakter olmalıdır.', { autoClose: 2000 });
+      if (email.length > 25) {
+        toast.error('Email '+ email.length + ' karaker. Max 20 karakter olmalıdır.', { autoClose: 2000 });
         return;
       }
   
@@ -57,30 +57,8 @@ const AdminLoginPage = () => {
   .then((data) => {
     console.log(data.token); 
     localStorage.setItem('token', data.token);
-    
-    // Farklı bir URL'in local storage'ına token değerini kaydetmek
-    fetch("http://localhost:3002/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        token: data.token,
-      }),
-    })
-      .then((response) => {
-        if (response.ok) {
-          console.log("Token başarıyla kaydedildi");
-        } else {
-          throw new Error("Token kaydedilemedi");
-        }
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-
     setTimeout(() => {
-      navigate("/adminhomepage"); 
+      navigate("/adminhome"); 
     }, 3000);
   })
   .catch((error) => {

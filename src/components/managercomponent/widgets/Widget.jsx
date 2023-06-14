@@ -4,7 +4,7 @@ import BadgeOutlinedIcon from "@mui/icons-material/BadgeOutlined";
 import AccessibilityNewOutlinedIcon from "@mui/icons-material/AccessibilityNewOutlined";
 import KeyboardArrowUpOutlinedIcon from "@mui/icons-material/KeyboardArrowUpOutlined";
 import { useState } from "react";
-import withAuth from "../../withAuth";
+/*import withAuth from "../../withAuth";*/
 const Widget = ({ type }) => {
   const [adminCount, setAdminCount] = useState(0);
   const [managerCount, setManagerCount] = useState(0);
@@ -78,14 +78,14 @@ const Widget = ({ type }) => {
   }
 
   return (
-    <div className="widget">
-      <div className="widget__left">
-        <span className="widget__title">{data.title}</span>
-        <span className="widget__counter">{data.count}</span>
-        <span className="widget__link">{data.link}</span>
+    <div className="widgetmanager">
+      <div className="widget__leftmanager">
+        <span className="widget__titlemanager">{data.title}</span>
+        <span className="widget__countermanager">{data.count}</span>
+        <span className="widget__linkmanager">{data.link}</span>
       </div>
-      <div className="widget__right">
-        <div className="percentage positive">
+      <div className="widget__rightmanager">
+        <div className="percentage positivemanager">
           <KeyboardArrowUpOutlinedIcon />
           20%
         </div>
@@ -95,4 +95,4 @@ const Widget = ({ type }) => {
   );
 };
 
-export default withAuth(Widget);
+export default Widget;

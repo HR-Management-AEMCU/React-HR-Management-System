@@ -39,6 +39,9 @@ const Navbar = () => {
     <div className="navbar">
       <div className="wrapper">
         <div className="items">
+        <div className="abc">
+            Manager Login
+          </div>
           <div className="item">
             <LanguageOutlinedIcon className="icon" />
             English
