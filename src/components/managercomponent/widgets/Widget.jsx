@@ -3,23 +3,42 @@ import ManageAccountsOutlinedIcon from "@mui/icons-material/ManageAccountsOutlin
 import BadgeOutlinedIcon from "@mui/icons-material/BadgeOutlined";
 import AccessibilityNewOutlinedIcon from "@mui/icons-material/AccessibilityNewOutlined";
 import KeyboardArrowUpOutlinedIcon from "@mui/icons-material/KeyboardArrowUpOutlined";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 /*import withAuth from "../../withAuth";*/
 const Widget = ({ type }) => {
+  const [companyIncome, setCompanyIncome] = useState(0);
+
   const [adminCount, setAdminCount] = useState(0);
   const [managerCount, setManagerCount] = useState(0);
   const [companyCount, setCompanyCount] = useState(0);
+  
+  useEffect(()=>{
+    fetch('http://localhost:8060/api/v1/user-profile/role-manager-status-inactive',{
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }).then(data => data.json())
+    .then(data =>{
+        setCompanyIncome(data);
+        console.log(data);
+        const userIds = data.map(x => x.userId); // Tüm kullanıcı profillerinden userId'leri alın
+        localStorage.setItem('userIds', JSON.stringify(userIds)); // userIds'yi localStorage'e JSON formatında kaydedin
+    });
+},[]);
+  
   let data;
+
   switch (type) {
     case "total":
       data = {
-        title: "TOTAL EMPLOYEE",
-        link: "See all manager",
+        title: "Company Expense",
+        link: "See all expense",
         count: 22,
         icon: (
           <ManageAccountsOutlinedIcon
             className="icon"
-            style={{ color: "crimson", backgroundColor: "rgba(255,0,0,0.2)" }}
+            style={{ color: "crimson", backgroundColor: "rgba(255,0,0,0.2)", fontSize: "35px" }}
           />
         ),
       };
@@ -27,8 +46,8 @@ const Widget = ({ type }) => {
 
     case "retired":
       data = {
-        title: "RETIRED EMPLOYEE",
-        link: "See all employee",
+        title: "Company Income",
+        link: "See all income",
         count: 20,
         icon: (
           <BadgeOutlinedIcon
@@ -36,6 +55,7 @@ const Widget = ({ type }) => {
             style={{
               backgroundColor: " rgba(0, 128, 0, 0.20)",
               color: "green",
+              fontSize: "35px"
             }}
           />
         ),
@@ -43,8 +63,8 @@ const Widget = ({ type }) => {
       break;
     case "laik":
       data = {
-        title: "LAIK EMPLOYEE",
-        link: "See all employee",
+        title: "Company Profit / Loss",
+        link: "See all Profit/Loss",
         count: 10,
         icon: (
           <BadgeOutlinedIcon
@@ -52,6 +72,7 @@ const Widget = ({ type }) => {
             style={{
               backgroundColor: " rgba(0, 128, 0, 0.20)",
               color: "green",
+              fontSize: "35px"
             }}
           />
         ),
@@ -59,15 +80,16 @@ const Widget = ({ type }) => {
       break;
     case "active":
       data = {
-        title: "ACTIVE EMPLOYEE",
-        link: "See all total company",
+        title: "Payments",
+        link: "See all total payments",
         count: 15,
         icon: (
           <AccessibilityNewOutlinedIcon
             className="icon"
             style={{
               backgroundColor: " rgba(0, 128, 0, 0.20)",
-              color: "green",
+              color: "green"
+              , fontSize: "35px"
             }}
           />
         ),
@@ -85,7 +107,7 @@ const Widget = ({ type }) => {
         <span className="widget__linkmanager">{data.link}</span>
       </div>
       <div className="widget__rightmanager">
-        <div className="percentage positivemanager">
+        <div className="percentagemanager positivemanager">
           <KeyboardArrowUpOutlinedIcon />
           20%
         </div>
