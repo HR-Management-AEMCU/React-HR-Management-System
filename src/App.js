@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 /*Manager Imports*/
-import LoginPage from './pages/manager/visitormanagerloginregister/LoginPage';
-import RegisterUserPage from './pages/manager/visitormanagerloginregister/RegisterUserPage';
-import RegisterCompanyPage from './pages/manager/visitormanagerloginregister/RegisterCompanyPage';
-import ManagerHome from './pages/manager/managerhomepage/Home';
-import TatilGunler from './pages/manager/managertatilgunler/TatilGunler'
+import LoginPage from "./pages/manager/visitormanagerloginregister/LoginPage";
+import RegisterUserPage from "./pages/manager/visitormanagerloginregister/RegisterUserPage";
+import RegisterCompanyPage from "./pages/manager/visitormanagerloginregister/RegisterCompanyPage";
+import ManagerHome from "./pages/manager/managerhomepage/Home";
+import TatilGunler from "./pages/manager/managertatilgunler/TatilGunler";
 
 import LoginPage from "./pages/manager/visitormanagerloginregister/LoginPage";
 import RegisterUserPage from "./pages/manager/visitormanagerloginregister/RegisterUserPage";
