@@ -52,6 +52,9 @@ const Navbar = () => {
               />
             </div>
           </Link>
+          <div className="abcd">
+            Visitor Homepage
+          </div>
         </div>
       </div>
     </div>

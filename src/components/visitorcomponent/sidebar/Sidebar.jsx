@@ -32,7 +32,7 @@ const Sidebar = () => {
     <div className="sidebar">
       <div className="top">
         <Link to="/visitorhome" style={{ textDecoration: "none" }}>
-          <span className="logo">HRGenius-Visitor</span>
+          <h4 className="logovisitor">HRGenius</h4>
         </Link>
       </div>
       <hr />
@@ -44,7 +44,7 @@ const Sidebar = () => {
               src={
                 admin.image
                   ? admin.image
-                  : "https://img.freepik.com/free-vector/mysterious-mafia-man-wearing-hat_52683-34829.jpg?w=740&t=st=1686683447~exp=1686684047~hmac=00cbe99cc22a9e3863bf10587e2ad55e1d53a9b3b6e9bc96d49cab86cc129417"
+                  : "https://img.freepik.com/free-photo/portrait-handsome-dark-haired-man-smiles-toothily-feels-glad-wears-round-spectacles-casual-black-t-shirt-expresses-positive-emotions-isolated-yellow-background-happiness-concept_273609-58988.jpg?w=996&t=st=1686840993~exp=1686841593~hmac=3dcbd07027220b740e2722e1654069eddbcd9a244e38a76b5a440246c5f4bffa"
               }
               className="avatar"
             />
@@ -52,7 +52,7 @@ const Sidebar = () => {
         </div>
         <ul>
           <p className="title">MAIN</p>
-          <Link to="/" style={{ textDecoration: "none" }}>
+          <Link to="/visitorhome" style={{ textDecoration: "none" }}>
             <li>
               <DashboardOutlinedIcon className="icon" />
               <span>Dashboard</span>
@@ -71,19 +71,30 @@ const Sidebar = () => {
             </li>
           </Link>
           <p className="title">LIST</p>
-          <Link to="/manager" style={{ textDecoration: "none" }}>
+        
+          {/* <Link to="/employee" style={{ textDecoration: "none" }}>
             <li>
-              <ManageAccountsOutlinedIcon className="icon" />
-              <span>Manager</span>
+              <BadgeOutlinedIcon className="icon" />
+              <span>Employee</span>
             </li>
-          </Link>
-          
+          </Link> */}
           <Link to="/company" style={{ textDecoration: "none" }}>
             <li>
               <ApartmentIcon className="icon" />
               <span>Company</span>
             </li>
           </Link>
+          <p className="title">APPROVALS</p>
+          <Link to="#" style={{ textDecoration: "none" }}>
+          <li>
+            <InsertChartOutlinedSharpIcon className="icon" />
+            <span>Comments</span>
+          </li>
+          </Link>
+          <li>
+            <NotificationsNoneIcon className="icon" />
+            <span>Complaints</span>
+          </li>
           <p className="title">USEFUL</p>
           <li>
             <InsertChartOutlinedSharpIcon className="icon" />
@@ -93,19 +104,36 @@ const Sidebar = () => {
             <NotificationsNoneIcon className="icon" />
             <span>Notifications</span>
           </li>
-
-          
-
           <p className="title">USER</p>
-          <Link to="/profile" style={{ textDecoration: "none" }}>
+          <Link to="/visitorprofile" style={{ textDecoration: "none" }}>
             <li>
               <AccountCircleOutlinedIcon className="icon" />
               <span>Profile</span>
             </li>
           </Link>
+          <Link to="/visitorupdateprofile" style={{ textDecoration: "none" }}>
+            <li>
+              <AccountCircleOutlinedIcon className="icon" />
+              <span>Update Profile</span>
+            </li>
+          </Link>
           <li>
             <ExitToAppIcon className="icon" />
             <Logout />
+          </li>
+
+          <p className="title">SERVICE</p>
+          <li>
+            <SettingsSystemDaydreamOutlinedIcon className="icon" />
+            <span>System Health</span>
+          </li>
+          <li>
+            <PsychologyOutlinedIcon className="icon" />
+            <span>Logs</span>
+          </li>
+          <li>
+            <SettingsOutlinedIcon className="icon" />
+            <span>Settings</span>
           </li>
         </ul>
       </div>
