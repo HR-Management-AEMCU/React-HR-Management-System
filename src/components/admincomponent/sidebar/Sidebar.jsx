@@ -89,6 +89,17 @@ const Sidebar = () => {
               <span>Company</span>
             </li>
           </Link>
+          <p className="title">APPROVALS</p>
+          <Link to="/comments-to-approve" style={{ textDecoration: "none" }}>
+          <li>
+            <InsertChartOutlinedSharpIcon className="icon" />
+            <span>Comments</span>
+          </li>
+          </Link>
+          <li>
+            <NotificationsNoneIcon className="icon" />
+            <span>Complaints</span>
+          </li>
           <p className="title">USEFUL</p>
           <li>
             <InsertChartOutlinedSharpIcon className="icon" />
