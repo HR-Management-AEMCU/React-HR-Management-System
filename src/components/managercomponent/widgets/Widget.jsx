@@ -32,8 +32,8 @@ const Widget = ({ type }) => {
   switch (type) {
     case "total":
       data = {
-        title: "Company Expense",
-        link: "See all expense",
+        title: "Company Outcome",
+        link: "See all outcome",
         count: 22,
         icon: (
           <ManageAccountsOutlinedIcon
