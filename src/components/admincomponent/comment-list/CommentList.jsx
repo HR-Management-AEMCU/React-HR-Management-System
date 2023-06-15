@@ -4,11 +4,10 @@ const CommentList = () => {
   const [comments, setComments] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:8070/api/v1/company/find-all') 
+    fetch('http://localhost:8070/api/v1/comment/find-all') 
       .then((response) => response.json())
       .then((data) => setComments(data));
   }, []);
-
   const handleDecisionClick = (commentId, decision) => {
     
     console.log(`Comment ID: ${commentId}, Decision: ${decision}`);
@@ -30,7 +29,7 @@ const CommentList = () => {
             <tr key={comment.id}>
               <td>{comment.name}</td>
               <td>{comment.companyId}</td>
-              <td>{comment.taxNumber}</td>
+              <td>{comment.content}</td>
               <td>
                 <button onClick={() => handleDecisionClick(comment.id, 'approve')}>Approve</button>
                 <button onClick={() => handleDecisionClick(comment.id, 'reject')}>Reject</button>
