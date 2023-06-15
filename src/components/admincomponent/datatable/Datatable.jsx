@@ -23,7 +23,8 @@ const Datatable = () => {
       status:""
     },
   ]);
-  /*useEffect(()=>{
+  /*çalışan metot fecth hatası verdiği için kapattım
+  useEffect(()=>{
     fetch('http://localhost:8060/api/v1/user-profile/role-manager-status-inactive',{
       method: 'GET',
       headers: {
