@@ -12,8 +12,13 @@ import AdminRegisterPage from "./pages/admin/adminloginregister/AdminRegisterPag
 import AdminHome from "./pages/admin/adminhomepage/Home";
 import List from "./pages/admin/adminmanagerlist/List";
 import AdminCommentApproval from "./pages/admin/admincommentapproval/comment";
+
 /*visitor import*/
-import VisitorHome from "./pages/visitor/Home";
+import VisitorHome from "./pages/visitor/visitorhomepage/Home";
+import VisitorProfilePage from "./pages/visitor/visitorprofile/VisitorProfilePage";
+import VisitorUpdateProfile from "./pages/visitor/visitorprofileupdatepage/VisitorUpdateProfile";
+
+
 /*import Profile from "./pages/profile/Profile";
 
 import Add from "./pages/add/Add";
@@ -33,7 +38,7 @@ function App() {
           <Route path="/registercompany" element={<RegisterCompanyPage />} />
 
           <Route path="/managerhome" element={<ManagerHome />} />
-          <Route path="/tatilgunleri" element={<TatilGunler />} />
+          <Route path="/tatilgunler" element={<TatilGunler />} />
 
           <Route path="/adminlogin" element={<AdminLoginPage />} />
           <Route path="/adminregister" element={<AdminRegisterPage />} />
@@ -43,6 +48,8 @@ function App() {
             element={<AdminCommentApproval />}
           />
           <Route path="/visitorhome" element={<VisitorHome />} />
+          <Route path="/visitorprofile" element={<VisitorProfilePage />} />
+          <Route path="/visitorupdateprofile" element={<VisitorUpdateProfile />} />
           <Route path="manager">
             <Route index element={<List />} />
             {/*  <Route path=":managerId" element={<Single />} />*/}
