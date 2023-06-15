@@ -17,10 +17,10 @@ const Home = () => {
         <Navbar />
         {/*widget1 ile kar zarar ödenecek paralar gibi ekranlar tutulup widget 2 ile yine sayılar listeler tuutlabilir*/}
         <div className="widgets">
-          <Widget type="total" />
           <Widget type="retired" />
-          <Widget type="active" />
+          <Widget type="total" />
           <Widget type="laik" />
+          <Widget type="active" />
         </div>
         <div className="widgets">
           <Widget2 type="total" />

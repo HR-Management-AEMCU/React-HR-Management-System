@@ -48,7 +48,7 @@ const token = localStorage.getItem("token");
     return (
         <div className="sidebar">
           <div className="sidebar__top">
-            <Link to="/" style={{ textDecoration: "none" }}>
+            <Link to="/managerhome" style={{ textDecoration: "none" }}>
               <span className="sidebar__top--logo">HRGenius</span>
             </Link>
           </div>
@@ -65,16 +65,16 @@ const token = localStorage.getItem("token");
             <div className="sidebar__center--menu">
               <div className="menu__dashboard">
                 <span className="main_span">MAIN</span>
-                <Link to="/" style={{ textDecoration: "none" }}>
+                <Link to="/managerhome" style={{ textDecoration: "none" }}>
                   <div className="dasboard__item">
                     <DashboardIcon className="icon" />
                     <span>Dashboard</span>
                   </div>
                 </Link>
-                <Link to="/login" style={{ textDecoration: "none" }}>
+                <Link to="/tatilgunler" style={{ textDecoration: "none" }}>
                   <div className="dasboard__item">
                     <DashboardIcon className="icon" />
-                    <span>fdsfsdfsd</span>
+                    <span>Tatil Günleri</span>
                   </div>
                 </Link>
               </div>

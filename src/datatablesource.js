@@ -6,7 +6,7 @@ export const managerColumns = [
     renderCell: (param) => {
       return (
         <div className="cellWithImg">
-          <img src={param.row.photo} className="cell" />
+          <img src={/*param.row.photo*/ "https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?w=740&t=st=1686742697~exp=1686743297~hmac=2332b27b2c39602256581e4bc382e0bcdf087b6e2774488c029992dcc00e98e4"} className="cell" />
         </div>
       );
     },

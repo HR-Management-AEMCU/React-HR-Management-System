@@ -9,11 +9,11 @@
   display: flex;
   justify-content: space-between;
   flex: 1;
-  padding: 10px;
+  padding: 1vh;
   -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
   box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
-  border-radius: 15px;
-  height: 100px;
+  border-radius: 1.5vh;
+  height: 15vh;
 
   .widget__leftmanager {
     display: flex;
@@ -22,17 +22,17 @@
 
     .widget__titlemanager {
       font-weight: bold;
-      font-size: 14px;
+      font-size: 2vh;
       color: var(--second-color);
     }
     .widget__countermanager {
-      font-size: 28px;
-      font-weight: 300;
+      font-size: 3.5vh;
+      font-weight: 400;
       color: #1d3354;
     }
     .widget__linkmanager {
       width: max-content;
-      font-size: 12px;
+      font-size: 1.6vh;
       border-bottom: 1px solid rgba(128, 128, 128, 0.514);
     }
   }
@@ -44,7 +44,7 @@
     .percentagemanager {
       display: flex;
       align-items: center;
-      font-size: 14px;
+      font-size: 2.5vh;
       &.positive {
         color: green;
       }
@@ -53,9 +53,9 @@
       }
     }
     .icon {
-      font-size: 18px;
-      padding: 5px;
+      padding: 4px;
       align-self: flex-end;
+      border-radius: 1vh;
     }
   }
 }

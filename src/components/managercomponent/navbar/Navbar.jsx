@@ -40,7 +40,7 @@ const Navbar = () => {
       <div className="wrapper">
         <div className="items">
         <div className="abc">
-            Manager Login
+            Manager Homepage
           </div>
           <div className="item">
             <LanguageOutlinedIcon className="icon" />
