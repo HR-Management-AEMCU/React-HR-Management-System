@@ -6,11 +6,6 @@ import RegisterCompanyPage from "./pages/manager/visitormanagerloginregister/Reg
 import ManagerHome from "./pages/manager/managerhomepage/Home";
 import TatilGunler from "./pages/manager/managertatilgunler/TatilGunler";
 
-import LoginPage from "./pages/manager/visitormanagerloginregister/LoginPage";
-import RegisterUserPage from "./pages/manager/visitormanagerloginregister/RegisterUserPage";
-import RegisterCompanyPage from "./pages/manager/visitormanagerloginregister/RegisterCompanyPage";
-import ManagerHome from "./pages/manager/managerhomepage/Home";
-
 /*Admin imports*/
 import AdminLoginPage from "./pages/admin/adminloginregister/LoginAdminPage";
 import AdminRegisterPage from "./pages/admin/adminloginregister/AdminRegisterPage";
@@ -38,6 +33,7 @@ function App() {
           <Route path="/registercompany" element={<RegisterCompanyPage />} />
 
           <Route path="/managerhome" element={<ManagerHome />} />
+          <Route path="/tatilgunleri" element={<TatilGunler />} />
 
           <Route path="/adminlogin" element={<AdminLoginPage />} />
           <Route path="/adminregister" element={<AdminRegisterPage />} />
