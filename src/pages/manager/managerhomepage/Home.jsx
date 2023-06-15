@@ -10,6 +10,7 @@ import AverageWork from "../../components/averagework/AverageWork";
 import withAuth from "../../withAuth";
 import PercentArea from "../../components/percentarea/PercentArea";*/
 const Home = () => {
+  
   return (
     <div className="home">
       <Sidebar />

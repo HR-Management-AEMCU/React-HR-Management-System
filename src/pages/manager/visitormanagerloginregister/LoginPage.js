@@ -19,7 +19,7 @@ const LoginPage = () => {
         return;
       }
       
-      if (email.length > 20) {
+      if (email.length > 30) {
         toast.error('Email adresi maksimum 20 karakter olmalıdır.', { autoClose: 2000 });
         return;
       }
@@ -56,7 +56,7 @@ const LoginPage = () => {
           console.log(data.token); 
           localStorage.setItem('token', data.token)
           setTimeout(() => {
-            navigate("/homepage"); 
+            navigate("/managerhome"); 
           }, 3000);
         })
         .catch((error) => {

@@ -16,7 +16,7 @@
   -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
   box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
   border-radius: 10px;
-  height: 125px;
+  height: 20vh;
 
   .widget__leftadmin {
     display: flex;
@@ -26,13 +26,14 @@
 
     .widget__titleadmin {
       font-weight: 700;
-      font-size: 16px;
+      font-size: 2.5vh;
       color: gray;
     }
     .widget__counteradmin {
-      font-size: 26px;
+      font-size: 4vh;
       font-weight: bold;
       color: #1d3354;
+      font-family: Montserrat;
     }
     .widget__linkadmin {
       width: max-content;

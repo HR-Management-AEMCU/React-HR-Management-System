@@ -3,27 +3,37 @@ import ManageAccountsOutlinedIcon from "@mui/icons-material/ManageAccountsOutlin
 import BadgeOutlinedIcon from "@mui/icons-material/BadgeOutlined";
 import AccessibilityNewOutlinedIcon from "@mui/icons-material/AccessibilityNewOutlined";
 import KeyboardArrowUpOutlinedIcon from "@mui/icons-material/KeyboardArrowUpOutlined";
+import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
+import PercentIcon from '@mui/icons-material/Percent';
+import MoneyOffIcon from '@mui/icons-material/MoneyOff';
+import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
+import BusinessIcon from '@mui/icons-material/Business';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
+import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
+import PaymentsIcon from '@mui/icons-material/Payments';
 import { useEffect, useState } from "react";
 /*import withAuth from "../../withAuth";*/
 const Widget = ({ type }) => {
-  const [companyIncome, setCompanyIncome] = useState(0);
-
+ 
   const [adminCount, setAdminCount] = useState(0);
   const [managerCount, setManagerCount] = useState(0);
   const [companyCount, setCompanyCount] = useState(0);
   
+  const [money, setMoney] = useState(0);
+
   useEffect(()=>{
-    fetch('http://localhost:8060/api/v1/user-profile/role-manager-status-inactive',{
-      method: 'GET',
+    fetch('http://localhost:8070/api/v1/company/company-money-operation',{
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
+      body: JSON.stringify({
+        token: localStorage.getItem('token'),
+    }),
     }).then(data => data.json())
     .then(data =>{
-        setCompanyIncome(data);
+        setMoney(data);
         console.log(data);
-        const userIds = data.map(x => x.userId); // Tüm kullanıcı profillerinden userId'leri alın
-        localStorage.setItem('userIds', JSON.stringify(userIds)); // userIds'yi localStorage'e JSON formatında kaydedin
     });
 },[]);
   
@@ -34,13 +44,16 @@ const Widget = ({ type }) => {
       data = {
         title: "Company Outcome",
         link: "See all outcome",
-        count: 22,
+        count: "-"+money.outcome +" $",
         icon: (
-          <ManageAccountsOutlinedIcon
+          <RemoveCircleIcon
             className="icon"
-            style={{ color: "crimson", backgroundColor: "rgba(255,0,0,0.2)", fontSize: "35px" }}
-          />
-        ),
+            style={{ color: "crimson", backgroundColor: "rgba(255,0,0,0.2)", fontSize: "35px" }}/>),
+            icon2: (
+              <MoneyOffIcon
+                className="percentagemanager "
+                style={{
+                  fontSize: "35px"}}/>),
       };
       break;
 
@@ -48,43 +61,47 @@ const Widget = ({ type }) => {
       data = {
         title: "Company Income",
         link: "See all income",
-        count: 20,
+        count: "+"+money.income +" $",
         icon: (
-          <BadgeOutlinedIcon
+          <AddCircleIcon
             className="icon"
             style={{
               backgroundColor: " rgba(0, 128, 0, 0.20)",
               color: "green",
-              fontSize: "35px"
-            }}
-          />
-        ),
+              fontSize: "35px"}}/>),
+              icon2: (
+                <AttachMoneyIcon
+                  className="percentagemanager "
+                  style={{
+                    fontSize: "35px"}}/>),
       };
       break;
     case "laik":
       data = {
         title: "Company Profit / Loss",
         link: "See all Profit/Loss",
-        count: 10,
+        count: money.profitLoss +" $",
         icon: (
-          <BadgeOutlinedIcon
+          <BusinessIcon
             className="icon"
             style={{
               backgroundColor: " rgba(0, 128, 0, 0.20)",
               color: "green",
-              fontSize: "35px"
-            }}
-          />
-        ),
+              fontSize: "35px"}}/>),
+        icon2: (
+          <PercentIcon
+            className="percentagemanager "
+            style={{
+              fontSize: "35px"}}/>),
       };
       break;
     case "active":
       data = {
         title: "Payments",
         link: "See all total payments",
-        count: 15,
+        count: money.payments +" $",
         icon: (
-          <AccessibilityNewOutlinedIcon
+          <PaymentsIcon
             className="icon"
             style={{
               backgroundColor: " rgba(0, 128, 0, 0.20)",
@@ -93,6 +110,11 @@ const Widget = ({ type }) => {
             }}
           />
         ),
+        icon2: (
+          <AccountBalanceIcon
+            className="percentagemanager "
+            style={{
+              fontSize: "35px"}}/>),
       };
       break;
     default:
@@ -107,9 +129,11 @@ const Widget = ({ type }) => {
         <span className="widget__linkmanager">{data.link}</span>
       </div>
       <div className="widget__rightmanager">
+        <div className="percentagemanager" >
+        {data.icon2}
+        </div>
         <div className="percentagemanager positivemanager">
-          <KeyboardArrowUpOutlinedIcon />
-          20%
+        
         </div>
         {data.icon}
       </div>
