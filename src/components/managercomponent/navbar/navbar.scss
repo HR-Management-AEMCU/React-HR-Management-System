@@ -57,8 +57,19 @@
     }
   }
 }
-.abc{
-  font-size: 2rem;
-  padding-right: 650px;
-  text-align: center;
+.menu{
+  margin: 10px;
+}
+.npt{
+  margin: 10px;
+  padding: 4px;
+  padding-left: 30px; /* İkonun genişliği kadar bir boşluk bırakmak için */
+  background-image: url("../../../assets//logo/searchicon.png");
+  background-size: 20px 20px;
+  
+  background-repeat: no-repeat;
+  background-position: left center; /* İkonun solda ortalanması */
+  background-position: 3px;
+  background-color: #d7cef7;
+  font-size: 18px;
 }

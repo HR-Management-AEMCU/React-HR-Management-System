@@ -1,167 +1,155 @@
 import "./sidebar.scss";
-import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
 import DashboardOutlinedIcon from "@mui/icons-material/DashboardOutlined";
-import DashboardIcon from '@mui/icons-material/Dashboard';
-import EngineeringOutlinedIcon from "@mui/icons-material/EngineeringOutlined";
-import InsertChartOutlinedSharpIcon from "@mui/icons-material/InsertChartOutlinedSharp";
+
+import ManageAccountsOutlinedIcon from "@mui/icons-material/ManageAccountsOutlined";
+import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import SettingsSystemDaydreamOutlinedIcon from "@mui/icons-material/SettingsSystemDaydreamOutlined";
-import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import PsychologyOutlinedIcon from "@mui/icons-material/PsychologyOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
+import InsertChartOutlinedSharpIcon from "@mui/icons-material/InsertChartOutlinedSharp";
+import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
+import { Link } from "react-router-dom";
 import PersonAddOutlinedIcon from "@mui/icons-material/PersonAddOutlined";
-import ExitToAppIcon from "@mui/icons-material/ExitToApp";
-/*import ManagerService from "../../service/ManagerService";*/
-import FormatListNumberedIcon from "@mui/icons-material/FormatListNumbered";
-import FormatListBulletedOutlinedIcon from "@mui/icons-material/FormatListBulletedOutlined";
-import FactCheckOutlinedIcon from "@mui/icons-material/FactCheckOutlined";
+import EngineeringOutlinedIcon from "@mui/icons-material/EngineeringOutlined";
+/*import AdminService from "../../service/AdminService";*/
+import { useEffect, useState, useContext } from "react";
 import Logout from "../logout/Logout";
-/*import withAuth from "../../withAuth";*/
-
-
+import ApartmentIcon from "@mui/icons-material/Apartment";
+import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined";
+import MailOutlinedIcon from "@mui/icons-material/MailOutlined";
+import arasımorb from "../../../assets/logo/arasımorb.png"
 const Sidebar = () => {
-
-const token = localStorage.getItem("token");
-  const [image, setImage] = useState("");
-
+  const [admin, setAdmin] = useState({});
+  const token = localStorage.getItem("token");
   /*useEffect(() => {
-    const source = fetch.CancelToken.source();
+    AdminService.getAllAdminInfo(token).then((response) => {
+      setAdmin((admin) => ({
+        ...admin,
+        ...response.data,
+      }));
+    });
+  }, []);*/
 
-    ManagerService.getImage(token, { cancelToken: source.token })
-      .then((response) => {
-        setImage(response.data);
-      })
-      .catch((error) => {
-        if (fetch.isCancel(error)) {
-          // istek iptal edildiyse, hata oluştuğunu kontrol eder
-          console.log("Axios request cancelled");
-        } else {
-          console.log("Another error happened: ", error.message);
-        }
-      });
-    return () => {
-      source.cancel();
-    };
-  }, [token]);
-*/
-    return (
-        <div className="sidebar">
-          <div className="sidebar__top">
-            <Link to="/managerhome" style={{ textDecoration: "none" }}>
-              <span className="sidebar__top--logo">HRGenius</span>
-            </Link>
-          </div>
-          <hr />
-          <div className="sidebar__center">
-            <div className="sidebar__center--avatar">
-              <img
-                src={
-                    "https://img.freepik.com/free-psd/3d-illustration-bald-person-with-glasses_23-2149436184.jpg?w=740&t=st=1686683631~exp=1686684231~hmac=4c005a1a584be365cc846b64f33c8edd1bbf329a29ab0f99171aca5b8a237ec9"
-                }
-                alt="avatar"
-              />
-            </div>
-            <div className="sidebar__center--menu">
-              <div className="menu__dashboard">
-                <span className="main_span">MAIN</span>
-                <Link to="/managerhome" style={{ textDecoration: "none" }}>
-                  <div className="dasboard__item">
-                    <DashboardIcon className="icon" />
-                    <span>Dashboard</span>
-                  </div>
-                </Link>
-                <Link to="/tatilgunler" style={{ textDecoration: "none" }}>
-                  <div className="dasboard__item">
-                    <DashboardIcon className="icon" />
-                    <span>Tatil Günleri</span>
-                  </div>
-                </Link>
-              </div>
-              <div className="menu__list">
-                <span className="main_span">EMPLOYEE</span>
-                <Link to="/employee" style={{ textDecoration: "none" }}>
-                  <div className="list__item">
-                    <EngineeringOutlinedIcon className="icon" />
-                    <span>Employee List</span>
-                  </div>
-                </Link>
-                <Link to="/employee/add" style={{ textDecoration: "none" }}>
-                  <div className="list__item">
-                    <PersonAddOutlinedIcon className="icon" />
-                    <span>Employee Add</span>
-                  </div>
-                </Link>
-              </div>
-              <div className="menu__list">
-                <span className="main_span">LIST</span>
-                <Link to="/advance" style={{ textDecoration: "none" }}>
-                  <div className="list__item">
-                    <FormatListNumberedIcon className="icon" />
-                    <span>Advance List</span>
-                  </div>
-                </Link>
-                <Link to="/expence" style={{ textDecoration: "none" }}>
-                  <div className="list__item">
-                    <FormatListNumberedIcon className="icon" />
-                    <span>Expense List</span>
-                  </div>
-                </Link>
-                <Link to="/permi" style={{ textDecoration: "none" }}>
-                  <div className="list__item">
-                    <FormatListNumberedIcon className="icon" />
-                    <span>Permission List</span>
-                  </div>
-                </Link>
-              </div>
-              <div className="menu__useful">
-                <span className="main_span">USEFUL</span>
-                <div className="main__useful_list">
-                  <div className="useful__item">
-                    <InsertChartOutlinedSharpIcon className="icon" />
-                    <span>Stats</span>
-                  </div>
-                  <div className="useful__item">
-                    <NotificationsNoneIcon className="icon" />
-                    <span>Notification</span>
-                  </div>
-                </div>
-              </div>
-              <div className="menu__useful">
-                <span className="main_span">SERVICE</span>
-                <div className="main__useful_list">
-                  <div className="useful__item">
-                    <SettingsSystemDaydreamOutlinedIcon className="icon" />
-                    <span>System Health</span>
-                  </div>
-                  <div className="useful__item">
-                    <PsychologyOutlinedIcon className="icon" />
-                    <span>Logs</span>
-                  </div>
-                  <div className="useful__item">
-                    <SettingsOutlinedIcon className="icon" />
-                    <span>Settings</span>
-                  </div>
-                </div>
-              </div>
-              <div className="menu__useful">
-                <span className="main_span">USER</span>
-                <div className="main__useful_list">
-                  <Link to="/profile" style={{ textDecoration: "none" }}>
-                    <div className="useful__item">
-                      <AccountCircleOutlinedIcon className="icon" />
-                      <span>Profile</span>
-                    </div>
-                  </Link>
-                  <div className="useful__item">
-                    <ExitToAppIcon className="icon" />
-                    <Logout />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+  return (
+    <div className="sidebar">
+    {/* <div className="top">
+        <Link to="/visitorhome" style={{ textDecoration: "none" }}>
+          <h4 className="logovisitor">HRGenius</h4>
+        </Link>
+      </div>
+      <hr />*/}
+
+      <div className="center">
+        <div className="item">
+          <Link to="/managerhome" style={{ textDecoration: "none"}}>
+            <img
+              src={arasımorb}
+              className="avatar"
+            />
+          </Link>
         </div>
-      );
-}
-export default Sidebar
+        <ul>
+          <p className="title">MANAGER MAIN</p>
+          <Link to="/managerhome" style={{ textDecoration: "none" }}>
+            <li>
+              <DashboardOutlinedIcon className="icon" />
+              <span>Dashboard</span>
+            </li>
+          </Link>
+          <Link to="/calendar" style={{ textDecoration: "none" }}>
+            <li>
+              <CalendarMonthOutlinedIcon className="icon" />
+              <span>Calendar</span>
+            </li>
+          </Link>
+          <Link to="/tatilgunler" style={{ textDecoration: "none" }}>
+            <li>
+              <CalendarMonthOutlinedIcon className="icon" />
+              <span>Tatil Günleri</span>
+            </li>
+          </Link>
+          <Link to="/inbox" style={{ textDecoration: "none" }}>
+            <li>
+              <MailOutlinedIcon className="icon" />
+              <span>Inbox</span>
+            </li>
+          </Link>
+          <p className="title">LIST</p>
+        
+          {/* <Link to="/employee" style={{ textDecoration: "none" }}>
+            <li>
+              <BadgeOutlinedIcon className="icon" />
+              <span>Employee</span>
+            </li>
+          </Link> */}
+          <Link to="/manager" style={{ textDecoration: "none" }}>
+            <li>
+              <EngineeringOutlinedIcon className="icon" />
+              <span>Employee List</span>
+            </li>
+          </Link>
+          <Link to="/company" style={{ textDecoration: "none" }}>
+            <li>
+              <PersonAddOutlinedIcon className="icon" />
+              <span>Employee Add</span>
+            </li>
+          </Link>
+          <p className="title">APPROVALS</p>
+          <Link to="/comments-to-approve" style={{ textDecoration: "none" }}>
+          <li>
+            <InsertChartOutlinedSharpIcon className="icon" />
+            <span>Comments</span>
+          </li>
+          </Link>
+          <li>
+            <NotificationsNoneIcon className="icon" />
+            <span>Complaints</span>
+          </li>
+          <p className="title">USEFUL</p>
+          <li>
+            <InsertChartOutlinedSharpIcon className="icon" />
+            <span>Stats</span>
+          </li>
+          <li>
+            <NotificationsNoneIcon className="icon" />
+            <span>Notifications</span>
+          </li>
+          <p className="title">USER</p>
+          <Link to="/adminprofile" style={{ textDecoration: "none" }}>
+            <li>
+              <AccountCircleOutlinedIcon className="icon" />
+              <span>Profile</span>
+            </li>
+          </Link>
+          <Link to="/adminupdateprofile" style={{ textDecoration: "none" }}>
+            <li>
+              <AccountCircleOutlinedIcon className="icon" />
+              <span>Update Profile</span>
+            </li>
+          </Link>
+          <li>
+            <ExitToAppIcon className="icon" />
+            <Logout />
+          </li>
+
+          <p className="title">SERVICE</p>
+          <li>
+            <SettingsSystemDaydreamOutlinedIcon className="icon" />
+            <span>System Health</span>
+          </li>
+          <li>
+            <PsychologyOutlinedIcon className="icon" />
+            <span>Logs</span>
+          </li>
+          <li>
+            <SettingsOutlinedIcon className="icon" />
+            <span>Settings</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  );
+};
+
+export default Sidebar;

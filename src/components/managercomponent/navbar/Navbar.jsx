@@ -3,6 +3,7 @@ import "./navbar.scss";
 import LanguageOutlinedIcon from "@mui/icons-material/LanguageOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import FullscreenOutlinedIcon from "@mui/icons-material/FullscreenOutlined";
+import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-router-dom";
 /*import ManagerService from "../../service/ManagerService";*/
 import { useState, useEffect } from "react";
@@ -37,11 +38,15 @@ const Navbar = () => {
 
   return (
     <div className="navbar">
+      <div>
+          <MenuIcon className="icon menu" /*onClick={toggleSidebar}*/></MenuIcon>
+        </div>
+      <div>
+      <input className="npt" type="text" placeholder= "Search..."/>
+      </div>
       <div className="wrapper">
+      
         <div className="items">
-        <div className="abc">
-            Manager Homepage
-          </div>
           <div className="item">
             <LanguageOutlinedIcon className="icon" />
             English
@@ -53,7 +58,7 @@ const Navbar = () => {
           <div className="item">
             <DarkModeOutlinedIcon className="icon" />
           </div>
-          <Link to="/profile" style={{ textDecoration: "none" }}>
+          <Link to="/managerprofile" style={{ textDecoration: "none" }}>
             <div className="item">
               <img
                 src={"https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg"}
@@ -61,6 +66,8 @@ const Navbar = () => {
               />
             </div>
           </Link>
+          
+        
         </div>
       </div>
     </div>

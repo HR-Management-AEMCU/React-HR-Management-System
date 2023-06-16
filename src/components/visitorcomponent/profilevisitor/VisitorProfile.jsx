@@ -11,19 +11,34 @@ const VisitorProfile = () => {
           alt="Profile Picture"
         />
         <h2 className="profile-name">John Doe</h2>
-      </div>
-      <div className="right-card">
+        <div className='leftinfo-card'>
         <div className="info-card">
           <h3>Email</h3>
           <p>johndoe@example.com</p>
         </div>
+      
         <div className="info-card">
           <h3>Phone</h3>
-          <p>(123) 456-7890</p>
+          <p>0554 865 13 55</p>
         </div>
         <div className="info-card">
+          <h3>Email</h3>
+          <p>johndoe@example.com</p>
+        </div>
+        </div>
+      </div>
+      <div className="right-card">
+      <div className="info-card">
           <h3>Company</h3>
           <p>ABC Corporation</p>
+        </div>
+        <div className="info-card">
+          <h3>Birth Date</h3>
+          <p>18.02.1996</p>
+        </div>
+        <div className="info-card">
+          <h3>Birth Place</h3>
+          <p>Denizli</p>
         </div>
         <div className="info-card">
           <h3>Age</h3>
@@ -38,20 +53,7 @@ const VisitorProfile = () => {
           <p>20100</p>
         </div>
       </div>
-      <div className="bottom-left-card">
-        <div className="social-card">
-          <h3>Twitter</h3>
-          <p>@johndoe</p>
-        </div>
-        <div className="social-card">
-          <h3>GitHub</h3>
-          <p>github.com/johndoe</p>
-        </div>
-        <div className="social-card">
-          <h3>Facebook</h3>
-          <p>facebook/johndoe</p>
-        </div>
-      </div>
+     
     </div>
       );
 }
