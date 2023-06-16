@@ -16,6 +16,7 @@ import Logout from "../logout/Logout";
 import ApartmentIcon from "@mui/icons-material/Apartment";
 import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined";
 import MailOutlinedIcon from "@mui/icons-material/MailOutlined";
+import arasımorb from "../../../assets/logo/arasımorb.png"
 const Sidebar = () => {
   const [admin, setAdmin] = useState({});
   const token = localStorage.getItem("token");
@@ -30,29 +31,25 @@ const Sidebar = () => {
 
   return (
     <div className="sidebar">
-      <div className="top">
-        <Link to="/adminhome" style={{ textDecoration: "none" }}>
-          <p className="logo">HRGenius-Admin</p>
+    {/* <div className="top">
+        <Link to="/visitorhome" style={{ textDecoration: "none" }}>
+          <h4 className="logovisitor">HRGenius</h4>
         </Link>
       </div>
-      <hr />
+      <hr />*/}
 
       <div className="center">
         <div className="item">
-          <Link to="/" style={{ textDecoration: "none" }}>
+          <Link to="/adminhome" style={{ textDecoration: "none"}}>
             <img
-              src={
-                admin.image
-                  ? admin.image
-                  : "https://img.freepik.com/free-vector/mysterious-mafia-man-wearing-hat_52683-34829.jpg?w=740&t=st=1686683447~exp=1686684047~hmac=00cbe99cc22a9e3863bf10587e2ad55e1d53a9b3b6e9bc96d49cab86cc129417"
-              }
+              src={arasımorb}
               className="avatar"
             />
           </Link>
         </div>
         <ul>
-          <p className="title">MAIN</p>
-          <Link to="/" style={{ textDecoration: "none" }}>
+          <p className="title">ADMIN MAIN</p>
+          <Link to="/adminhome" style={{ textDecoration: "none" }}>
             <li>
               <DashboardOutlinedIcon className="icon" />
               <span>Dashboard</span>
@@ -71,18 +68,19 @@ const Sidebar = () => {
             </li>
           </Link>
           <p className="title">LIST</p>
-          <Link to="/manager" style={{ textDecoration: "none" }}>
-            <li>
-              <ManageAccountsOutlinedIcon className="icon" />
-              <span>Manager</span>
-            </li>
-          </Link>
+        
           {/* <Link to="/employee" style={{ textDecoration: "none" }}>
             <li>
               <BadgeOutlinedIcon className="icon" />
               <span>Employee</span>
             </li>
           </Link> */}
+          <Link to="/manager" style={{ textDecoration: "none" }}>
+            <li>
+              <ManageAccountsOutlinedIcon className="icon" />
+              <span>Manager</span>
+            </li>
+          </Link>
           <Link to="/company" style={{ textDecoration: "none" }}>
             <li>
               <ApartmentIcon className="icon" />
@@ -109,6 +107,23 @@ const Sidebar = () => {
             <NotificationsNoneIcon className="icon" />
             <span>Notifications</span>
           </li>
+          <p className="title">USER</p>
+          <Link to="/adminprofile" style={{ textDecoration: "none" }}>
+            <li>
+              <AccountCircleOutlinedIcon className="icon" />
+              <span>Profile</span>
+            </li>
+          </Link>
+          <Link to="/adminupdateprofile" style={{ textDecoration: "none" }}>
+            <li>
+              <AccountCircleOutlinedIcon className="icon" />
+              <span>Update Profile</span>
+            </li>
+          </Link>
+          <li>
+            <ExitToAppIcon className="icon" />
+            <Logout />
+          </li>
 
           <p className="title">SERVICE</p>
           <li>
@@ -122,18 +137,6 @@ const Sidebar = () => {
           <li>
             <SettingsOutlinedIcon className="icon" />
             <span>Settings</span>
-          </li>
-
-          <p className="title">USER</p>
-          <Link to="/profile" style={{ textDecoration: "none" }}>
-            <li>
-              <AccountCircleOutlinedIcon className="icon" />
-              <span>Profile</span>
-            </li>
-          </Link>
-          <li>
-            <ExitToAppIcon className="icon" />
-            <Logout />
           </li>
         </ul>
       </div>

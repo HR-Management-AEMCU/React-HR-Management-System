@@ -16,6 +16,9 @@ import Logout from "../logout/Logout";
 import ApartmentIcon from "@mui/icons-material/Apartment";
 import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined";
 import MailOutlinedIcon from "@mui/icons-material/MailOutlined";
+import arasımor from "../../../assets/logo/arasımor.png"
+import arasımorb from "../../../assets/logo/arasımorb.png"
+import arasımorc from "../../../assets/logo/arasımorc.png"
 const Sidebar = () => {
   const [admin, setAdmin] = useState({});
   const token = localStorage.getItem("token");
@@ -30,28 +33,24 @@ const Sidebar = () => {
 
   return (
     <div className="sidebar">
-      <div className="top">
+    {/* <div className="top">
         <Link to="/visitorhome" style={{ textDecoration: "none" }}>
           <h4 className="logovisitor">HRGenius</h4>
         </Link>
       </div>
-      <hr />
+      <hr />*/}
 
       <div className="center">
         <div className="item">
-          <Link to="/" style={{ textDecoration: "none" }}>
+          <Link to="/" style={{ textDecoration: "none"}}>
             <img
-              src={
-                admin.image
-                  ? admin.image
-                  : "https://img.freepik.com/free-photo/portrait-handsome-dark-haired-man-smiles-toothily-feels-glad-wears-round-spectacles-casual-black-t-shirt-expresses-positive-emotions-isolated-yellow-background-happiness-concept_273609-58988.jpg?w=996&t=st=1686840993~exp=1686841593~hmac=3dcbd07027220b740e2722e1654069eddbcd9a244e38a76b5a440246c5f4bffa"
-              }
+              src={arasımorb}
               className="avatar"
             />
           </Link>
         </div>
         <ul>
-          <p className="title">MAIN</p>
+          <p className="title">VISITOR MAIN</p>
           <Link to="/visitorhome" style={{ textDecoration: "none" }}>
             <li>
               <DashboardOutlinedIcon className="icon" />
