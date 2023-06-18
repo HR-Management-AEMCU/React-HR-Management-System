@@ -10,7 +10,7 @@
   display: flex;
   align-items: center;
   font-size: 14px;
-  color: var(--first-color);
+  color: /*var(--first-color)*/#1d3354;
   .wrapper {
     width: 100%;
     display: flex;
@@ -45,7 +45,7 @@
 
         .icon {
           font-size: 20px;
-          color: var(--first-color);
+          color: /*var(--first-color)*/#1d3354;
         }
         .avatar {
           height: 30px;

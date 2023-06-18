@@ -42,7 +42,7 @@ const Sidebar = () => {
 
       <div className="center">
         <div className="item">
-          <Link to="/managerhome" style={{ textDecoration: "none"}}>
+          <Link to="/personelhome" style={{ textDecoration: "none"}}>
             <img
               src={arasımorb}
               className="avatar"
@@ -50,8 +50,8 @@ const Sidebar = () => {
           </Link>
         </div>
         <ul>
-          <p className="title">MANAGER MAIN</p>
-          <Link to="/managerhome" style={{ textDecoration: "none" }}>
+          <p className="title">PERSONNEL MAIN</p>
+          <Link to="/personelhome" style={{ textDecoration: "none" }}>
             <li>
               <DashboardOutlinedIcon className="icon" />
               <span>Dashboard</span>
@@ -63,7 +63,7 @@ const Sidebar = () => {
               <span>Calendar</span>
             </li>
           </Link>
-          <Link to="/managerhome/tatilgunler" style={{ textDecoration: "none" }}>
+          <Link to="/personelhome/tatilgunler" style={{ textDecoration: "none" }}>
             <li>
               <CalendarMonthOutlinedIcon className="icon" />
               <span>Tatil Günleri</span>
@@ -83,20 +83,20 @@ const Sidebar = () => {
               <span>Employee</span>
             </li>
           </Link> */}
-          <Link to="/manager" style={{ textDecoration: "none" }}>
+          <Link to="#" style={{ textDecoration: "none" }}>
             <li>
               <EngineeringOutlinedIcon className="icon" />
               <span>Employee List</span>
             </li>
           </Link>
-          <Link to="/company" style={{ textDecoration: "none" }}>
+          <Link to="#" style={{ textDecoration: "none" }}>
             <li>
               <PersonAddOutlinedIcon className="icon" />
               <span>Employee Add</span>
             </li>
           </Link>
           <p className="title">APPROVALS</p>
-          <Link to="/comments-to-approve" style={{ textDecoration: "none" }}>
+          <Link to="#" style={{ textDecoration: "none" }}>
           <li>
             <InsertChartOutlinedSharpIcon className="icon" />
             <span>Comments</span>
@@ -116,13 +116,13 @@ const Sidebar = () => {
             <span>Notifications</span>
           </li>
           <p className="title">USER</p>
-          <Link to="/adminprofile" style={{ textDecoration: "none" }}>
+          <Link to="#" style={{ textDecoration: "none" }}>
             <li>
               <AccountCircleOutlinedIcon className="icon" />
               <span>Profile</span>
             </li>
           </Link>
-          <Link to="/adminupdateprofile" style={{ textDecoration: "none" }}>
+          <Link to="#" style={{ textDecoration: "none" }}>
             <li>
               <AccountCircleOutlinedIcon className="icon" />
               <span>Update Profile</span>

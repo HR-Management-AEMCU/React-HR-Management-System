@@ -16,8 +16,11 @@ import AdminCommentApproval from "./pages/admin/admincommentapproval/comment";
 /*visitor import*/
 import VisitorHome from "./pages/visitor/visitorhomepage/Home";
 import VisitorProfilePage from "./pages/visitor/visitorprofile/VisitorProfilePage";
-import VisitorUpdateProfile from "./pages/visitor/visitorprofileupdatepage/VisitorUpdateProfile";
+import VisitorUpdateProfile from "./pages/visitor/visitorprofileupdatepage/VisitorUpdateProfilecopy";
 
+/*Personel*/
+import PersonelHome from "./pages/personel/personelhomepage/Home";
+import TatilGunlerPersonel from "./pages/personel/personeltatilgunler/TatilGunler";
 
 /*import Profile from "./pages/profile/Profile";
 
@@ -37,12 +40,23 @@ function App() {
           <Route path="/register" element={<RegisterUserPage />} />
           <Route path="/registercompany" element={<RegisterCompanyPage />} />
 
-          <Route path="/managerhome" element={<ManagerHome />} />
-          <Route path="/tatilgunler" element={<TatilGunler />} />
+          <Route path="managerhome">
+                <Route index element={<ManagerHome />} />
+                <Route path="tatilgunler" element={<TatilGunler />} />
+              </Route>
+
+          <Route path="personelhome">
+                <Route index element={<PersonelHome />} />
+                <Route path="tatilgunler" element={<TatilGunlerPersonel />} />
+              </Route>
+
+          <Route path="adminhome">
+                <Route index element={<AdminHome />} />
+                <Route path="managercheck" element={<List />} />
+              </Route>
 
           <Route path="/adminlogin" element={<AdminLoginPage />} />
           <Route path="/adminregister" element={<AdminRegisterPage />} />
-          <Route path="/adminhome" element={<AdminHome />} />
           <Route
             path="/comments-to-approve"
             element={<AdminCommentApproval />}
@@ -50,11 +64,7 @@ function App() {
           <Route path="/visitorhome" element={<VisitorHome />} />
           <Route path="/visitorprofile" element={<VisitorProfilePage />} />
           <Route path="/visitorupdateprofile" element={<VisitorUpdateProfile />} />
-          <Route path="manager">
-            <Route index element={<List />} />
-            {/*  <Route path=":managerId" element={<Single />} />*/}
-            {/* <Route path="new" element={<New />} />*/}
-          </Route>
+         
 
           {/* 
             <Route path="forgot" element={<Forgot />} />
