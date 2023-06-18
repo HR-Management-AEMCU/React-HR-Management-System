@@ -1,33 +1,64 @@
 import "./navbar.scss";
-import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+
 import LanguageOutlinedIcon from "@mui/icons-material/LanguageOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import FullscreenOutlinedIcon from "@mui/icons-material/FullscreenOutlined";
-import { Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
-/*import AdminService from "../../service/AdminService";*/
-import { useEffect, useState, useContext } from "react";
-/*import { SidebarContext } from "../../context/SidebarContext";*/
+import { Link } from "react-router-dom";
+/*import ManagerService from "../../service/ManagerService";*/
+import { useState, useEffect } from "react";
+
+/*import withAuth from "../../withAuth";*/
 
 const Navbar = () => {
-  const [admin, setAdmin] = useState({});
-  /*const { toggleSidebar } = useContext(SidebarContext);*/
   const token = localStorage.getItem("token");
- /* useEffect(() => {
-    AdminService.getAllAdminInfo(token).then((response) => {
-      setAdmin((admin) => ({
-        ...admin,
-        ...response.data,
-      }));
-    });
-  }, []);*/
+  const [image, setImage] = useState("");
+  /*useEffect(() => {
+    // Axios için iptal tokeni oluştur
+    const source = fetch.CancelToken.source();
+
+    ManagerService.getImage(token, { cancelToken: source.token })
+      .then((response) => {
+        setImage(response.data);
+      })
+      .catch((error) => {
+        if (axios.isCancel(error)) {
+          // istek iptal edildiyse, hata oluştuğunu kontrol eder
+          console.log("Axios request cancelled");
+        } else {
+          console.log("Another error happened: ", error.message);
+        }
+      });
+
+    // useEffect temizleme fonksiyonu
+    return () => {
+      source.cancel();
+    };
+  }, [token]);*/
+  function handleSearch(event) {
+    if (event && event.keyCode === 13) {
+      event.preventDefault();
+      const searchInput = document.getElementById("search-input").value;
+      // Arama işlemini burada gerçekleştirin
+      console.log("Arama: " + searchInput);
+      document.getElementById("search-input").value = "";
+    }
+  }
 
   return (
     <div className="navbar">
-      <div className="wrapper">
-        <div>
-          <MenuIcon className="icon" /*onClick={toggleSidebar}*/></MenuIcon>
+      <div>
+          <MenuIcon className="icon menu" /*onClick={toggleSidebar}*/></MenuIcon>
         </div>
+      <div>
+      <input className="npt" 
+      type="text"
+      id="search-input"
+      placeholder="Search..."
+      onKeyDown={handleSearch} />
+      </div>
+      <div className="wrapper">
+      
         <div className="items">
           <div className="item">
             <LanguageOutlinedIcon className="icon" />
@@ -40,21 +71,16 @@ const Navbar = () => {
           <div className="item">
             <DarkModeOutlinedIcon className="icon" />
           </div>
-          <Link to="/profile" style={{ textDecoration: "none" }}>
+          <Link to="/managerprofile" style={{ textDecoration: "none" }}>
             <div className="item">
               <img
-                src={
-                  admin.image
-                    ? admin.image
-                    : "https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg"
-                }
+                src={"https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg"}
                 className="avatar"
               />
             </div>
           </Link>
-          <div className="abcd">
-            Visitor Homepage
-          </div>
+          
+        
         </div>
       </div>
     </div>

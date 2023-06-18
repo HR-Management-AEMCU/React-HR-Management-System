@@ -1,0 +1,52 @@
+.board {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 160vh;
+    background: linear-gradient(90deg, #C7C5F4, #776BCC);
+  }
+  
+  .tatil-listesi {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 80vh;
+    max-height: 150vh;
+  }
+  .baslik{
+    text-align: center;
+    font-size: 4vh
+  }
+  .tatil {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+    text-align: center;
+  }
+  
+  .icon-container {
+    margin-right: 10px;
+  }
+  
+  .icon-container i {
+    color: #26a69a;
+    font-size: 20px;
+  }
+  
+  .tatil-info {
+    flex: 1;
+  }
+  
+  .tarih {
+    font-weight: bold;
+    font-size: 3vh;
+    color: #333333;
+  }
+  
+  .ad {
+    margin-top: 5px;
+    font-size: 2vh;
+    color: #666666;
+  }

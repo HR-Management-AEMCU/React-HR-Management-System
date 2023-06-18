@@ -167,19 +167,15 @@ const Datatable = () => {
   return (
     <div className="datatable">
       <ToastContainer />
-    <div className="dataTableTitle">
-      <Link to="/manager/new" className="links">
-        <span>Add new manager</span>
-      </Link>
-    </div>
-
-    <DataGrid
-      rows={manager}
-      columns={managerColumns.concat(actionColumn)}
-      rowHeight={90}
-      pageSizeOptions={[5]}
-      getRowId={getRowId}
-    />
+      {manager.length > 0 && (
+  <DataGrid
+    rows={manager}
+    columns={managerColumns.concat(actionColumn)}
+    rowHeight={90}
+    pageSizeOptions={[5]}
+    getRowId={getRowId}
+  />
+)}
   </div>
 );
 };

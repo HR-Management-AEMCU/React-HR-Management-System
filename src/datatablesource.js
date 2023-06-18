@@ -2,7 +2,7 @@ export const managerColumns = [
   {
     field: "image",
     headerName: "Image",
-    width: 180,
+    width: 150,
     renderCell: (param) => {
       return (
         <div className="cellWithImg">
@@ -13,11 +13,11 @@ export const managerColumns = [
   },
   { field: "name", headerName: "Firstname", width: 150 },
   { field: "surname", headerName: "Surname", width: 150 },
-  { field: "email", headerName: "Email", width: 200 },
-  { field: "companyName", headerName: "Company Name", width: 200 },
-  { field: "taxNumber", headerName: "Tax Number", width: 200 },
+  { field: "email", headerName: "Email", width: 150 },
+  { field: "companyName", headerName: "Company Name", width: 150 },
+  { field: "taxNumber", headerName: "Tax Number", width: 150 },
   { field: "status", headerName: "Status", width: 150 },
-  { field: "userId", headerName: "UserId", width: 250 },
+  { field: "userId", headerName: "UserId", width: 150 },
 ];
 
 export const managerRows = [

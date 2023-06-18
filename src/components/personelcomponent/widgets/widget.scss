@@ -1,0 +1,67 @@
+:root {
+  --first-color: #6439ff;
+  --second-color: #6439ffab;
+  --light-gray: rgba(128, 128, 128, 0.705);
+  --hover-color: #6439ff2a;
+}
+
+.widgetmanager {
+  background-color: #c8bbfa2a;
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  padding: 1vh;
+  margin-top: 4vh;
+  margin-bottom: 3vh;
+  -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+  box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+  border-radius: 1.5vh;
+  height: 20vh;
+
+  .widget__leftmanager {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .widget__titlemanager {
+      font-weight: bold;
+      font-size: 2.7vh;
+      color: #6439ffab;
+    }
+    .widget__countermanager {
+      font-size: 4.5vh;
+      font-weight: 400;
+      color: #1d3354;
+      font-family: Montserrat;
+      margin-left: 2vh;
+    }
+    .widget__linkmanager {
+      width: max-content;
+      font-size: 1.6vh;
+      border-bottom: 1px solid rgba(128, 128, 128, 0.514);
+    }
+  }
+  .widget__rightmanager {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .percentagemanager {
+      border-radius: 1vh;
+      display: flex;
+      align-items: center;
+      font-size: 2.5vh;
+      &.positivemanager {
+        color: green;
+      }
+      &.negativemanager {
+        color: red;
+      }
+    }
+    .icon {
+      padding: 4px;
+      align-self: flex-end;
+      border-radius: 1vh;
+    }
+  }
+}

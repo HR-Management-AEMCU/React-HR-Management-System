@@ -1,0 +1,9 @@
+.list {
+  display: flex;
+
+  .listContainer {
+    flex: 9;
+    display: flex;
+    flex-direction: column;
+  }
+}
