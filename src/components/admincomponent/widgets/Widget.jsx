@@ -86,7 +86,7 @@ const Widget = ({ type }) => {
     case "retired":
       data = {
         title: "TOTAL MANAGER",
-        link: "See all employee",
+        link: "localhost:3000/list-employee",
         class: "active",
         count: 10,
         /*count: listAdvance.length,*/

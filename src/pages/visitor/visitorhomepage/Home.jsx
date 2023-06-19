@@ -3,6 +3,7 @@ import Sidebar from "../../../components/visitorcomponent/sidebar/Sidebar";
 import Navbar from "../../../components/visitorcomponent/navbar/Navbar";
 import Widget from "../../../components/visitorcomponent/widgets/Widget";
 
+
 import { useContext } from "react";
 import Welcome from "../../../components/visitorcomponent/welcome/Welcome";
 /*import withAuth from "../../withAuth";*/
@@ -24,6 +25,7 @@ const Home = () => {
           <Widget type="total" />
           <Widget type="laik" />
         </div>
+        
         
        
         

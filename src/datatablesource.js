@@ -19,6 +19,22 @@ export const managerColumns = [
   { field: "status", headerName: "Status", width: 150 },
   { field: "userId", headerName: "UserId", width: 150 },
 ];
+export const companyColumns = [
+  {
+    field: "image",
+    headerName: "Image",
+    width: 250,
+    renderCell: (param) => {
+      return (
+        <div className="cellWithImg">
+          <img src={/*param.row.photo*/ ""} className="cell" />
+        </div>
+      );
+    },
+  },
+  { field: "companyName", headerName: "Company Name", width: 250 },
+  { field: "companyId", headerName: "CompanyId", width: 250 },
+];
 
 export const managerRows = [
   {
