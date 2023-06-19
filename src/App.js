@@ -17,6 +17,7 @@ import AdminCommentApproval from "./pages/admin/admincommentapproval/comment";
 import VisitorHome from "./pages/visitor/visitorhomepage/Home";
 import VisitorProfilePage from "./pages/visitor/visitorprofile/VisitorProfilePage";
 import VisitorUpdateProfile from "./pages/visitor/visitorprofileupdatepage/VisitorUpdateProfilecopy";
+import VisitorCompanyList from "./pages/visitor/visitorcompanylist/VisitorCompanyList";
 
 /*Personel*/
 import PersonelHome from "./pages/personel/personelhomepage/Home";
@@ -64,6 +65,9 @@ function App() {
           <Route path="/visitorhome" element={<VisitorHome />} />
           <Route path="/visitorprofile" element={<VisitorProfilePage />} />
           <Route path="/visitorupdateprofile" element={<VisitorUpdateProfile />} />
+          <Route path="/visitorcompanylist" element={<VisitorCompanyList />} />
+
+          
          
 
           {/* 

@@ -78,7 +78,7 @@ const Sidebar = () => {
               <span>Employee</span>
             </li>
           </Link> */}
-          <Link to="/company" style={{ textDecoration: "none" }}>
+          <Link to="/visitorcompanylist" style={{ textDecoration: "none" }}>
             <li>
               <ApartmentIcon className="icon" />
               <span>Company</span>

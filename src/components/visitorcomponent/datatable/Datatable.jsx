@@ -1,6 +1,6 @@
 import "./datatable.scss";
 import { DataGrid, GridColumnHeaderFilterIconButton } from "@mui/x-data-grid";
-import { managerColumns } from "../../../datatablesource";
+import { companyColumns } from "../../../datatablesource";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
@@ -13,18 +13,14 @@ const Datatable = () => {
   const navigate = useNavigate();
   const [manager, setManager] = useState([
     { 
-      userId: "",
-      name: "",
-      photo: "",
-      surname: "",
-      email: "",
+      companyId: "",
       companyName: "",
-      taxNumber: "",
-      status:""
+      companyLogoUrl: "",
     },
   ]);
   useEffect(() => {
-    fetch('http://localhost:8070/companies-list', {
+    
+    fetch('http://localhost:8070/api/v1/company/get-companies-list', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -32,14 +28,10 @@ const Datatable = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        const formattedData = data.map((item) => ({
-          companyId: item.companyId,
-          companyName: item.companyName,
-          companyLogoUrl: item.companyLogoUrl,
-        }));
         // Verileri istenen şekilde formatlayarak duruma kaydetmek
-        setManager(formattedData);
-        console.log(formattedData);
+        setManager(data);
+        console.log(data);
+       
       })
       .catch((error) => {
         console.error(error);
@@ -131,26 +123,24 @@ const Datatable = () => {
     return (
       <div>
         <ToastContainer />
-        <button type="button" style={{ backgroundColor: 'green', color: 'white', marginRight: '5px', fontSize: '3vh' , width:'4vh' }} onClick={handleCheck}>✔</button>
-        <button type="button" style={{ backgroundColor: 'red', color: 'white', fontSize: '3vh', width:'4vh'}} onClick={handleCross}>✖</button>
-      </div>
+        <button type="button" style={{ backgroundColor: 'gray', color: 'white', marginRight: '5px', fontSize: '2vh' , width:'5vh' }} onClick={handleCheck}>View</button></div>
     );
   };
 
   
 
-  const getRowId = (row) => row.userId;
+  const getRowId = (row) => row.companyId;
   return (
     <div className="datatable">
-    <div className="dataTableTitle">
+   {/*<div className="dataTableTitle">
       <Link to="/manager/new" className="links">
         <span>Add new manager</span>
       </Link>
-    </div>
+    </div>*/}
 
     <DataGrid
       rows={manager}
-      columns={managerColumns.concat(actionColumn)}
+      columns={companyColumns.concat(actionColumn)}
       rowHeight={70}
       pageSizeOptions={[5]}
       getRowId={getRowId}
