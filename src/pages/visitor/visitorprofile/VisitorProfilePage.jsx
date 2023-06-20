@@ -2,7 +2,7 @@ import "./visitorprofilepage.scss";
 import Sidebar from "../../../components/visitorcomponent/sidebar/Sidebar";
 import Navbar from "../../../components/visitorcomponent/navbar/Navbar";
 import Widget from "../../../components/visitorcomponent/widgets/Widget";
-import VisitorProfile from "../../../components/visitorcomponent/profilevisitor/VisitorProfile copy";
+import VisitorProfile from "../../../components/visitorcomponent/profilevisitor/VisitorProfile";
 
 import { useContext } from "react";
 import Welcome from "../../../components/visitorcomponent/welcome/Welcome";

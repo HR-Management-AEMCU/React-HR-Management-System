@@ -1,57 +1,130 @@
+import { useEffect, useState } from 'react';
 import './visitorprofile.css';
 
 const VisitorProfile = () => {
 
+  const [manager, setManager] = useState([
+    { 
+      name: "",
+      surname:"",
+      photo: "",
+      email: "",
+      birthDate:"",
+      birthPlace:"",
+      identificationNumber:"",
+      gender:"",
+      neighbourhood:"",
+      district:"",
+      province:"",
+      country:"",
+      buildingNumber:"",
+      apartmentNumber:"",
+      postalCode: "",
+    },
+  ]);
+
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    return `${day}/${month}/${year}`;
+  };
+
+  useEffect(()=>{
+    fetch('http://localhost:8060/api/v1/user-profile/info-visitor',{
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        token: localStorage.getItem('token'),
+    }),
+    }).then(data => data.json())
+    .then(data =>{
+        setManager(data);
+        console.log(data);
+    });
+},[]);
+
     return (
          <div className="user-profile">
       <div className="left-card">
+        
         <img
           className="profile-picture"
-          src="https://img.freepik.com/free-photo/cartoon-character-with-yellow-jacket-sunglasses_71767-101.jpg?w=740&t=st=1686869975~exp=1686870575~hmac=33b6727184dabd64e20dd53e4c1112220af176d0dfff55a44d6b402aa023e7f0"
+          src={manager.photo}
           alt="Profile Picture"
         />
-        <h2 className="profile-name">John Doe</h2>
+        <h2 className="profile-name">{manager.name} {manager.surname}</h2>
         <div className='leftinfo-card'>
-        <div className="info-card">
-          <h3>Email</h3>
-          <p>johndoe@example.com</p>
+
+
+          <div className='name-container'>
+        <div className="line">
+          <span className='first-name'>Email</span>
+          <span className='second-name'>{manager.email}</span>
         </div>
-      
-        <div className="info-card">
-          <h3>Phone</h3>
-          <p>0554 865 13 55</p>
+      <hr />
+        <div className="line">
+          <span className='first-name'>Phone </span>
+          <span className='second-name'>{manager.phone}</span>
         </div>
-        <div className="info-card">
-          <h3>Email</h3>
-          <p>johndoe@example.com</p>
+        <hr />
+        <div className="line">
+          <span className='first-name'>Gender</span>
+          <span className='second-name'>{manager.gender}</span>
+        </div>
+        <hr />
         </div>
         </div>
       </div>
       <div className="right-card">
-      <div className="info-card">
-          <h3>Company</h3>
-          <p>ABC Corporation</p>
+
+      <div className='name-container'>
+      
+        <div className="line">
+          <span className='first-name'>İdentify Number</span>
+          <span className='second-name'>{manager.identificationNumber}</span>
         </div>
-        <div className="info-card">
-          <h3>Birth Date</h3>
-          <p>18.02.1996</p>
+        <hr />
+        <div className="line">
+          <span className='first-name'>Birth Day</span>
+          <span className='second-name'>{formatDate(manager.birthDate)}</span>
         </div>
-        <div className="info-card">
-          <h3>Birth Place</h3>
-          <p>Denizli</p>
+      <hr />
+        <div className="line">
+          <span className='first-name'>Birth Place</span>
+          <span className='second-name'>{manager.birthPlace}</span>
         </div>
-        <div className="info-card">
-          <h3>Age</h3>
-          <p>30</p>
+        <hr />
+        <div className="line">
+          <span className='first-name'>Country</span>
+          <span className='second-name'>{manager.country}</span>
         </div>
-        <div className="info-card">
-          <h3>Country</h3>
-          <p>Denizli</p>
+        <hr />
+        <div className="line">
+          <span className='first-name'>District</span>
+          <span className='second-name'>{manager.district}</span>
         </div>
-        <div className="info-card">
-          <h3>Postal Code</h3>
-          <p>20100</p>
+        <hr />
+        <div className="line">
+          <span className='first-name'>Neighbourhood</span>
+          <span className='second-name'>{manager.neighbourhood}</span>
         </div>
+        <hr />
+        <div className="line">
+          <span className='first-name'>Province</span>
+          <span className='second-name'>{manager.province}</span>
+        </div>
+        <hr />
+        <div className="line">
+          <span className='first-name'>Postal Code</span>
+          <span className='second-name'>{manager.postalCode}</span>
+        </div>
+        <hr />
+        </div>
+
       </div>
      
     </div>

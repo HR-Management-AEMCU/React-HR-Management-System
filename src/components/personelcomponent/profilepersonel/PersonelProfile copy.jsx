@@ -38,7 +38,7 @@ const PersonelProfile = () => {
     return `${day}/${month}/${year}`;
   };
 
-  /*useEffect(()=>{
+  useEffect(()=>{
     fetch('http://localhost:8060/api/v1/user-profile/info-personel',{
       method: 'POST',
       headers: {
@@ -52,7 +52,7 @@ const PersonelProfile = () => {
         setManager(data);
         console.log(data);
     });
-},[]);*/
+},[]);
 
     return (
          <div className="user-profile">
@@ -165,16 +165,24 @@ const PersonelProfile = () => {
           <span className='second-name'>{manager.department}</span>
         </div>
         <hr />
-        <div className="line">
-          <span className='first-name'>Job Starting Date</span>
-          <span className='second-name'>{manager.jobStartingDate}</span>
-        </div>
-        <hr />
-        <div className="line">
-          <span className='first-name'>Job Ending Date</span>
-          <span className='second-name'>{manager.jobEndingDate}</span>
-        </div>
-        <hr />
+       {manager.jobStartingDate && (
+        <div>
+          <div className="line">
+           <span className='first-name'>Job Starting Date</span>
+           <span className='second-name'>{manager.jobStartingDate}</span>
+         </div>
+          <hr /> 
+        </div>)}
+        {manager.jobEndingDate && (
+         <div>
+          <div className="line">
+            <span className='first-name'>Job Ending Date</span>
+            <span className='second-name'>{manager.jobEndingDate}</span>
+          </div>
+          <hr /> 
+         </div>)}
+
+
         </div>
 
       </div>

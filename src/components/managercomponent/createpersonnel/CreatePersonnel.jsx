@@ -26,6 +26,7 @@ const CreatePersonnel = () => {
     const [country, setCountry] = useState('');
     const [apartmentNumber, setApartmentNumber] = useState('');
     const [postalCode, setPostalCode] = useState('');
+    const [department, setDepartment] = useState('');
     const [denemeTarihi, setDenemeTarihi] = useState('');
     const token=localStorage.getItem('token');
 
@@ -60,7 +61,7 @@ const CreatePersonnel = () => {
         method: 'POST',
         body: JSON.stringify({ token,photo, phone, gender,identificationNumber,
              unixTimestamp,birthPlace,neighbourhood,district,province,country,apartmentNumber,postalCode,
-            name,surname, email , password,companyName, jobStartingDate, salary, salaryDate,denemeTarihi }),
+            name,surname, email , password,companyName, jobStartingDate, salary, salaryDate,department,denemeTarihi }),
         headers: {
           'Content-Type': 'application/json'
         }
@@ -70,7 +71,7 @@ const CreatePersonnel = () => {
         if (response.ok) {
           toast.success("Employee Add Success...", { autoClose: 2000 });
           setTimeout(() => {
-            navigate("/managerhome/createpersonnel"); 
+            navigate("/managerhome/personellist"); 
           }, 4000);
         } else {
           toast.error("Employee Add dont Success", { autoClose: 2000 });
@@ -107,6 +108,7 @@ const CreatePersonnel = () => {
         setCountry('');
         setApartmentNumber('');
         setPostalCode('');
+        setDepartment('');
       };
 
    
@@ -248,6 +250,14 @@ const CreatePersonnel = () => {
         onChange={(e) => setJobStartingDate(e.target.value)}
         required
       />
+       <label className="updatelabelemployeeadd" htmlFor="name">Phone:</label>
+      <input className="updateinputemployeeadd"
+        type="text"
+        id="phone"
+        value={phone}
+        onChange={(e) => setPhone(e.target.value)}
+        required
+      />
       <label className="updatelabelemployeeadd" htmlFor="name">Salary Date:</label>
       <input
         className="updateinputemployeeadd"
@@ -257,12 +267,13 @@ const CreatePersonnel = () => {
         onChange={(e) => setSalaryDate(e.target.value)}
         required
       />
-       <label className="updatelabelemployeeadd" htmlFor="name">Phone:</label>
-      <input className="updateinputemployeeadd"
+      <label className="updatelabelemployeeadd" htmlFor="name">Department:</label>
+      <input
+        className="updateinputemployeeadd"
         type="text"
-        id="phone"
-        value={phone}
-        onChange={(e) => setPhone(e.target.value)}
+        id="department"
+        value={department}
+        onChange={(e) => setDepartment(e.target.value)}
         required
       />
       <label className="updatelabelemployeeadd" htmlFor="name">IdentificationNumber:</label>
