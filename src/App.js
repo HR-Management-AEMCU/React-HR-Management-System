@@ -5,6 +5,7 @@ import RegisterUserPage from "./pages/manager/visitormanagerloginregister/Regist
 import RegisterCompanyPage from "./pages/manager/visitormanagerloginregister/RegisterCompanyPage";
 import ManagerHome from "./pages/manager/managerhomepage/Home";
 import TatilGunler from "./pages/manager/managertatilgunler/TatilGunler";
+import CreatePersonnelPage from "./pages/manager/createpersonnel/CreatePersonnelPage";
 
 /*Admin imports*/
 import AdminLoginPage from "./pages/admin/adminloginregister/LoginAdminPage";
@@ -44,6 +45,7 @@ function App() {
           <Route path="managerhome">
                 <Route index element={<ManagerHome />} />
                 <Route path="tatilgunler" element={<TatilGunler />} />
+                <Route path="createpersonnel" element={<CreatePersonnelPage />} />
               </Route>
 
           <Route path="personelhome">

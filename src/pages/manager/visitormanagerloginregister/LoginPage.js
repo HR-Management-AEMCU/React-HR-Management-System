@@ -46,7 +46,7 @@ const LoginPage = () => {
       })
         .then((response) => {
           if (response.ok) {
-            toast.success("Login Başarılı! Anasayfaya Yönlendiriliyorsunuz...", { autoClose: 2000 });
+           
             return response.json(); 
           } else {
             throw new Error("Giriş başarısız"); 
@@ -55,9 +55,36 @@ const LoginPage = () => {
         .then((data) => {
           console.log(data.token); 
           localStorage.setItem('token', data.token)
-          setTimeout(() => {
+
+          const roles = data.roles; 
+          const rolesJSON = JSON.stringify(roles); 
+          localStorage.setItem('roles', rolesJSON);
+          /*setTimeout(() => {
+            navigate("/managerhome"); 
+          }, 3000);*/
+        }).then(()=>{
+          const user=localStorage.getItem('roles')
+          console.log(user)
+          console.log("ççalisti")
+          if ( user.includes('MANAGER') && user.includes('PERSONNEL')) {
+            toast.success("Login Başarılı! ManagerHome Yönlendiriliyorsunuz...", { autoClose: 2000 });
+             setTimeout(() => {
             navigate("/managerhome"); 
           }, 3000);
+          } else if ( user.includes('PERSONNEL')) {
+            toast.success("Login Başarılı! PersonelHome Yönlendiriliyorsunuz...", { autoClose: 2000 });
+             setTimeout(() => {
+              navigate('/personelhome');
+          }, 3000);
+          } else if ( user.includes('VISITOR')) {
+            toast.success("Login Başarılı! VisitorHome Yönlendiriliyorsunuz...", { autoClose: 2000 });
+            setTimeout(() => {
+              navigate('/visitorhome');
+         }, 3000);
+          }else{
+            console.log("yönlendirme yapılamadi")
+          }
+          
         })
         .catch((error) => {
           toast.error("Kayıt başarısız.Lütfen daha sonra deneyiniz...", { autoClose: 3000 });

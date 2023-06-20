@@ -61,8 +61,9 @@ const Updateprofile = () => {
             navigate("/visitorhome"); 
           }, 4000);
         } else {
-          throw new Error("Kayit başarisiz"); // İstek başarısızsa hata fırlat
           toast.error("Update başarısız.", { autoClose: 5000 });
+          throw new Error("Kayit başarisiz"); // İstek başarısızsa hata fırlat
+          
         }
       })
       .catch((error) => {
