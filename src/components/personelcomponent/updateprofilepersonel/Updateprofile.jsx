@@ -18,6 +18,8 @@ const Updateprofile = () => {
     const [country, setCountry] = useState('');
     const [apartmentNumber, setApartmentNumber] = useState('');
     const [postalCode, setPostalCode] = useState('');
+
+    
     const token=localStorage.getItem('token');
 
 

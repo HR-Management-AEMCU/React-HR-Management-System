@@ -89,7 +89,7 @@ const Sidebar = () => {
               <span>Employee List</span>
             </li>
           </Link>
-          <Link to="/company" style={{ textDecoration: "none" }}>
+          <Link to="/managerhome/createpersonnel" style={{ textDecoration: "none" }}>
             <li>
               <PersonAddOutlinedIcon className="icon" />
               <span>Employee Add</span>
