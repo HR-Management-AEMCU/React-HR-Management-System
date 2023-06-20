@@ -1,0 +1,28 @@
+/* Resimler.css */
+
+.resim-container {
+    position: relative;
+    width: 90%;
+    height: 60%;
+    margin: 0 auto;
+    overflow: hidden;
+    margin-top: 10px;
+  }
+  
+  .resim-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform: rotate(0deg);
+    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+    border: 2px solid #000000;
+  }
+  
+  .resim-container img.active {
+    opacity: 1;
+    transform: rotate(360deg);
+  }
+  
