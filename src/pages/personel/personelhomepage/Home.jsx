@@ -9,6 +9,8 @@ import BarCharts from "../../components/bar/BarCharts";
 import AverageWork from "../../components/averagework/AverageWork";
 import withAuth from "../../withAuth";
 import PercentArea from "../../components/percentarea/PercentArea";*/
+import MainImages from "../../../components/personelcomponent/mainresimler/MainImages";
+import Footer from "../../../components/personelcomponent/footer/Footer";
 const Home = () => {
   
   return (
@@ -17,13 +19,15 @@ const Home = () => {
       <div className="homeContainer">
         <Navbar />
         {/*widget1 ile kar zarar ödenecek paralar gibi ekranlar tutulup widget 2 ile yine sayılar listeler tuutlabilir*/}
-       
-        <div className="widgets">
+        <MainImages/>
+        <Footer/>
+        {/*<div className="widgets">
           <Widget2 type="total" />
           <Widget2 type="retired" />
           <Widget2 type="active" />
           <Widget2 type="laik" />
-        </div>
+        </div>*/}
+       
       <div className="circ">
           {/* <div className="circ_left">
             <NewEmployee />

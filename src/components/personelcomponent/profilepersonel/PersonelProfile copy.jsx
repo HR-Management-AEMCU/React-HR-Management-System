@@ -17,12 +17,10 @@ const PersonelProfile = () => {
     district: "",
     province: "",
     country: "",
-    buildingNumber: "",
     apartmentNumber: "",
     postalCode: "",
     salary: "",
     companyName: "",
-    taxNumber: "",
     phone: "",
     department: "",
     jobStartingDate: "",
@@ -68,6 +66,7 @@ const PersonelProfile = () => {
 
 
           <div className='name-container'>
+        {/*profil resminin altında zaten isim soyisim yazdığı için ekstra gerek yok
         <div className="line">
           <span className='first-name'>Name</span>
           <span className='second-name'>{manager.name}</span>
@@ -77,7 +76,7 @@ const PersonelProfile = () => {
           <span className='first-name'>Surname </span>
           <span className='second-name'>{manager.surname}</span>
         </div>
-        <hr />
+    <hr />*/}
         <div className="line">
           <span className='first-name'>Email</span>
           <span className='second-name'>{manager.email}</span>
@@ -91,11 +90,6 @@ const PersonelProfile = () => {
       <div className="line">
           <span className='first-name'>Birth Place</span>
           <span className='second-name'>{manager.birthPlace}</span>
-        </div>
-        <hr />
-        <div className="line">
-          <span className='first-name'>Identification Number</span>
-          <span className='second-name'>{manager.identificationNumber}</span>
         </div>
         <hr />
         <div className="line">
@@ -114,7 +108,11 @@ const PersonelProfile = () => {
       <div className="right-card">
 
       <div className='name-container'>
-      
+      <div className="line">
+          <span className='first-name'>Identification Number</span>
+          <span className='second-name'>{manager.identificationNumber}</span>
+        </div>
+        <hr />
         <div className="line">
           <span className='first-name'>Neighbourhood</span>
           <span className='second-name'>{manager.neighbourhood}</span>
@@ -130,11 +128,11 @@ const PersonelProfile = () => {
           <span className='second-name'>{manager.province}</span>
         </div>
         <hr />
-        <div className="line">
+       {/* <div className="line">
           <span className='first-name'>Building Number</span>
           <span className='second-name'>{manager.buildingNumber}</span>
-        </div>
-        <hr />
+  </div>
+        <hr />*/}
         <div className="line">
           <span className='first-name'>Apartment Number</span>
           <span className='second-name'>{manager.apartmentNumber}</span>

@@ -9,7 +9,7 @@ import Updateprofile from "../../../components/personelcomponent/updateprofilepe
 /*import CompanyService from "../../service/CompanyService";*/
 
 
-const PersonnelUpdateProfile = () => {
+const PersonelUpdateProfile = () => {
   const [manager, setManager] = useState({});
   const [managerFormData, setManagerFormData] = useState({});
   const token = localStorage.getItem("token");
@@ -62,4 +62,4 @@ const PersonnelUpdateProfile = () => {
   );
 };
 
-export default PersonnelUpdateProfile;
+export default PersonelUpdateProfile;
