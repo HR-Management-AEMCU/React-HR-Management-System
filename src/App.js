@@ -22,6 +22,8 @@ import VisitorCompanyList from "./pages/visitor/visitorcompanylist/VisitorCompan
 /*Personel*/
 import PersonelHome from "./pages/personel/personelhomepage/Home";
 import TatilGunlerPersonel from "./pages/personel/personeltatilgunler/TatilGunler";
+import PersonelProfilePage from "./pages/personel/personelprofile/PersonelProfilePage";
+
 
 /*import Profile from "./pages/profile/Profile";
 
@@ -49,6 +51,7 @@ function App() {
           <Route path="personelhome">
                 <Route index element={<PersonelHome />} />
                 <Route path="tatilgunler" element={<TatilGunlerPersonel />} />
+                <Route path="personelprofilepage" element={<PersonelProfilePage />} />
               </Route>
 
           <Route path="adminhome">
