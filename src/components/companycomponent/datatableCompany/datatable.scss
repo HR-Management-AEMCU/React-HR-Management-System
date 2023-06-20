@@ -1,0 +1,88 @@
+.datatable {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin-top: 20px;
+  gap: 20px;
+  .datatableTitle {
+    font-size: 24px;
+    color: gray;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    width: 350px;
+    height: 50px;
+    background-color: red;
+  }
+
+  .cellWithImg {
+    display: flex;
+    align-items: center;
+
+    .cellImg {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+  .cellAction {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    .view {
+      padding: 2px 5px;
+      border-radius: 3px;
+      color: darkblue;
+      border: 1px solid rgba(0, 0, 139, 0.575);
+      font-weight: 600;
+    }
+    .delete {
+      padding: 2px 5px;
+      border-radius: 3px;
+      color: red;
+      border: 1px solid rgba(255, 0, 0, 0.329);
+      font-weight: 600;
+    }
+  }
+
+  .linksecompany {
+    text-decoration: none;
+    color: rgb(70, 70, 241);
+    width: 350px;
+    border: 0.5 solid black;
+  }
+
+  .icon {
+    font-size: 18px;
+  }
+}
+
+.link {
+  text-decoration: none;
+  color: #1d3354;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  span {
+    width: 250px;
+  }
+}
+
+.datagrid {
+  background-color: transparent;
+}
+.links {
+  border: 0.1px solid gray;
+  line-height: 35px;
+  padding: 10px;
+  color: gray;
+  background-color: #dad7f4;
+
+  span {
+    color: #a38a80;
+  }
+}
+
+.datagridcompany {
+}
