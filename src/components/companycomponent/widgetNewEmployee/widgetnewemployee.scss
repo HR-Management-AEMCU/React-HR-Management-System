@@ -1,0 +1,58 @@
+.widgetNew {
+  flex: 0.93;
+  padding: 10px;
+  -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+  box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #fafafe;
+
+  .widgetNew-p {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1d3354;
+    text-align: center;
+  }
+  .person-area {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    max-height: 100px;
+    border-radius: 5%;
+
+    .employee-icon {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .info-employee {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      .name-employee {
+        font-size: 16px;
+        font-weight: 500;
+      }
+      .title-employee {
+        font-size: 12px;
+        font-weight: 400;
+      }
+    }
+  }
+  .widgetSmButton {
+    display: flex;
+    align-items: center;
+    border: none;
+    border-radius: 10px;
+    padding: 7px 10px;
+
+    color: #555;
+    cursor: pointer;
+  }
+  .widgetSmIcon {
+    font-size: 16px;
+  }
+}

@@ -26,6 +26,7 @@ import PersonelHome from "./pages/personel/personelhomepage/Home";
 import TatilGunlerPersonel from "./pages/personel/personeltatilgunler/TatilGunler";
 import PersonelProfilePage from "./pages/personel/personelprofile/PersonelProfilePage";
 import PersonelUpdateProfile from "./pages/personel/personelprofileupdatepage/PersonelUpdateProfile";
+import CompanyInfo from "./pages/company/companyinfopage/CompanyInfoPage";
 
 /*import Profile from "./pages/profile/Profile";
 
@@ -79,8 +80,12 @@ function App() {
           <Route path="/visitorupdateprofile" element={<VisitorUpdateProfile />} />
           <Route path="/visitorcompanylist" element={<VisitorCompanyList />} />
 
-          
-         
+            {/*company*/}
+            <Route path="company">
+                {/*<Route index element={<ListCompany />} />*/}
+                <Route path=":companyId" element={<CompanyInfo />} />
+               {/* <Route path="new" element={<NewCompany />} />*/}
+              </Route>
 
           {/* 
             <Route path="forgot" element={<Forgot />} />
