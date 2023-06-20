@@ -116,7 +116,7 @@ const Sidebar = () => {
             <span>Notifications</span>
           </li>
           <p className="title">USER</p>
-          <Link to="#" style={{ textDecoration: "none" }}>
+          <Link to="/personelhome/personelprofilepage" style={{ textDecoration: "none" }}>
             <li>
               <AccountCircleOutlinedIcon className="icon" />
               <span>Profile</span>
