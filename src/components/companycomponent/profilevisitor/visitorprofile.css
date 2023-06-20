@@ -1,0 +1,82 @@
+/* UserProfile.css */
+
+
+.left-card,
+.right-card {
+  
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  
+}
+
+.user-profile {
+  font-family: Arial;
+  display: flex;
+  background-color: #EEEEEE;
+  border-radius: 20px;
+  padding: 30px;
+  margin: 50px;
+  margin-right: 15vh;
+  margin-left: 15vh;
+   display: flex;
+  justify-content: space-between;
+  padding: 30px;
+  
+}
+
+.left-card {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #787A91;
+  font-family: Montserrat;
+  
+}
+
+.right-card {
+  width: 59%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #787A91;
+}
+.leftinfo-card{
+  width: 100%;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  
+}
+.info-card {
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+
+.profile-picture {
+  width: 21vh;
+  height: 21vh;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.profile-name {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 5vh;
+}
+
+h3 {
+  margin-bottom: 5px;
+  font-size: 2.6vh;
+}
+
+p {
+  color: gray;
+  font-weight: 600;
+  font-size: 2.8vh;
+}
