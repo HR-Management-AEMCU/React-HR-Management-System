@@ -23,8 +23,11 @@ import VisitorCompanyList from "./pages/visitor/visitorcompanylist/VisitorCompan
 import PersonelHome from "./pages/personel/personelhomepage/Home";
 import TatilGunlerPersonel from "./pages/personel/personeltatilgunler/TatilGunler";
 import PersonelProfilePage from "./pages/personel/personelprofile/PersonelProfilePage";
-import CompanyInfo from "./pages/company/companyinfopage/CompanyInfoPage";
 
+
+/*Company*/
+import CompanyInfo from "./pages/company/companyinfopage/CompanyInfoPage";
+import CompanyCard from "./pages/company/companycard/CompanyCard";
 
 /*import Profile from "./pages/profile/Profile";
 
@@ -70,11 +73,13 @@ function App() {
           <Route path="/visitorprofile" element={<VisitorProfilePage />} />
           <Route path="/visitorupdateprofile" element={<VisitorUpdateProfile />} />
           <Route path="/visitorcompanylist" element={<VisitorCompanyList />} />
+          <Route path="/companycard" element={<CompanyCard />} />
 
             {/*company*/}
             <Route path="company">
                 {/*<Route index element={<ListCompany />} />*/}
                 <Route path=":companyId" element={<CompanyInfo />} />
+                
                {/* <Route path="new" element={<NewCompany />} />*/}
               </Route>
 
