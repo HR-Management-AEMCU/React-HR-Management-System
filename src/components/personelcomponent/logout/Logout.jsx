@@ -8,6 +8,7 @@ function Logout() {
 
   const handleLogout = () => {
     localStorage.removeItem("token");
+    localStorage.removeItem("roles");
     history("/login");
   };
 

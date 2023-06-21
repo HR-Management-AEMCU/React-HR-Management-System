@@ -5,6 +5,8 @@ import RegisterUserPage from "./pages/manager/visitormanagerloginregister/Regist
 import RegisterCompanyPage from "./pages/manager/visitormanagerloginregister/RegisterCompanyPage";
 import ManagerHome from "./pages/manager/managerhomepage/Home";
 import TatilGunler from "./pages/manager/managertatilgunler/TatilGunler";
+import CreatePersonnelPage from "./pages/manager/createpersonnel/CreatePersonnelPage";
+import ManagerActivatePage from "./pages/manager/visitormanagerloginregister/ManagerActivatePage";
 
 /*Admin imports*/
 import AdminLoginPage from "./pages/admin/adminloginregister/LoginAdminPage";
@@ -16,7 +18,7 @@ import AdminCommentApproval from "./pages/admin/admincommentapproval/comment";
 /*visitor import*/
 import VisitorHome from "./pages/visitor/visitorhomepage/Home";
 import VisitorProfilePage from "./pages/visitor/visitorprofile/VisitorProfilePage";
-import VisitorUpdateProfile from "./pages/visitor/visitorprofileupdatepage/VisitorUpdateProfilecopy";
+import VisitorUpdateProfile from "./pages/visitor/visitorprofileupdatepage/VisitorUpdateProfile";
 import VisitorCompanyList from "./pages/visitor/visitorcompanylist/VisitorCompanyList";
 
 /*Personel*/
@@ -25,7 +27,13 @@ import TatilGunlerPersonel from "./pages/personel/personeltatilgunler/TatilGunle
 import PersonelProfilePage from "./pages/personel/personelprofile/PersonelProfilePage";
 
 
+
 /*Company*/
+
+
+
+
+import PersonelUpdateProfile from "./pages/personel/personelprofileupdatepage/PersonelUpdateProfile";
 import CompanyInfo from "./pages/company/companyinfopage/CompanyInfoPage";
 import CompanyCard from "./pages/company/companycard/CompanyCard";
 
@@ -45,17 +53,24 @@ function App() {
           <Route index element={<LoginPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterUserPage />} />
-          <Route path="/registercompany" element={<RegisterCompanyPage />} />
+
+          <Route path="registercompany">
+                <Route index element={<RegisterCompanyPage />} />
+                <Route path="activatecode" element={<ManagerActivatePage />} />
+                
+              </Route>
 
           <Route path="managerhome">
                 <Route index element={<ManagerHome />} />
                 <Route path="tatilgunler" element={<TatilGunler />} />
+                <Route path="createpersonnel" element={<CreatePersonnelPage />} />
               </Route>
 
           <Route path="personelhome">
                 <Route index element={<PersonelHome />} />
                 <Route path="tatilgunler" element={<TatilGunlerPersonel />} />
                 <Route path="personelprofilepage" element={<PersonelProfilePage />} />
+                <Route path="personelupdatepage" element={<PersonelUpdateProfile />} />
               </Route>
 
           <Route path="adminhome">

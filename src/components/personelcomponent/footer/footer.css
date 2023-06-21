@@ -1,0 +1,43 @@
+.footer {
+    background-color: #8f6cb1;
+    color: #000000;
+    padding: 20px;
+    margin: 20px 0px;
+  }
+  
+  .footer-content {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo-container {
+    display: flex;
+    margin-right: 20px;
+    width: 50%;
+    align-items: center;
+    margin-left: 3vh;
+    
+  }
+  
+  .logo {
+    width: 13vh; /* Logo genişliğini istediğiniz boyuta ayarlayabilirsiniz */
+  }
+  
+  .text-container {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .contact-info {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .contact-details {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  

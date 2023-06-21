@@ -23,7 +23,7 @@ const Datatable = () => {
       status:""
     },
   ]);
-  /*çalışan metot fecth hatası verdiği için kapattım
+  /*çalışan metot fecth hatası verdiği için kapattım*/
   useEffect(()=>{
     fetch('http://localhost:8060/api/v1/user-profile/role-manager-status-inactive',{
       method: 'GET',
@@ -37,7 +37,7 @@ const Datatable = () => {
         const userIds = data.map(x => x.userId); // Tüm kullanıcı profillerinden userId'leri alın
         localStorage.setItem('userIds', JSON.stringify(userIds)); // userIds'yi localStorage'e JSON formatında kaydedin
     });
-},[]);*/
+},[]);
 
 /*
   useEffect(() => {
@@ -103,7 +103,7 @@ const Datatable = () => {
             console.log(data.token); 
             localStorage.setItem('token', data.token)
             setTimeout(() => {
-              navigate("/manager");
+              navigate("/adminhome");
             }, 3000);
           })
           .catch((error) => {

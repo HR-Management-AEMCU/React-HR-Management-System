@@ -5,6 +5,13 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Updateprofile = () => {
+  /*
+  "buildingNumber": 0,
+  "salary": 0,
+  "companyName": "string",
+  "department": "string",
+  "jobStartingDate": 0
+  */ 
     const navigate = useNavigate();
     const [photo, setPhoto] = useState('');
     const [phone, setPhone] = useState('');
@@ -18,6 +25,12 @@ const Updateprofile = () => {
     const [country, setCountry] = useState('');
     const [apartmentNumber, setApartmentNumber] = useState('');
     const [postalCode, setPostalCode] = useState('');
+    const [salary, setSalary] = useState('');
+    const [companyName, setCompanyName] = useState('');
+    const [department, setDepartment] = useState('');
+    const [jobStartingDate, setJobStartingDate] = useState('');
+
+    
     const token=localStorage.getItem('token');
 
 
@@ -46,28 +59,29 @@ const Updateprofile = () => {
 
       // Burada fetch isteği yaparak değişiklikleri backend'e kaydedebilirsiniz
       // Örnek olarak:
-      fetch('http://localhost:8060/api/v1/user-profile/update-visitor', {
+      fetch('http://localhost:8060/api/v1/user-profile/update-personnel', {
         method: 'POST',
         body: JSON.stringify({ token,photo, phone, gender,identificationNumber,
-             unixTimestamp,birthPlace,neighbourhood,district,province,country,apartmentNumber,postalCode }),
+             unixTimestamp,birthPlace,neighbourhood,district,province,country,
+             apartmentNumber,postalCode,jobStartingDate,department,companyName,salary }),
         headers: {
           'Content-Type': 'application/json'
         }
       })
       .then((response) => {
         if (response.ok) {
-          toast.success("Update başarılı...", { autoClose: 2000 });
+          toast.success("UpdatePersonnel başarılı...", { autoClose: 2000 });
           setTimeout(() => {
-            navigate("/visitorhome"); 
+            navigate("/personelhome"); 
           }, 4000);
         } else {
-          toast.error("Update başarısız.", { autoClose: 5000 });
-          throw new Error("Kayit başarisiz"); // İstek başarısızsa hata fırlat
+          toast.error("UpdatePersonnel başarısız.", { autoClose: 5000 });
+          throw new Error("UpdatePersonnel başarisiz"); // İstek başarısızsa hata fırlat
           
         }
       })
       .catch((error) => {
-        toast.error("Update başarısız.Lütfen daha sonra tekrar deneyiniz...", { autoClose: 5000 });
+        toast.error("UpdatePersonnel başarısız.Lütfen daha sonra tekrar deneyiniz...", { autoClose: 5000 });
         console.error(error);
       });
       console.log(phone,province)
@@ -87,6 +101,10 @@ const Updateprofile = () => {
         setCountry('');
         setApartmentNumber('');
         setPostalCode('');
+        setSalary('');
+        setCompanyName('');
+        setDepartment('');
+        setJobStartingDate('');
       };
 
    
@@ -95,6 +113,9 @@ const Updateprofile = () => {
   return (
     <div className="containerupdate">
         <ToastContainer />
+        <div className="baslikdiv">
+      <h1 className="employeregisterbaslik">Employee Edit</h1>
+      </div>
     <form className="updateprofile">
       <div className="genelupdate">
       <div className="left">
@@ -119,6 +140,22 @@ const Updateprofile = () => {
       id="birthday" 
       value={birthDate} 
       onChange={(e) =>  setBirthDate(e.target.value)} 
+      />
+       <label className="updatelabel" htmlFor="name">Company Name:</label>
+      <input className="updateinput"
+        type="text"
+        id="companyName"
+        value={companyName}
+        onChange={(e) => setCompanyName(e.target.value)}
+        required
+      />
+        <label className="updatelabel" htmlFor="name">Department:</label>
+      <input className="updateinput"
+        type="text"
+        id="department"
+        value={department}
+        onChange={(e) => setDepartment(e.target.value)}
+        required
       />
    <label className="updatelabel" htmlFor="name">Neighbourhood:</label>
       <input className="updateinput"
@@ -168,6 +205,22 @@ const Updateprofile = () => {
         id="birthPlace"
         value={birthPlace}
         onChange={(e) => setBirthPlace(e.target.value)}
+        required
+      />
+      <label className="updatelabel" htmlFor="name">Salary:</label>
+      <input className="updateinput"
+        type="number"
+        id="salary"
+        value={salary}
+        onChange={(e) => setSalary(e.target.value)}
+        required
+      />
+      <label className="updatelabel" htmlFor="name">Job Starting Date:</label>
+      <input className="updateinput"
+        type="text"
+        id="jobStartingDate"
+        value={jobStartingDate}
+        onChange={(e) => setJobStartingDate(e.target.value)}
         required
       />
       <label className="updatelabel" htmlFor="name">District:</label>

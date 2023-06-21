@@ -44,7 +44,7 @@ const Loginpage = () => {
       return;
     }
     
-    if (email.length > 20) {
+    if (email.length > 29) {
       toast.error('Email adresi maksimum 20 karakter olmalıdır.', { autoClose: 2000 });
       return;
     }
@@ -103,7 +103,7 @@ const Loginpage = () => {
         if (response.ok) {
           toast.success("Kayıt başarılı! Login Sayfasına Yönlendiriliyorsunuz...", { autoClose: 2000 });
           setTimeout(() => {
-            navigate("/login"); 
+            navigate("/registercompany/activatecode"); 
           }, 4000);
         } else {
           throw new Error("Kayit başarisiz"); 

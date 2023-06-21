@@ -1,33 +1,22 @@
-import "./home.scss";
-import Sidebar from "../../../components/personelcomponent/sidebar/Sidebar";
-import Navbar from "../../../components/personelcomponent/navbar/Navbar";
-
-import Widget2 from "../../../components/personelcomponent/widgets/Widget2"
+import "./createpersonnelpage.scss";
+import Sidebar from "../../../components/managercomponent/sidebar/Sidebar";
+import Navbar from "../../../components/managercomponent/navbar/Navbar";
+import CreatePersonnel from "../../../components/managercomponent/createpersonnel/CreatePersonnel";
 /*import NewEmployee from "../../components/newEmployee/NewEmployee";
 import Tables from "../../components/table/Tables";
 import BarCharts from "../../components/bar/BarCharts";
 import AverageWork from "../../components/averagework/AverageWork";
 import withAuth from "../../withAuth";
 import PercentArea from "../../components/percentarea/PercentArea";*/
-import MainImages from "../../../components/personelcomponent/mainresimler/MainImages";
-import Footer from "../../../components/personelcomponent/footer/Footer";
-const Home = () => {
+const CreatePersonnelPage = () => {
   
   return (
     <div className="home">
       <Sidebar />
       <div className="homeContainer">
         <Navbar />
-        {/*widget1 ile kar zarar ödenecek paralar gibi ekranlar tutulup widget 2 ile yine sayılar listeler tuutlabilir*/}
-        <MainImages/>
-        <Footer/>
-        {/*<div className="widgets">
-          <Widget2 type="total" />
-          <Widget2 type="retired" />
-          <Widget2 type="active" />
-          <Widget2 type="laik" />
-        </div>*/}
-       
+        <CreatePersonnel/>
+        
       <div className="circ">
           {/* <div className="circ_left">
             <NewEmployee />
@@ -49,4 +38,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default CreatePersonnelPage;

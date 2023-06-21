@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const LoginPage = () => {
+const ManagerActivatePage = () => {
 
     const navigate = useNavigate();
     const handleSubmit = (event) => {
@@ -11,7 +11,7 @@ const LoginPage = () => {
       const data = new FormData(event.currentTarget);
  
       const email = data.get("email");
-      const password = data.get("password");
+      
       
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(email)) {
@@ -24,24 +24,17 @@ const LoginPage = () => {
         return;
       }
   
-      const passwordRegex = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=*!])(?=\S+$).{8,}$/;
-    if (!passwordRegex.test(password)) {
-      toast.error(
-        "Şifreniz doğru değildir.",
-        { autoClose: 3000 }
-      );
-      return;
-    }
+    
   
   
-      fetch("http://localhost:8090/api/v1/auth/login", {
+      fetch("http://localhost:8090/api/v1/auth/activate-status", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
           email: data.get("email"),
-          password: data.get("password"),
+          activationCode: data.get("activationCode"),
         }),
       })
         .then((response) => {
@@ -52,42 +45,17 @@ const LoginPage = () => {
             throw new Error("Giriş başarısız"); 
           }
         })
-        .then((data) => {
-          console.log(data.token); 
-          localStorage.setItem('token', data.token)
-
-          const roles = data.roles; 
-          const rolesJSON = JSON.stringify(roles); 
-          localStorage.setItem('roles', rolesJSON);
-          /*setTimeout(() => {
-            navigate("/managerhome"); 
-          }, 3000);*/
-        }).then(()=>{
-          const user=localStorage.getItem('roles')
-          console.log(user)
+        .then(()=>{
           console.log("ççalisti")
-          if ( user.includes('MANAGER') && user.includes('PERSONNEL')) {
-            toast.success("Login Başarılı! ManagerHome Yönlendiriliyorsunuz...", { autoClose: 2000 });
-             setTimeout(() => {
-            navigate("/managerhome"); 
-          }, 3000);
-          } else if ( user.includes('PERSONNEL')) {
-            toast.success("Login Başarılı! PersonelHome Yönlendiriliyorsunuz...", { autoClose: 2000 });
-             setTimeout(() => {
-              navigate('/personelhome');
-          }, 3000);
-          } else if ( user.includes('VISITOR')) {
-            toast.success("Login Başarılı! VisitorHome Yönlendiriliyorsunuz...", { autoClose: 2000 });
-            setTimeout(() => {
-              navigate('/visitorhome');
-         }, 3000);
-          }else{
-            console.log("yönlendirme yapılamadi")
-          }
           
+            toast.success("Activate Başarılı! Login Ekranına Yönlendiriliyorsunuz...", { autoClose: 2000 });
+             setTimeout(() => {
+            navigate("/login"); 
+          }, 3000);
+         
         })
         .catch((error) => {
-          toast.error("Kayıt başarısız.Lütfen daha sonra deneyiniz...", { autoClose: 3000 });
+          toast.error("Activate başarısız.Lütfen daha sonra deneyiniz...", { autoClose: 3000 });
           console.error(error);
         });
     };
@@ -119,20 +87,18 @@ const LoginPage = () => {
 				</div>
 				<div className="login__field">
 					<i className="login__icon fas fa-lock"></i>
-					<input type="password" className="login__input" placeholder="Password"
+					<input type="password" className="login__input" placeholder="Activation Code"
                     required
-                    name="password"
-                    label="Password"
-                    type="password"
-                    id="password"
-                    autoComplete="current-password"/>
+                    name="activationCode"
+                    label="activationCode"
+                    id="activationCode"/>
                     
 				</div>
                     <div className="forgot">
-                     <a href="#" className='forgota'>Forgot password?</a>
+                     <a href="#" className='forgota'>Didn't you get a code?</a>
                         </div>
 				<button className="button login__submit">
-					<span className="button__text">Sign In</span>
+					<span className="button__text">ACTIVATE</span>
 					<i className="button__icon fas fa-chevron-right"></i>
 				</button>	
                 <div className='link'>
@@ -155,4 +121,4 @@ const LoginPage = () => {
    </div>
   )
 }
-export default LoginPage
+export default ManagerActivatePage
