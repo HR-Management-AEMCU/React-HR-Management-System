@@ -11,16 +11,15 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Datatable = () => {
   const navigate = useNavigate();
-  const [manager, setManager] = useState([
-    { 
-      companyId: "",
-      companyName: "",
-      companyLogoUrl: "",
-    },
-  ]);
+  const [manager, setManager] = useState({});
+
+  const [page, setPage] = useState(1);
+  const [pageSize, setPageSize] = useState(5);  
+  const [query, setQuery] = useState("");
+  const [data, setData] = useState([]);
   useEffect(() => {
     
-    fetch('http://localhost:8070/api/v1/company/get-companies-list', {
+    /*fetch('http://localhost:8070/api/v1/company/get-companies-list', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -35,10 +34,35 @@ const Datatable = () => {
       })
       .catch((error) => {
         console.error(error);
-      });
-  }, []);
+      });*/
+
+      if (query.length === 0 || query.length > 1) {
+        fetch(
+          `http://localhost:8070/api/v1/company/search-companies-page?text=${query}&page=${page}`,
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        )
+          .then((data) => data.json())
+          .then((data) => {
+            setManager(data);
+            console.log(data);
+            console.log(manager)
+          });
+      }
+
+  }, [query,page]);
   
 
+  const nextPage = () => {
+    setPage(prevPage => prevPage + 1);
+  }
+  const prevPage = () => {
+    setPage(prevPage => prevPage > 1 ? prevPage - 1 : 1);
+  }
 /*
   useEffect(() => {
     ManagerService.getAllAdminSummaryInfo().then((response) => {
@@ -119,32 +143,98 @@ const Datatable = () => {
       console.log("Kırmızı çarpı butonuna tıklandı!");
       // İlgili işlemleri burada gerçekleştirebilirsiniz
     };
-  
+    
+    
     return (
       <div>
         <ToastContainer />
         <button type="button" style={{ backgroundColor: 'gray', color: 'white', marginRight: '5px', fontSize: '2vh' , width:'5vh' }} onClick={handleCheck}>View</button></div>
     );
   };
-
   
-
+  const tableRows = Object.values(manager).map((item,index) => (
+    
+    <tr key={index}>
+      <td>{item.companyName}</td>
+      <td>{item.name}</td>
+      <td>{item.department}</td>
+      <td>asdjkalns</td>
+    </tr>
+  ));
   const getRowId = (row) => row.companyId;
   return (
     <div className="datatable">
+      <div className="app1">
+      <input
+        className="search"
+        placeholder="Search..."
+        onChange={(e) => setQuery(e.target.value)}
+      />
+      
+    </div>
    {/*<div className="dataTableTitle">
       <Link to="/manager/new" className="links">
         <span>Add new manager</span>
       </Link>
-    </div>*/}
-
+    </div>
+    
     <DataGrid
       rows={manager}
       columns={companyColumns.concat(actionColumn)}
       rowHeight={70}
       pageSizeOptions={[5]}
       getRowId={getRowId}
+      paginationModel={new GridPaginationModel(currentPage, totalPages, handlePageChange)}
+     
     />
+   
+   <table>
+        <thead>
+          <tr>
+            <th>Logo</th>
+            <th>Company Name</th>
+            <th>Address</th>
+            <th>Phone</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+  {data.map((company,index) => (
+    <tr key={index}>
+      {company.map((abc) => (
+        <>
+          <tr key={abc.id} >
+          <td>{abc.companyName}</td>
+          <td>{abc.companyName}</td>
+          </tr>
+        </>
+      ))}
+    </tr>
+  ))}
+</tbody>
+
+      </table>
+      */}
+
+
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Department</th>
+      </tr>
+    </thead>
+    <tbody>
+      {tableRows}
+    </tbody>
+  </table>
+
+      <button onClick={prevPage} disabled={page === 1}>
+        Previous Page
+      </button>
+      <button onClick={nextPage}>Next Page</button>
   </div>
 );
 };
