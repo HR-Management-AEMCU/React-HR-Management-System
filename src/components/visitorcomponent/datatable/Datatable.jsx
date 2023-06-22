@@ -16,7 +16,8 @@ const Datatable = () => {
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(5);  
   const [query, setQuery] = useState("");
-  const [data, setData] = useState([]);
+  
+
   useEffect(() => {
     
     /*fetch('http://localhost:8070/api/v1/company/get-companies-list', {
@@ -36,7 +37,7 @@ const Datatable = () => {
         console.error(error);
       });*/
 
-      if (query.length === 0 || query.length > 1) {
+      if (query.length === 0 || query.length > 2) {
         fetch(
           `http://localhost:8070/api/v1/company/search-companies-page?text=${query}&page=${page}`,
           {
@@ -49,8 +50,10 @@ const Datatable = () => {
           .then((data) => data.json())
           .then((data) => {
             setManager(data);
+            console.log("saf data");
             console.log(data);
-            console.log(manager)
+            console.log("State objesi")
+            console.log(manager);
           });
       }
 
