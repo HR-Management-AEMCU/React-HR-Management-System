@@ -116,13 +116,13 @@ const Sidebar = () => {
             <span>Notifications</span>
           </li>
           <p className="title">USER</p>
-          <Link to="/adminprofile" style={{ textDecoration: "none" }}>
+          <Link to="/managerprofile" style={{ textDecoration: "none" }}>
             <li>
               <AccountCircleOutlinedIcon className="icon" />
               <span>Profile</span>
             </li>
           </Link>
-          <Link to="/adminupdateprofile" style={{ textDecoration: "none" }}>
+          <Link to="/managerupdateprofile" style={{ textDecoration: "none" }}>
             <li>
               <AccountCircleOutlinedIcon className="icon" />
               <span>Update Profile</span>
@@ -134,14 +134,6 @@ const Sidebar = () => {
           </li>
 
           <p className="title">SERVICE</p>
-          <li>
-            <SettingsSystemDaydreamOutlinedIcon className="icon" />
-            <span>System Health</span>
-          </li>
-          <li>
-            <PsychologyOutlinedIcon className="icon" />
-            <span>Logs</span>
-          </li>
           <li>
             <SettingsOutlinedIcon className="icon" />
             <span>Settings</span>
