@@ -4,7 +4,7 @@ const CommentList = () => {
   const [comments, setComments] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:8070/api/v1/comment/find-all') 
+    fetch('http://localhost:8070/api/v1/comment/comment-approval/') 
       .then((response) => response.json())
       .then((data) => setComments(data));
   }, []);
