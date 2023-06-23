@@ -11,22 +11,13 @@ const List = () => {
   const rows = [
     {
       id: 1,
-      firtName: "Orkun",
-      img: "https://m.media-amazon.com/images/I/81bc8mA3nKL._AC_UY327_FMwebp_QL65_.jpg",
-      surname: "Ozturk",
-      email: "orkun@gmail.com",
+      firtName: "abc",
+      img: "abchttop",
+      surname: "abc",
+      email: "abc@gmail.com",
       phone: 5555555555,
-      address: "izmit/kocaeli",
+      address: "abc/denizli",
     },
-    {
-      id: 2,
-      firtName: "Emre",
-      img: "https://m.media-amazon.com/images/I/81bc8mA3nKL._AC_UY327_FMwebp_QL65_.jpg",
-      surname: "Yardımcı",
-      email: "emre@gmail.com",
-      phone: 5555555555,
-      address: "izmit/kocaeli",
-    }
   ];
 
   return (
