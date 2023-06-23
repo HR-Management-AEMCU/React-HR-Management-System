@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LoginPage from "./pages/manager/visitormanagerloginregister/LoginPage";
 import RegisterUserPage from "./pages/manager/visitormanagerloginregister/RegisterUserPage";
 import RegisterCompanyPage from "./pages/manager/visitormanagerloginregister/RegisterCompanyPage";
+import ForgotPasswordPage from "./pages/manager/visitormanagerloginregister/ForgotPasswordPage";
 import ManagerHome from "./pages/manager/managerhomepage/Home";
 import TatilGunler from "./pages/manager/managertatilgunler/TatilGunler";
 import CreatePersonnelPage from "./pages/manager/createpersonnel/CreatePersonnelPage";
@@ -51,9 +52,12 @@ function App() {
       <Routes>
         <Route path="/">
           <Route index element={<LoginPage />} />
-          <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterUserPage />} />
-
+          <Route path="login">
+                <Route index element={<LoginPage />} />
+                <Route path="forgotpassword" element={<ForgotPasswordPage />} />
+                
+              </Route>
           <Route path="registercompany">
                 <Route index element={<RegisterCompanyPage />} />
                 <Route path="activatecode" element={<ManagerActivatePage />} />

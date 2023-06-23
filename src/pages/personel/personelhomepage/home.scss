@@ -1,7 +1,10 @@
 .home {
   display: flex;
+  height: 100%;
   .homeContainer {
     flex: 12;
+    min-height: 100%;
+    margin-bottom: -50px;
   }
   .widgets {
     display: flex;
@@ -34,22 +37,23 @@
     }
   }
 }
-.circ {
+.circfooter {
   display: flex;
   gap: 20px;
   max-height: 500px;
-  padding: 20px;
+  padding-top: 20px;
+height: 50px;
 }
-.circ_left {
+.circ_leftfooter {
   display: flex;
   gap: 20px;
   flex: 1;
 }
-.circ_right {
+.circ_rightfooter {
   flex: 4;
   display: flex;
   gap: 20px;
 }
-.circ_left_ave {
+.circ_left_avefooter {
   max-height: 350px;
 }

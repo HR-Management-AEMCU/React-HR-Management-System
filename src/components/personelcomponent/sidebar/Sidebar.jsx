@@ -133,19 +133,7 @@ const Sidebar = () => {
             <Logout />
           </li>
 
-          <p className="title">SERVICE</p>
-          <li>
-            <SettingsSystemDaydreamOutlinedIcon className="icon" />
-            <span>System Health</span>
-          </li>
-          <li>
-            <PsychologyOutlinedIcon className="icon" />
-            <span>Logs</span>
-          </li>
-          <li>
-            <SettingsOutlinedIcon className="icon" />
-            <span>Settings</span>
-          </li>
+         
         </ul>
       </div>
     </div>

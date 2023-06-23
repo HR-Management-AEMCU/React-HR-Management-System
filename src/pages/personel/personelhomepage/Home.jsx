@@ -11,6 +11,7 @@ import withAuth from "../../withAuth";
 import PercentArea from "../../components/percentarea/PercentArea";*/
 import MainImages from "../../../components/personelcomponent/mainresimler/MainImages";
 import Footer from "../../../components/personelcomponent/footer/Footer";
+import Main from "../../../components/personelcomponent/mainresimler/Main";
 const Home = () => {
   
   return (
@@ -19,8 +20,8 @@ const Home = () => {
       <div className="homeContainer">
         <Navbar />
         {/*widget1 ile kar zarar ödenecek paralar gibi ekranlar tutulup widget 2 ile yine sayılar listeler tuutlabilir*/}
-        <MainImages/>
-        <Footer/>
+        <Main/>
+        
         {/*<div className="widgets">
           <Widget2 type="total" />
           <Widget2 type="retired" />
@@ -28,7 +29,8 @@ const Home = () => {
           <Widget2 type="laik" />
         </div>*/}
        
-      <div className="circ">
+      <div className="circfooter">
+        <Footer/>
           {/* <div className="circ_left">
             <NewEmployee />
           </div> */}
