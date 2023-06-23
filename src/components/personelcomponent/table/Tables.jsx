@@ -11,49 +11,22 @@ const List = () => {
   const rows = [
     {
       id: 1,
-      firtName: "Melihcan",
+      firtName: "Orkun",
       img: "https://m.media-amazon.com/images/I/81bc8mA3nKL._AC_UY327_FMwebp_QL65_.jpg",
       surname: "Ozturk",
-      email: "melihcan@gmail.com",
+      email: "orkun@gmail.com",
       phone: 5555555555,
       address: "izmit/kocaeli",
     },
     {
       id: 2,
-      firtName: "Berkin",
+      firtName: "Emre",
       img: "https://m.media-amazon.com/images/I/81bc8mA3nKL._AC_UY327_FMwebp_QL65_.jpg",
       surname: "Yardımcı",
-      email: "berkin@gmail.com",
+      email: "emre@gmail.com",
       phone: 5555555555,
       address: "izmit/kocaeli",
-    },
-    {
-      id: 3,
-      firtName: "Buse",
-      img: "https://m.media-amazon.com/images/I/81bc8mA3nKL._AC_UY327_FMwebp_QL65_.jpg",
-      surname: "can",
-      email: "melihcan@gmail.com",
-      phone: 5555555555,
-      address: "izmit/kocaeli",
-    },
-    {
-      id: 4,
-      firtName: "Ali ",
-      img: "https://m.media-amazon.com/images/I/81bc8mA3nKL._AC_UY327_FMwebp_QL65_.jpg",
-      surname: "Ogutcen",
-      email: "aliogutcen@gmail.com",
-      phone: 5555555555,
-      address: "izmit/kocaeli",
-    },
-    {
-      id: 5,
-      firtName: "Mert",
-      img: "https://m.media-amazon.com/images/I/81bc8mA3nKL._AC_UY327_FMwebp_QL65_.jpg",
-      surname: "Namsal",
-      email: "mertnamsal@gmail.com",
-      phone: 5555555555,
-      address: "izmit/kocaeli",
-    },
+    }
   ];
 
   return (
