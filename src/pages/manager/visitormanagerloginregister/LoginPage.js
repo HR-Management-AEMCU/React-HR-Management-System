@@ -129,7 +129,7 @@ const LoginPage = () => {
                     
 				</div>
                     <div className="forgot">
-                     <a href="#" className='forgota'>Forgot password?</a>
+                     <a href="login/forgotpassword" className='forgota'>Forgot password?</a>
                         </div>
 				<button className="button login__submit">
 					<span className="button__text">Sign In</span>
