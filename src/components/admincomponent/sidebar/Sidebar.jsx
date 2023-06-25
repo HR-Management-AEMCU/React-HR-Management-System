@@ -98,7 +98,7 @@ const Sidebar = () => {
             <NotificationsNoneIcon className="icon" />
             <span>Complaints</span>
           </li>
-          <p className="title">USEFUL</p>
+          {/*<p className="title">USEFUL</p>
           <li>
             <InsertChartOutlinedSharpIcon className="icon" />
             <span>Stats</span>
@@ -106,7 +106,7 @@ const Sidebar = () => {
           <li>
             <NotificationsNoneIcon className="icon" />
             <span>Notifications</span>
-          </li>
+        </li>*/}
           <p className="title">USER</p>
           <Link to="/adminprofile" style={{ textDecoration: "none" }}>
             <li>
@@ -124,7 +124,7 @@ const Sidebar = () => {
             <ExitToAppIcon className="icon" />
             <Logout />
           </li>
-
+{/*}
           <p className="title">SERVICE</p>
           <li>
             <SettingsSystemDaydreamOutlinedIcon className="icon" />
@@ -137,7 +137,7 @@ const Sidebar = () => {
           <li>
             <SettingsOutlinedIcon className="icon" />
             <span>Settings</span>
-          </li>
+      </li>*/}
         </ul>
       </div>
     </div>

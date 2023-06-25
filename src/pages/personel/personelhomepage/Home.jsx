@@ -12,7 +12,31 @@ import PercentArea from "../../components/percentarea/PercentArea";*/
 import MainImages from "../../../components/personelcomponent/mainresimler/MainImages";
 import Footer from "../../../components/personelcomponent/footer/Footer";
 import Main from "../../../components/personelcomponent/mainresimler/Main";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 const Home = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // localStorage'den role verisini alın
+    const roles = JSON.parse(localStorage.getItem("roles"));
+    if (!roles || roles.length === 0) {
+      navigate("/login");
+      return;
+    }
+    console.log(roles)
+    console.log(roles[1])
+    console.log(roles[1]===("PERSONNEL"))
+    // Eğer role "PERSONNEL" değilse, login sayfasına yönlendir
+    if (roles[0]===("PERSONNEL")) {
+      
+    }else if(roles[0]===("MANAGER") && roles[1]=== ("PERSONNEL")){
+
+    }
+    else{
+      navigate("/login");
+    }
+  }, [navigate]);
   
   return (
     <div className="home">

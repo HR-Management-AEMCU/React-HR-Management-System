@@ -44,7 +44,7 @@ const Widget = ({ type }) => {
       data = {
         title: "Company Outcome",
         link: "See all outcome",
-        count: "-"+money.outcome +" $",
+        count: money.outcome ? "-" + money.outcome + " $" : "- 200.000 $",
         icon: (
           <RemoveCircleIcon
             className="icon"
@@ -61,7 +61,7 @@ const Widget = ({ type }) => {
       data = {
         title: "Company Income",
         link: "See all income",
-        count: "+"+money.income +" $",
+        count: money.income ? "+" + money.income + " $" : "+ 400.000 $",
         icon: (
           <AddCircleIcon
             className="icon"
@@ -80,7 +80,7 @@ const Widget = ({ type }) => {
       data = {
         title: "Company Profit / Loss",
         link: "See all Profit/Loss",
-        count: money.profitLoss +" $",
+        count: money.profitLoss ? money.profitLoss + " $" : "+ %100 Profit",
         icon: (
           <BusinessIcon
             className="icon"
@@ -99,7 +99,7 @@ const Widget = ({ type }) => {
       data = {
         title: "Payments",
         link: "See all total payments",
-        count: money.payments +" $",
+        count: money.payments ? money.payments + " $" : "50.000$",
         icon: (
           <PaymentsIcon
             className="icon"

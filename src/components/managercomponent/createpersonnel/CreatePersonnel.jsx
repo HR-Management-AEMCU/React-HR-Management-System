@@ -3,6 +3,7 @@ import "./createpersonnel.css";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+/*import wepik from "../../../assets/logo/wepik3.jpeg"*/
 
 const CreatePersonnel = () => {
     const navigate = useNavigate();
@@ -71,7 +72,8 @@ const CreatePersonnel = () => {
         if (response.ok) {
           toast.success("Employee Add Success...", { autoClose: 2000 });
           setTimeout(() => {
-            navigate("/managerhome/personellist"); 
+            /*navigate("/managerhome/personellist"); */
+            window.location.reload();
           }, 4000);
         } else {
           toast.error("Employee Add dont Success", { autoClose: 2000 });
@@ -115,10 +117,11 @@ const CreatePersonnel = () => {
 
 
   return (
-    <div className="containerupdateemployeeadd">
-      <div className="baslikdiv">
+    <div className="containerupdateemployeeadd" /*style={{ backgroundImage: `url(${wepik})` }}*/>
+
+      {/*<div className="baslikdiv">
       <h1 className="employeregisterbaslik">Employee Register</h1>
-      </div>
+      </div>*/}
       
         <ToastContainer />
     <form className="updateprofileemployeeadd">

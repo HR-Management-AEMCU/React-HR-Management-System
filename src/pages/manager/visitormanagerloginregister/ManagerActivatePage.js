@@ -19,8 +19,8 @@ const ManagerActivatePage = () => {
         return;
       }
       
-      if (email.length > 30) {
-        toast.error('Email adresi maksimum 20 karakter olmalıdır.', { autoClose: 2000 });
+      if (email.length > 29) {
+        toast.error('Email adresi maksimum 29 karakter olmalıdır.', { autoClose: 2000 });
         return;
       }
   
@@ -48,7 +48,7 @@ const ManagerActivatePage = () => {
         .then(()=>{
           console.log("ççalisti")
           
-            toast.success("Activate Başarılı! Login Ekranına Yönlendiriliyorsunuz...", { autoClose: 2000 });
+            toast.success("Activate Başarılı! Admin onayından sonra Login işlemini yapabilirsiniz...", { autoClose: 2000 });
              setTimeout(() => {
             navigate("/login"); 
           }, 3000);

@@ -5,14 +5,39 @@ import "./personelupdateprofile.scss";
 import Sidebar from "../../../components/personelcomponent/sidebar/Sidebar";
 import Navbar from "../../../components/personelcomponent/navbar/Navbar";
 import Updateprofile from "../../../components/personelcomponent/updateprofilepersonel/Updateprofile";
+import { useNavigate } from "react-router-dom";
 /*import withAuth from "../../withAuth";*/
 /*import CompanyService from "../../service/CompanyService";*/
 
 
 const PersonelUpdateProfile = () => {
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // localStorage'den role verisini alın
+    const roles = JSON.parse(localStorage.getItem("roles"));
+    if (!roles || roles.length === 0) {
+      navigate("/login");
+      return;
+    }
+    console.log(roles)
+    console.log(roles[1])
+    console.log(roles[1]===("PERSONNEL"))
+    // Eğer role "PERSONNEL" değilse, login sayfasına yönlendir
+    if (roles[0]===("PERSONNEL")) {
+      
+    }else if(roles[0]===("MANAGER") && roles[1]=== ("PERSONNEL")){
+
+    }
+    else{
+      navigate("/login");
+    }
+  }, [navigate]);
+
+
   const [manager, setManager] = useState({});
   const [managerFormData, setManagerFormData] = useState({});
-  const token = localStorage.getItem("token");
 
   /*useEffect(() => {
     const fetchInfo = async () => {

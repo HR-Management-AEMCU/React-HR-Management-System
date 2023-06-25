@@ -3,6 +3,9 @@ import Sidebar from "../../../components/managercomponent/sidebar/Sidebar";
 import Navbar from "../../../components/managercomponent/navbar/Navbar";
 import Widget from "../../../components/managercomponent/widgets/Widget";
 import Widget2 from "../../../components/managercomponent/widgets/Widget2"
+
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 /*import NewEmployee from "../../components/newEmployee/NewEmployee";
 import Tables from "../../components/table/Tables";
 import BarCharts from "../../components/bar/BarCharts";
@@ -10,7 +13,24 @@ import AverageWork from "../../components/averagework/AverageWork";
 import withAuth from "../../withAuth";
 import PercentArea from "../../components/percentarea/PercentArea";*/
 const Home = () => {
-  
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // localStorage'den role verisini alın
+    const roles = localStorage.getItem("roles");
+    if (!roles || roles.length === 0) {
+      navigate("/login");
+      return;
+    }
+    console.log(roles)
+    console.log(roles.includes("PERSONNEL") && roles.includes("MANAGER"))
+    // Eğer role "PERSONNEL" değilse, login sayfasına yönlendir
+    if (roles.includes("PERSONNEL") && roles.includes("MANAGER")) {
+      
+    }else{
+      navigate("/login");
+    }
+  }, [navigate]);
   return (
     <div className="home">
       <Sidebar />

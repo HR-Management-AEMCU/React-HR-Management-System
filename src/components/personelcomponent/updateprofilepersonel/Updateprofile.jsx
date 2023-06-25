@@ -29,6 +29,7 @@ const Updateprofile = () => {
     const [companyName, setCompanyName] = useState('');
     const [department, setDepartment] = useState('');
     const [jobStartingDate, setJobStartingDate] = useState('');
+    const [selectedImage, setSelectedImage] = useState(null);
 
     
     const token=localStorage.getItem('token');
@@ -57,22 +58,28 @@ const Updateprofile = () => {
             return;
           }
 
+          const formData = new FormData();
+        formData.append("selectedImage", selectedImage);
+        console.log(formData)
+        console.log(selectedImage)
       // Burada fetch isteği yaparak değişiklikleri backend'e kaydedebilirsiniz
       // Örnek olarak:
+
       fetch('http://localhost:8060/api/v1/user-profile/update-personnel', {
         method: 'POST',
         body: JSON.stringify({ token,photo, phone, gender,identificationNumber,
              unixTimestamp,birthPlace,neighbourhood,district,province,country,
-             apartmentNumber,postalCode,jobStartingDate,department,companyName,salary }),
+             apartmentNumber,postalCode,jobStartingDate,department,companyName,salary ,selectedImage}),
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
         }
       })
       .then((response) => {
         if (response.ok) {
           toast.success("UpdatePersonnel başarılı...", { autoClose: 2000 });
           setTimeout(() => {
-            navigate("/personelhome"); 
+            /*navigate("/personelhome/personelupdatepage"); */
+           /* window.location.reload();*/
           }, 4000);
         } else {
           toast.error("UpdatePersonnel başarısız.", { autoClose: 5000 });
@@ -106,20 +113,31 @@ const Updateprofile = () => {
         setDepartment('');
         setJobStartingDate('');
       };
-
+      const handleImageChange = (e) => {
+        setSelectedImage(e.target.files[0]);
+      };
    
 
 
   return (
     <div className="containerupdate">
         <ToastContainer />
-        <div className="baslikdiv">
+       {/*} <div className="baslikdiv">
       <h1 className="employeregisterbaslik">Employee Edit</h1>
-      </div>
+      </div>*/}
     <form className="updateprofile">
       <div className="genelupdate">
       <div className="left">
-            <label className="updatelabel" htmlFor="name">Photo Url:</label>
+      <label className="updatelabel" htmlFor="name">Photo:</label>
+      <input
+        className="updateinputimg"
+        type="file"
+        id="selectedImage"
+      
+        onChange={handleImageChange}
+        required
+      />
+      <label className="updatelabel" htmlFor="name">Photo Url:</label>
       <input
         className="updateinput"
         type="text"
@@ -141,14 +159,14 @@ const Updateprofile = () => {
       value={birthDate} 
       onChange={(e) =>  setBirthDate(e.target.value)} 
       />
-       <label className="updatelabel" htmlFor="name">Company Name:</label>
+       {/*<label className="updatelabel" htmlFor="name">Company Name:</label>
       <input className="updateinput"
         type="text"
         id="companyName"
         value={companyName}
         onChange={(e) => setCompanyName(e.target.value)}
         required
-      />
+  />
         <label className="updatelabel" htmlFor="name">Department:</label>
       <input className="updateinput"
         type="text"
@@ -156,7 +174,7 @@ const Updateprofile = () => {
         value={department}
         onChange={(e) => setDepartment(e.target.value)}
         required
-      />
+      />*/}
    <label className="updatelabel" htmlFor="name">Neighbourhood:</label>
       <input className="updateinput"
         type="text"
@@ -207,14 +225,14 @@ const Updateprofile = () => {
         onChange={(e) => setBirthPlace(e.target.value)}
         required
       />
-      <label className="updatelabel" htmlFor="name">Salary:</label>
+    {/*}  <label className="updatelabel" htmlFor="name">Salary:</label>
       <input className="updateinput"
         type="number"
         id="salary"
         value={salary}
         onChange={(e) => setSalary(e.target.value)}
         required
-      />
+      />*/}
       <label className="updatelabel" htmlFor="name">Job Starting Date:</label>
       <input className="updateinput"
         type="text"

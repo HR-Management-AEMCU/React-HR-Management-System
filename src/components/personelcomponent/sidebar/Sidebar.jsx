@@ -75,7 +75,7 @@ const Sidebar = () => {
               <span>Inbox</span>
             </li>
           </Link>
-          <p className="title">LIST</p>
+          {/*<p className="title">LIST</p>*/}
         
           {/* <Link to="/employee" style={{ textDecoration: "none" }}>
             <li>
@@ -83,7 +83,7 @@ const Sidebar = () => {
               <span>Employee</span>
             </li>
           </Link> */}
-          <Link to="#" style={{ textDecoration: "none" }}>
+          {/*<Link to="#" style={{ textDecoration: "none" }}>
             <li>
               <EngineeringOutlinedIcon className="icon" />
               <span>Employee List</span>
@@ -95,6 +95,7 @@ const Sidebar = () => {
               <span>Employee Add</span>
             </li>
           </Link>
+          */}
           <p className="title">APPROVALS</p>
           <Link to="#" style={{ textDecoration: "none" }}>
           <li>
@@ -106,6 +107,7 @@ const Sidebar = () => {
             <NotificationsNoneIcon className="icon" />
             <span>Complaints</span>
           </li>
+          {/*
           <p className="title">USEFUL</p>
           <li>
             <InsertChartOutlinedSharpIcon className="icon" />
@@ -114,7 +116,7 @@ const Sidebar = () => {
           <li>
             <NotificationsNoneIcon className="icon" />
             <span>Notifications</span>
-          </li>
+        </li>*/}
           <p className="title">USER</p>
           <Link to="/personelhome/personelprofilepage" style={{ textDecoration: "none" }}>
             <li>
