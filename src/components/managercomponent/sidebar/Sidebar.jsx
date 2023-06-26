@@ -98,13 +98,13 @@ const Sidebar = () => {
             </li>
           </Link>
           <p className="titlemanager">COMPANY</p>
-          <Link to="" style={{ textDecoration: "none" }}>
+          <Link to="/managerhome/companyprofilepage" style={{ textDecoration: "none" }}>
           <li>
             <ApartmentIcon className="iconmanager" />
             <span className="spnmanager">Company Profile</span>
           </li>
           </Link>
-          <Link to="" style={{ textDecoration: "none" }}>
+          <Link to="/managerhome/companyupdatepage" style={{ textDecoration: "none" }}>
           <li>
             <EditIcon className="iconmanager" />
             <span className="spnmanager">Company Edit</span>

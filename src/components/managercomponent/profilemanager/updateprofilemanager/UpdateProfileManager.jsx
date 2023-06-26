@@ -1,10 +1,10 @@
 import { useState } from "react";
-import "./updateprofile.css";
+import "./updateprofilemanager.css";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const Updateprofile = () => {
+const UpdateProfileManager = () => {
   /*
   "buildingNumber": 0,
   "salary": 0,
@@ -82,7 +82,7 @@ const Updateprofile = () => {
           toast.success("UpdatePersonnel başarılı...", { autoClose: 2000 });
           setTimeout(() => {
             /*navigate("/personelhome/personelupdatepage"); */
-            window.location.reload();
+           /* window.location.reload();*/
           }, 4000);
         } else {
           toast.error("UpdatePersonnel başarısız.", { autoClose: 5000 });
@@ -131,15 +131,6 @@ const Updateprofile = () => {
     <form className="updateprofile">
       <div className="genelupdate">
       <div className="left">
-      <label className="updatelabel" htmlFor="name">Photo:</label>
-      <input
-        className="updateinputimg"
-        type="file"
-        id="selectedImage"
-      
-        onChange={handleImageChange}
-        required
-      />
       <label className="updatelabel" htmlFor="name">Photo Url:</label>
       <input
         className="updateinput"
@@ -295,4 +286,4 @@ const Updateprofile = () => {
   </div>
 );
 }
-export default Updateprofile
+export default UpdateProfileManager

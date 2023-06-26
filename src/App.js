@@ -10,6 +10,8 @@ import CreatePersonnelPage from "./pages/manager/createpersonnel/CreatePersonnel
 import ManagerActivatePage from "./pages/manager/visitormanagerloginregister/ManagerActivatePage";
 import ManagerProfilePage from "./pages/manager/managerprofile/ManagerProfilePage";
 import ManagerUpdateProfile from "./pages/manager/managerprofileupdatepage/ManagerUpdateProfile";
+import CompanyProfilePage from "./pages/manager/companyprofile/CompanyProfilePage";
+import CompanyUpdateProfile from "./pages/manager/companyprofileupdatepage/CompanyUpdateProfile";
 /*Admin imports*/
 import AdminLoginPage from "./pages/admin/adminloginregister/LoginAdminPage";
 import AdminRegisterPage from "./pages/admin/adminloginregister/AdminRegisterPage";
@@ -71,6 +73,8 @@ function App() {
                 <Route path="createpersonnel" element={<CreatePersonnelPage />} />
                 <Route path="managerprofilepage" element={<ManagerProfilePage />} />
                 <Route path="managerupdatepage" element={<ManagerUpdateProfile />} />
+                <Route path="companyprofilepage" element={<CompanyProfilePage />} />
+                <Route path="companyupdatepage" element={<CompanyUpdateProfile />} />
               </Route>
 
           <Route path="personelhome">

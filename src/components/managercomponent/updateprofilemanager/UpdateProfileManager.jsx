@@ -79,19 +79,19 @@ const UpdateProfileManager = () => {
       })
       .then((response) => {
         if (response.ok) {
-          toast.success("UpdatePersonnel başarılı...", { autoClose: 2000 });
+          toast.success("UpdateManager başarılı...", { autoClose: 2000 });
           setTimeout(() => {
             /*navigate("/personelhome/personelupdatepage"); */
-           /* window.location.reload();*/
+           window.location.reload();
           }, 4000);
         } else {
-          toast.error("UpdatePersonnel başarısız.", { autoClose: 5000 });
-          throw new Error("UpdatePersonnel başarisiz"); // İstek başarısızsa hata fırlat
+          toast.error("UpdateManager başarısız.", { autoClose: 5000 });
+          throw new Error("UpdateManager başarisiz"); // İstek başarısızsa hata fırlat
           
         }
       })
       .catch((error) => {
-        toast.error("UpdatePersonnel başarısız.Lütfen daha sonra tekrar deneyiniz...", { autoClose: 5000 });
+        toast.error("UpdateManager başarısız.Lütfen daha sonra tekrar deneyiniz...", { autoClose: 5000 });
         console.error(error);
       });
       console.log(phone,province)
@@ -131,15 +131,6 @@ const UpdateProfileManager = () => {
     <form className="updateprofile">
       <div className="genelupdate">
       <div className="left">
-      <label className="updatelabel" htmlFor="name">Photo:</label>
-      <input
-        className="updateinputimg"
-        type="file"
-        id="selectedImage"
-      
-        onChange={handleImageChange}
-        required
-      />
       <label className="updatelabel" htmlFor="name">Photo Url:</label>
       <input
         className="updateinput"
