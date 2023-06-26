@@ -8,7 +8,8 @@ import ManagerHome from "./pages/manager/managerhomepage/Home";
 import TatilGunler from "./pages/manager/managertatilgunler/TatilGunler";
 import CreatePersonnelPage from "./pages/manager/createpersonnel/CreatePersonnelPage";
 import ManagerActivatePage from "./pages/manager/visitormanagerloginregister/ManagerActivatePage";
-
+import ManagerProfilePage from "./pages/manager/managerprofile/ManagerProfilePage";
+import ManagerUpdateProfile from "./pages/manager/managerprofileupdatepage/ManagerUpdateProfile";
 /*Admin imports*/
 import AdminLoginPage from "./pages/admin/adminloginregister/LoginAdminPage";
 import AdminRegisterPage from "./pages/admin/adminloginregister/AdminRegisterPage";
@@ -68,6 +69,8 @@ function App() {
                 <Route index element={<ManagerHome />} />
                 <Route path="tatilgunler" element={<TatilGunler />} />
                 <Route path="createpersonnel" element={<CreatePersonnelPage />} />
+                <Route path="managerprofilepage" element={<ManagerProfilePage />} />
+                <Route path="managerupdatepage" element={<ManagerUpdateProfile />} />
               </Route>
 
           <Route path="personelhome">

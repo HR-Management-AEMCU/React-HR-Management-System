@@ -18,6 +18,8 @@ import Logout from "../logout/Logout";
 import ApartmentIcon from "@mui/icons-material/Apartment";
 import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined";
 import MailOutlinedIcon from "@mui/icons-material/MailOutlined";
+import EditIcon from '@mui/icons-material/Edit';
+
 import arasımorb from "../../../assets/logo/arasımorb.png"
 const Sidebar = () => {
   const [admin, setAdmin] = useState({});
@@ -95,17 +97,19 @@ const Sidebar = () => {
               <span className="spnmanager">Employee Add</span>
             </li>
           </Link>
-          <p className="titlemanager">APPROVALS</p>
-          <Link to="/comments-to-approve" style={{ textDecoration: "none" }}>
+          <p className="titlemanager">COMPANY</p>
+          <Link to="" style={{ textDecoration: "none" }}>
           <li>
-            <InsertChartOutlinedSharpIcon className="iconmanager" />
-            <span className="spnmanager">Comments</span>
+            <ApartmentIcon className="iconmanager" />
+            <span className="spnmanager">Company Profile</span>
           </li>
           </Link>
+          <Link to="" style={{ textDecoration: "none" }}>
           <li>
-            <NotificationsNoneIcon className="iconmanager" />
-            <span className="spnmanager">Complaints</span>
+            <EditIcon className="iconmanager" />
+            <span className="spnmanager">Company Edit</span>
           </li>
+          </Link>
           {/*<p className="title">USEFUL</p>
           <li>
             <InsertChartOutlinedSharpIcon className="icon" />
@@ -116,16 +120,16 @@ const Sidebar = () => {
             <span>Notifications</span>
         </li>*/}
           <p className="titlemanager">USER</p>
-          <Link to="/managerprofile" style={{ textDecoration: "none" }}>
+          <Link to="/managerhome/managerprofilepage" style={{ textDecoration: "none" }}>
             <li>
               <AccountCircleOutlinedIcon className="iconmanager" />
-              <span className="spnmanager">Profile</span>
+              <span className="spnmanager">Manager Profile</span>
             </li>
           </Link>
-          <Link to="/managerupdateprofile" style={{ textDecoration: "none" }}>
+          <Link to="/managerhome/managerupdatepage" style={{ textDecoration: "none" }}>
             <li>
-              <AccountCircleOutlinedIcon className="iconmanager" />
-              <span className="spnmanager">Update Profile</span>
+              <EditIcon className="iconmanager" />
+              <span className="spnmanager">Manager Edit</span>
             </li>
           </Link>
           <li>

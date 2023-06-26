@@ -44,17 +44,17 @@ const Home = () => {
       <div className="homeContainer">
         <Navbar />
         {/*widget1 ile kar zarar ödenecek paralar gibi ekranlar tutulup widget 2 ile yine sayılar listeler tuutlabilir*/}
-        <Main/>
+        {/*<Main/>*/}
         
-        {/*<div className="widgets">
+        <div className="widgets">
           <Widget2 type="total" />
           <Widget2 type="retired" />
           <Widget2 type="active" />
           <Widget2 type="laik" />
-        </div>*/}
+        </div>
        
       <div className="circfooter">
-        <Footer/>
+       {/*} <Footer/>*/}
           {/* <div className="circ_left">
             <NewEmployee />
           </div> */}

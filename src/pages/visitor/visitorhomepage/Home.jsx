@@ -2,7 +2,8 @@ import "./home.scss";
 import Sidebar from "../../../components/visitorcomponent/sidebar/Sidebar";
 import Navbar from "../../../components/visitorcomponent/navbar/Navbar";
 import Widget from "../../../components/visitorcomponent/widgets/Widget";
-
+import Main from "../../../components/visitorcomponent/mainresimler/Main"
+import Footer from "../../../components/visitorcomponent/footer/Footer";
 
 import { useContext, useEffect } from "react";
 import Welcome from "../../../components/visitorcomponent/welcome/Welcome";
@@ -37,14 +38,15 @@ const Home = () => {
       {/*isSidebarVisible &&*/ <Sidebar />}
       <div className="homeContainervisitor">
         <Navbar />
-        <Welcome />
-        <div className="widgetvisitor">
+        { /*<Welcome />
+       <div className="widgetvisitor">
           <Widget type="active" />
           <Widget type="retired" />
           <Widget type="total" />
           <Widget type="laik" />
-        </div>
-        
+        </div>*/}
+        <Main/>
+        <Footer/>
         
        
         
