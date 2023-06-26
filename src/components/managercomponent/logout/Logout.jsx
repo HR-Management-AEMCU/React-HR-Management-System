@@ -14,7 +14,7 @@ function Logout() {
 
   return (
     <span className="logout" onClick={handleLogout}>
-      Logout
+      <div className="log">Logout</div>
     </span>
   );
 }

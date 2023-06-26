@@ -33,7 +33,7 @@ const Sidebar = () => {
   }, []);*/
 
   return (
-    <div className="sidebar">
+    <div className="sidebarvisitor">
     {/* <div className="top">
         <Link to="/visitorhome" style={{ textDecoration: "none" }}>
           <h4 className="logovisitor">HRGenius</h4>
@@ -51,26 +51,26 @@ const Sidebar = () => {
           </Link>
         </div>
         <ul>
-          <p className="title">VISITOR MAIN</p>
+          <p className="titlevisitor">VISITOR MAIN</p>
           <Link to="/visitorhome" style={{ textDecoration: "none" }}>
             <li>
-              <DashboardOutlinedIcon className="icon" />
-              <span>Dashboard</span>
+              <DashboardOutlinedIcon className="iconvisitor" />
+              <span className="spnvisitor">Dashboard</span>
             </li>
           </Link>
           <Link to="/calendar" style={{ textDecoration: "none" }}>
             <li>
-              <CalendarMonthOutlinedIcon className="icon" />
-              <span>Calendar</span>
+              <CalendarMonthOutlinedIcon className="iconvisitor" />
+              <span className="spnvisitor">Calendar</span>
             </li>
           </Link>
           <Link to="/inbox" style={{ textDecoration: "none" }}>
             <li>
-              <MailOutlinedIcon className="icon" />
-              <span>Inbox</span>
+              <MailOutlinedIcon className="iconvisitor" />
+              <span className="spnvisitor">Inbox</span>
             </li>
           </Link>
-          <p className="title">LIST</p>
+          <p className="titlevisitor">LIST</p>
         
           {/* <Link to="/employee" style={{ textDecoration: "none" }}>
             <li>
@@ -80,20 +80,20 @@ const Sidebar = () => {
           </Link> */}
           <Link to="/visitorcompanylist" style={{ textDecoration: "none" }}>
             <li>
-              <ApartmentIcon className="icon" />
-              <span>Company</span>
+              <ApartmentIcon className="iconvisitor" />
+              <span className="spnvisitor">Company</span>
             </li>
           </Link>
-          <p className="title">APPROVALS</p>
+          <p className="titlevisitor">APPROVALS</p>
           <Link to="#" style={{ textDecoration: "none" }}>
           <li>
-            <InsertChartOutlinedSharpIcon className="icon" />
-            <span>Comments</span>
+            <InsertChartOutlinedSharpIcon className="iconvisitor" />
+            <span className="spnvisitor">Comments</span>
           </li>
           </Link>
           <li>
-            <NotificationsNoneIcon className="icon" />
-            <span>Complaints</span>
+            <NotificationsNoneIcon className="iconvisitor" />
+            <span className="spnvisitor">Complaints</span>
           </li>
           {/*
           <p className="title">USEFUL</p>
@@ -105,21 +105,21 @@ const Sidebar = () => {
             <NotificationsNoneIcon className="icon" />
             <span>Notifications</span>
         </li>*/}
-          <p className="title">USER</p>
+          <p className="titlevisitor">USER</p>
           <Link to="/visitorprofile" style={{ textDecoration: "none" }}>
             <li>
-              <AccountCircleOutlinedIcon className="icon" />
-              <span>Profile</span>
+              <AccountCircleOutlinedIcon className="iconvisitor" />
+              <span className="spnvisitor">Profile</span>
             </li>
           </Link>
           <Link to="/visitorupdateprofile" style={{ textDecoration: "none" }}>
             <li>
-              <AccountCircleOutlinedIcon className="icon" />
-              <span>Update Profile</span>
+              <AccountCircleOutlinedIcon className="iconvisitor" />
+              <span className="spnvisitor">Update Profile</span>
             </li>
           </Link>
           <li>
-            <ExitToAppIcon className="icon" />
+            <ExitToAppIcon className="iconvisitor" />
             <Logout />
           </li>
 {/*}
