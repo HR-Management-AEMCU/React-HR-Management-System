@@ -18,9 +18,9 @@
   --dark-menu-hover-color: #4d4d4d;
 }
 
-.sidebar {
+.sidebarpersonel {
   border-right: 1px solid rgb(233, 232, 232);
-  flex: 1;
+  flex: 1.4;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -71,8 +71,8 @@ hr {
     margin: 0;
     padding: 0;
 
-    .title {
-      font-size: 14px;
+    .titlepersonel {
+      font-size: 2.2vh;
       font-weight: 700;
       color: var(--text-color);
       margin-top: 20px;
@@ -82,7 +82,9 @@ hr {
     .sidebar.dark-mode .title {
       color: var(--dark-text-color);
     }
-
+.spn{
+  font-size: 2.2vh;
+}
     li {
       display: flex;
       align-items: center;
@@ -93,8 +95,8 @@ hr {
         background-color: var(--menu-hover-color);
       }
 
-      .icon {
-        font-size: 20px;
+      .iconpersonel {
+        font-size: 2.7vh;
         color: var(--icon-color);
       }
 

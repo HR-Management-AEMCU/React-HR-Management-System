@@ -58,10 +58,13 @@ const Updateprofile = () => {
             return;
           }
 
-          const formData = new FormData();
+        /*const formData = new FormData();
         formData.append("selectedImage", selectedImage);
+        formData.append("gender", gender);
+        formData.append("phone", phone);
+        formData.append("provience", province);
         console.log(formData)
-        console.log(selectedImage)
+        console.log(selectedImage)*/
       // Burada fetch isteği yaparak değişiklikleri backend'e kaydedebilirsiniz
       // Örnek olarak:
 
@@ -69,7 +72,7 @@ const Updateprofile = () => {
         method: 'POST',
         body: JSON.stringify({ token,photo, phone, gender,identificationNumber,
              unixTimestamp,birthPlace,neighbourhood,district,province,country,
-             apartmentNumber,postalCode,jobStartingDate,department,companyName,salary ,selectedImage}),
+             apartmentNumber,postalCode,jobStartingDate,department,companyName,salary }),
         headers: {
           'Content-Type': 'application/json',
         }
