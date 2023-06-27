@@ -21,6 +21,18 @@ const Updateprofile = () => {
     const [postalCode, setPostalCode] = useState('');
     const token=localStorage.getItem('token');
 
+    /** For upload photofrom local driver */
+    const handlePhotoChange = (e) => {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onloadend = () => {
+          setPhoto(reader.result);
+        };
+      }
+    };
+
 
 
     const handleSave = () => {
@@ -136,7 +148,13 @@ const Updateprofile = () => {
     <form className="updateprofile">
       <div className="genelupdate">
       <div className="left">
-            <label className="updatelabel" htmlFor="name">Photo Url:</label>
+          <label className="updatelabel" htmlFor="photo">Photo:</label>
+          <input
+            type="file"
+            id="photo"
+            accept="image/*"
+            onChange={handlePhotoChange}
+          />
       <input
         className="updateinput"
         type="text"
@@ -233,10 +251,6 @@ const Updateprofile = () => {
         required
       />
 
-
-
-
-
       {/*<label htmlFor="bio">Comment:</label>
       <textarea
       className="updatetextarea"
@@ -244,12 +258,8 @@ const Updateprofile = () => {
         value={bio}
         onChange={(e) => setBio(e.target.value)}
       ></textarea>*/}
-
-
         </div>
       </div>
-     
-    
 
       <div className="button-container">
         <button type="button" className="save updatebutton" onClick={handleSave}>SAVE</button>
