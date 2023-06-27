@@ -18,6 +18,8 @@ import Logout from "../logout/Logout";
 import ApartmentIcon from "@mui/icons-material/Apartment";
 import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined";
 import MailOutlinedIcon from "@mui/icons-material/MailOutlined";
+import EditIcon from '@mui/icons-material/Edit';
+
 import arasımorb from "../../../assets/logo/arasımorb.png"
 const Sidebar = () => {
   const [admin, setAdmin] = useState({});
@@ -32,7 +34,7 @@ const Sidebar = () => {
   }, []);*/
 
   return (
-    <div className="sidebar">
+    <div className="sidebarmanager">
     {/* <div className="top">
         <Link to="/visitorhome" style={{ textDecoration: "none" }}>
           <h4 className="logovisitor">HRGenius</h4>
@@ -50,32 +52,32 @@ const Sidebar = () => {
           </Link>
         </div>
         <ul>
-          <p className="title">MANAGER MAIN</p>
+          <p className="titlemanager">MANAGER MAIN</p>
           <Link to="/managerhome" style={{ textDecoration: "none" }}>
             <li>
-              <DashboardOutlinedIcon className="icon" />
-              <span>Dashboard</span>
+              <DashboardOutlinedIcon className="iconmanager" />
+              <span className="spnmanager">Dashboard</span>
             </li>
           </Link>
           <Link to="/calendar" style={{ textDecoration: "none" }}>
             <li>
-              <CalendarMonthOutlinedIcon className="icon" />
-              <span>Calendar</span>
+              <CalendarMonthOutlinedIcon className="iconmanager" />
+              <span className="spnmanager">Calendar</span>
             </li>
           </Link>
           <Link to="/managerhome/tatilgunler" style={{ textDecoration: "none" }}>
             <li>
-              <CalendarMonthOutlinedIcon className="icon" />
-              <span>Tatil Günleri</span>
+              <CalendarMonthOutlinedIcon className="iconmanager" />
+              <span className="spnmanager">Tatil Günleri</span>
             </li>
           </Link>
           <Link to="/inbox" style={{ textDecoration: "none" }}>
             <li>
-              <MailOutlinedIcon className="icon" />
-              <span>Inbox</span>
+              <MailOutlinedIcon className="iconmanager" />
+              <span className="spnmanager">Inbox</span>
             </li>
           </Link>
-          <p className="title">LIST</p>
+          <p className="titlemanager">EMPLOYEE LIST</p>
         
           {/* <Link to="/employee" style={{ textDecoration: "none" }}>
             <li>
@@ -85,28 +87,30 @@ const Sidebar = () => {
           </Link> */}
           <Link to="/manager" style={{ textDecoration: "none" }}>
             <li>
-              <EngineeringOutlinedIcon className="icon" />
-              <span>Employee List</span>
+              <EngineeringOutlinedIcon className="iconmanager" />
+              <span className="spnmanager">Employee List</span>
             </li>
           </Link>
           <Link to="/managerhome/createpersonnel" style={{ textDecoration: "none" }}>
             <li>
-              <PersonAddOutlinedIcon className="icon" />
-              <span>Employee Add</span>
+              <PersonAddOutlinedIcon className="iconmanager" />
+              <span className="spnmanager">Employee Add</span>
             </li>
           </Link>
-          <p className="title">APPROVALS</p>
-          <Link to="/comments-to-approve" style={{ textDecoration: "none" }}>
+          <p className="titlemanager">COMPANY</p>
+          <Link to="/managerhome/companyprofilepage" style={{ textDecoration: "none" }}>
           <li>
-            <InsertChartOutlinedSharpIcon className="icon" />
-            <span>Comments</span>
+            <ApartmentIcon className="iconmanager" />
+            <span className="spnmanager">Company Profile</span>
           </li>
           </Link>
+          <Link to="/managerhome/companyupdatepage" style={{ textDecoration: "none" }}>
           <li>
-            <NotificationsNoneIcon className="icon" />
-            <span>Complaints</span>
+            <EditIcon className="iconmanager" />
+            <span className="spnmanager">Company Edit</span>
           </li>
-          <p className="title">USEFUL</p>
+          </Link>
+          {/*<p className="title">USEFUL</p>
           <li>
             <InsertChartOutlinedSharpIcon className="icon" />
             <span>Stats</span>
@@ -114,30 +118,30 @@ const Sidebar = () => {
           <li>
             <NotificationsNoneIcon className="icon" />
             <span>Notifications</span>
-          </li>
-          <p className="title">USER</p>
-          <Link to="/managerprofile" style={{ textDecoration: "none" }}>
+        </li>*/}
+          <p className="titlemanager">USER</p>
+          <Link to="/managerhome/managerprofilepage" style={{ textDecoration: "none" }}>
             <li>
-              <AccountCircleOutlinedIcon className="icon" />
-              <span>Profile</span>
+              <AccountCircleOutlinedIcon className="iconmanager" />
+              <span className="spnmanager">Manager Profile</span>
             </li>
           </Link>
-          <Link to="/managerupdateprofile" style={{ textDecoration: "none" }}>
+          <Link to="/managerhome/managerupdatepage" style={{ textDecoration: "none" }}>
             <li>
-              <AccountCircleOutlinedIcon className="icon" />
-              <span>Update Profile</span>
+              <EditIcon className="iconmanager" />
+              <span className="spnmanager">Manager Edit</span>
             </li>
           </Link>
           <li>
-            <ExitToAppIcon className="icon" />
+            <ExitToAppIcon className="iconmanager" />
             <Logout />
           </li>
 
-          <p className="title">SERVICE</p>
+          {/*<p className="title">SERVICE</p>
           <li>
             <SettingsOutlinedIcon className="icon" />
             <span>Settings</span>
-          </li>
+      </li>*/}
         </ul>
       </div>
     </div>

@@ -77,7 +77,7 @@ const Widget = ({ type }) => {
         title: "TOTAL EMPLOYEE",
         link: "See all manager",
         class: "total",
-        count: 15,
+        count: 150,
         icon: <img className="widgetadmin-imga" src={ProjectImage} alt="" />,
         background: "#dad7f4",
       };
@@ -88,7 +88,7 @@ const Widget = ({ type }) => {
         title: "TOTAL MANAGER",
         link: "See all employee",
         class: "active",
-        count: 10,
+        count: 15,
         /*count: listAdvance.length,*/
         icon: <img src={ManagerIcon} className="widgetadmin-img" />,
         background: "#fcd4c8",
@@ -99,7 +99,7 @@ const Widget = ({ type }) => {
         title: "TOTAL COMPANY",
         link: "See all employee",
         class: "active",
-        count: 150,
+        count: 15,
         /*count: listPermission.length,*/
         icon: <img src={MoneyImage} className="widgetadmin-img" />,
         background: "#fef4de",

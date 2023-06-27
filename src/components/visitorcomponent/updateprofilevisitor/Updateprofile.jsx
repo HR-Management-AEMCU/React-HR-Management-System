@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Updateprofile = () => {
     const navigate = useNavigate();
+    const filteredData = {};
     const [photo, setPhoto] = useState('');
     const [phone, setPhone] = useState('');
     const [gender, setGender] = useState('');
@@ -35,61 +36,50 @@ const Updateprofile = () => {
 
 
     const handleSave = () => {
+      filteredData.token = token;
+      if (photo) {
+        filteredData.photo = photo;
+      }
+      if (phone) {
+        filteredData.phone = phone;
+      }
+      if (gender) {
+        filteredData.gender = gender;
+      }
+      if (identificationNumber) {
+        filteredData.identificationNumber = identificationNumber;
+      }
+      if (birthDate) {
+        filteredData.birthDate = birthDate;
+      }
+      if (birthPlace) {
+        filteredData.birthPlace = birthPlace;
+      }
+      if (neighbourhood) {
+        filteredData.neighbourhood = neighbourhood;
+      }
+      if (district) {
+        filteredData.district = district;
+      }
+      if (province) {
+        filteredData.province = province;
+      }
+      if (country) {
+        filteredData.country = country;
+      }
+      if (apartmentNumber) {
+        filteredData.apartmentNumber = apartmentNumber;
+      }
+      if (postalCode) {
+        filteredData.postalCode = postalCode;
+      }
 
         //gg.aa.yyyy şeklinde alından date long tipine çevirme
         const selectedDate = new Date(birthDate);
         const unixTimestamp = selectedDate.getTime();
         console.log(unixTimestamp);
 
-        /* PHOTOUPDATE */
-        if (!photo) {
-          toast.error("Please select a photo.", { autoClose: 2000 });
-          return;
-        }
-      
-        // Base64 formatındaki fotoğrafı veritabanına kaydetme işlemi burada gerçekleştirilebilir
-      
-        // fetch isteği ve diğer işlemler...
-        fetch('http://localhost:8060/api/v1/user-profile/update-visitor', {
-          method: 'POST',
-          body: JSON.stringify({
-            token,
-            photo,
-            phone,
-            gender,
-            identificationNumber,
-            unixTimestamp,
-            birthPlace,
-            neighbourhood,
-            district,
-            province,
-            country,
-            apartmentNumber,
-            postalCode
-          }),
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        })
-          .then((response) => {
-            if (response.ok) {
-              toast.success("Update successful.", { autoClose: 2000 });
-              setTimeout(() => {
-                navigate("/visitorhome");
-              }, 4000);
-            } else {
-              toast.error("Update failed.", { autoClose: 5000 });
-              throw new Error("Failed to update"); // İstek başarısızsa hata fırlat
-            }
-          })
-          .catch((error) => {
-            toast.error("Update failed. Please try again later.", { autoClose: 5000 });
-            console.error(error);
-          });
-
-
-
-        if (gender.trim() === "") {
+       /* if (gender.trim() === "") {
             toast.error("Gender Not Empty.", { autoClose: 2000 });
             return;
           }
@@ -102,14 +92,14 @@ const Updateprofile = () => {
         if (!phoneRegex.test(phone)) {
             toast.error('Lütfen geçerli bir telefon numarası girin.', { autoClose: 2000 });
             return;
-          }
+          }*/
 
       // Burada fetch isteği yaparak değişiklikleri backend'e kaydedebilirsiniz
       // Örnek olarak:
       fetch('http://localhost:8060/api/v1/user-profile/update-visitor', {
         method: 'POST',
-        body: JSON.stringify({ token,photo, phone, gender,identificationNumber,
-             unixTimestamp,birthPlace,neighbourhood,district,province,country,apartmentNumber,postalCode }),
+        body: JSON.stringify(filteredData/*{ token,photo, phone, gender,identificationNumber,
+             unixTimestamp,birthPlace,neighbourhood,district,province,country,apartmentNumber,postalCode }*/),
         headers: {
           'Content-Type': 'application/json'
         }
@@ -118,7 +108,7 @@ const Updateprofile = () => {
         if (response.ok) {
           toast.success("Update başarılı...", { autoClose: 2000 });
           setTimeout(() => {
-            navigate("/visitorhome"); 
+            window.location.reload();
           }, 4000);
         } else {
           toast.error("Update başarısız.", { autoClose: 5000 });
@@ -261,10 +251,6 @@ const Updateprofile = () => {
         required
       />
 
-
-
-
-
       {/*<label htmlFor="bio">Comment:</label>
       <textarea
       className="updatetextarea"
@@ -272,12 +258,8 @@ const Updateprofile = () => {
         value={bio}
         onChange={(e) => setBio(e.target.value)}
       ></textarea>*/}
-
-
         </div>
       </div>
-     
-    
 
       <div className="button-container">
         <button type="button" className="save updatebutton" onClick={handleSave}>SAVE</button>

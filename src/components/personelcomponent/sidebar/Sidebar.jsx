@@ -32,7 +32,7 @@ const Sidebar = () => {
   }, []);*/
 
   return (
-    <div className="sidebar">
+    <div className="sidebarpersonel">
     {/* <div className="top">
         <Link to="/visitorhome" style={{ textDecoration: "none" }}>
           <h4 className="logovisitor">HRGenius</h4>
@@ -41,7 +41,7 @@ const Sidebar = () => {
       <hr />*/}
 
       <div className="center">
-        <div className="item">
+        <div className="itempersonel">
           <Link to="/personelhome" style={{ textDecoration: "none"}}>
             <img
               src={arasımorb}
@@ -50,32 +50,32 @@ const Sidebar = () => {
           </Link>
         </div>
         <ul>
-          <p className="title">PERSONNEL MAIN</p>
+          <p className="titlepersonel">PERSONNEL MAIN</p>
           <Link to="/personelhome" style={{ textDecoration: "none" }}>
             <li>
-              <DashboardOutlinedIcon className="icon" />
-              <span>Dashboard</span>
+              <DashboardOutlinedIcon className="iconpersonel" />
+              <span className="spn">Dashboard</span>
             </li>
           </Link>
           <Link to="/calendar" style={{ textDecoration: "none" }}>
             <li>
-              <CalendarMonthOutlinedIcon className="icon" />
-              <span>Calendar</span>
+              <CalendarMonthOutlinedIcon className="iconpersonel" />
+              <span className="spn">Calendar</span>
             </li>
           </Link>
           <Link to="/personelhome/tatilgunler" style={{ textDecoration: "none" }}>
             <li>
-              <CalendarMonthOutlinedIcon className="icon" />
-              <span>Tatil Günleri</span>
+              <CalendarMonthOutlinedIcon className="iconpersonel" />
+              <span className="spn">Tatil Günleri</span>
             </li>
           </Link>
           <Link to="/inbox" style={{ textDecoration: "none" }}>
             <li>
-              <MailOutlinedIcon className="icon" />
-              <span>Inbox</span>
+              <MailOutlinedIcon className="iconpersonel" />
+              <span className="spn">Inbox</span>
             </li>
           </Link>
-          <p className="title">LIST</p>
+          {/*<p className="title">LIST</p>*/}
         
           {/* <Link to="/employee" style={{ textDecoration: "none" }}>
             <li>
@@ -83,7 +83,7 @@ const Sidebar = () => {
               <span>Employee</span>
             </li>
           </Link> */}
-          <Link to="#" style={{ textDecoration: "none" }}>
+          {/*<Link to="#" style={{ textDecoration: "none" }}>
             <li>
               <EngineeringOutlinedIcon className="icon" />
               <span>Employee List</span>
@@ -95,17 +95,19 @@ const Sidebar = () => {
               <span>Employee Add</span>
             </li>
           </Link>
-          <p className="title">APPROVALS</p>
+          */}
+          <p className="titlepersonel">APPROVALS</p>
           <Link to="#" style={{ textDecoration: "none" }}>
           <li>
-            <InsertChartOutlinedSharpIcon className="icon" />
-            <span>Comments</span>
+            <InsertChartOutlinedSharpIcon className="iconpersonel" />
+            <span className="spn">Comments</span>
           </li>
           </Link>
           <li>
-            <NotificationsNoneIcon className="icon" />
-            <span>Complaints</span>
+            <NotificationsNoneIcon className="iconpersonel" />
+            <span className="spn">Complaints</span>
           </li>
+          {/*
           <p className="title">USEFUL</p>
           <li>
             <InsertChartOutlinedSharpIcon className="icon" />
@@ -114,22 +116,22 @@ const Sidebar = () => {
           <li>
             <NotificationsNoneIcon className="icon" />
             <span>Notifications</span>
-          </li>
-          <p className="title">USER</p>
+        </li>*/}
+          <p className="titlepersonel">USER</p>
           <Link to="/personelhome/personelprofilepage" style={{ textDecoration: "none" }}>
             <li>
-              <AccountCircleOutlinedIcon className="icon" />
-              <span>Profile</span>
+              <AccountCircleOutlinedIcon className="iconpersonel" />
+              <span className="spn">Profile</span>
             </li>
           </Link>
           <Link to="/personelhome/personelupdatepage" style={{ textDecoration: "none" }}>
             <li>
-              <AccountCircleOutlinedIcon className="icon" />
-              <span>Update Profile</span>
+              <AccountCircleOutlinedIcon className="iconpersonel" />
+              <span className="spn">Update Profile</span>
             </li>
           </Link>
           <li>
-            <ExitToAppIcon className="icon" />
+            <ExitToAppIcon className="iconpersonel" />
             <Logout />
           </li>
 

@@ -9,12 +9,13 @@ function Logout() {
   const handleLogout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("roles");
+    localStorage.removeItem('userIds')
     history("/adminlogin");
   };
 
   return (
     <span className="logout" onClick={handleLogout}>
-      Logout
+      <div className="log">Logout</div>
     </span>
   );
 }
