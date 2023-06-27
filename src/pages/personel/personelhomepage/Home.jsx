@@ -14,10 +14,25 @@ import Footer from "../../../components/personelcomponent/footer/Footer";
 import Main from "../../../components/personelcomponent/mainresimler/Main";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import jwtDecode from "jwt-decode";
 const Home = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      const decodedToken = jwtDecode(token);
+      const current_time = Date.now().valueOf() / 1000;
+      console.log(decodedToken);
+      console.log(current_time);
+
+      // Token'ın süresi dolmuşsa çerezi sil
+      if (decodedToken.exp < current_time) {
+        localStorage.removeItem("token");
+        localStorage.removeItem("roles");
+        navigate("/login");
+      }
+    }
     // localStorage'den role verisini alın
     const roles = JSON.parse(localStorage.getItem("roles"));
     if (!roles || roles.length === 0) {

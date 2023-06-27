@@ -84,7 +84,7 @@ const Sidebar = () => {
               <span className="spnvisitor">Company</span>
             </li>
           </Link>
-          <p className="titlevisitor">APPROVALS</p>
+         {/*} <p className="titlevisitor">APPROVALS</p>
           <Link to="#" style={{ textDecoration: "none" }}>
           <li>
             <InsertChartOutlinedSharpIcon className="iconvisitor" />
@@ -94,7 +94,7 @@ const Sidebar = () => {
           <li>
             <NotificationsNoneIcon className="iconvisitor" />
             <span className="spnvisitor">Complaints</span>
-          </li>
+        </li>*/}
           {/*
           <p className="title">USEFUL</p>
           <li>

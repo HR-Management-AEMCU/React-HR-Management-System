@@ -38,6 +38,9 @@ const Widget = ({ type }) => {
 },[]);
   
   let data;
+  const pl=money.profitLoss;
+  const plWithTwoDecimals = pl.toFixed(2); // Virgülden sonra 2 basamak al
+  console.log(plWithTwoDecimals); // Sonucu konsola yazdır (örneğin)
 
   switch (type) {
     case "total":
@@ -80,7 +83,7 @@ const Widget = ({ type }) => {
       data = {
         title: "Company Profit / Loss",
         link: "See all Profit/Loss",
-        count: money.profitLoss ? money.profitLoss + " $" : "+ %100 Profit",
+        count: plWithTwoDecimals ? "% "+plWithTwoDecimals + " $" : "+ % 100 Profit",
         icon: (
           <BusinessIcon
             className="icon"

@@ -8,6 +8,7 @@ import Footer from "../../../components/visitorcomponent/footer/Footer";
 import { useContext, useEffect } from "react";
 import Welcome from "../../../components/visitorcomponent/welcome/Welcome";
 import { useNavigate } from "react-router-dom";
+import jwtDecode from "jwt-decode";
 /*import withAuth from "../../withAuth";*/
 
 /*import Maps from "../../../components/admincomponent/maps/Maps";*/
@@ -17,6 +18,20 @@ const Home = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      const decodedToken = jwtDecode(token);
+      const current_time = Date.now().valueOf() / 1000;
+      console.log(decodedToken);
+      console.log(current_time);
+
+      // Token'ın süresi dolmuşsa çerezi sil
+      if (decodedToken.exp < current_time) {
+        localStorage.removeItem("token");
+        localStorage.removeItem("roles");
+        navigate("/login");
+      }
+    }
     // localStorage'den role verisini alın
     const roles = localStorage.getItem("roles");
     if (!roles || roles.length === 0) {

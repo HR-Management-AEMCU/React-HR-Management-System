@@ -6,6 +6,7 @@ import Sidebar from "../../../components/personelcomponent/sidebar/Sidebar";
 import Navbar from "../../../components/personelcomponent/navbar/Navbar";
 import Updateprofile from "../../../components/personelcomponent/updateprofilepersonel/Updateprofile";
 import { useNavigate } from "react-router-dom";
+import jwtDecode from "jwt-decode";
 /*import withAuth from "../../withAuth";*/
 /*import CompanyService from "../../service/CompanyService";*/
 
@@ -15,6 +16,20 @@ const PersonelUpdateProfile = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      const decodedToken = jwtDecode(token);
+      const current_time = Date.now().valueOf() / 1000;
+      console.log(decodedToken);
+      console.log(current_time);
+
+      // Token'ın süresi dolmuşsa çerezi sil
+      if (decodedToken.exp < current_time) {
+        localStorage.removeItem("token");
+        localStorage.removeItem("roles");
+        navigate("/login");
+      }
+    }
     // localStorage'den role verisini alın
     const roles = JSON.parse(localStorage.getItem("roles"));
     if (!roles || roles.length === 0) {

@@ -13,6 +13,7 @@ const UpdateProfileManager = () => {
   "jobStartingDate": 0
   */ 
     const navigate = useNavigate();
+    const filteredData = {};
     const [photo, setPhoto] = useState('');
     const [phone, setPhone] = useState('');
     const [gender, setGender] = useState('');
@@ -37,13 +38,53 @@ const UpdateProfileManager = () => {
 
 
     const handleSave = () => {
+      filteredData.token = token;
+      if (photo) {
+        filteredData.photo = photo;
+      }
+      if (phone) {
+        filteredData.phone = phone;
+      }
+      if (gender) {
+        filteredData.gender = gender;
+      }
+      if (identificationNumber) {
+        filteredData.identificationNumber = identificationNumber;
+      }
+      if (birthDate) {
+        filteredData.birthDate = birthDate;
+      }
+      if (birthPlace) {
+        filteredData.birthPlace = birthPlace;
+      }
+      if (neighbourhood) {
+        filteredData.neighbourhood = neighbourhood;
+      }
+      if (district) {
+        filteredData.district = district;
+      }
+      if (province) {
+        filteredData.province = province;
+      }
+      if (country) {
+        filteredData.country = country;
+      }
+      if (apartmentNumber) {
+        filteredData.apartmentNumber = apartmentNumber;
+      }
+      if (postalCode) {
+        filteredData.postalCode = postalCode;
+      }
+      if (jobStartingDate) {
+        filteredData.jobStartingDate = jobStartingDate;
+      }
 
         //gg.aa.yyyy şeklinde alından date long tipine çevirme
         const selectedDate = new Date(birthDate);
         const unixTimestamp = selectedDate.getTime();
         console.log(unixTimestamp);
 
-        if (gender.trim() === "") {
+        /*if (gender.trim() === "") {
             toast.error("Gender Not Empty.", { autoClose: 2000 });
             return;
           }
@@ -56,7 +97,7 @@ const UpdateProfileManager = () => {
         if (!phoneRegex.test(phone)) {
             toast.error('Lütfen geçerli bir telefon numarası girin.', { autoClose: 2000 });
             return;
-          }
+          }*/
 
         /*const formData = new FormData();
         formData.append("selectedImage", selectedImage);
@@ -70,9 +111,9 @@ const UpdateProfileManager = () => {
 
       fetch('http://localhost:8060/api/v1/user-profile/update-personnel', {
         method: 'POST',
-        body: JSON.stringify({ token,photo, phone, gender,identificationNumber,
+        body: JSON.stringify(filteredData/*{ token,photo, phone, gender,identificationNumber,
              unixTimestamp,birthPlace,neighbourhood,district,province,country,
-             apartmentNumber,postalCode,jobStartingDate,department,companyName,salary }),
+             apartmentNumber,postalCode,jobStartingDate,department,companyName,salary }*/),
         headers: {
           'Content-Type': 'application/json',
         }

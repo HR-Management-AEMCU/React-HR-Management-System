@@ -149,6 +149,11 @@ const ManagerProfile = () => {
         </div>
         <hr />
         <div className="line">
+          <span className='first-name'>Country</span>
+          <span className='second-name'>{manager.country}</span>
+        </div>
+        <hr />
+        <div className="line">
           <span className='first-name'>Salary</span>
           <span className='second-name'>{manager.salary}</span>
         </div>
