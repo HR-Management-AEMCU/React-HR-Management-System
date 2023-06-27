@@ -1,8 +1,12 @@
-.slider {
+.slidervisitor {
     position: relative;
-    height: 76.3vh; /* Ekran yüksekliğinin yüzde 60'ı */
-    width: 100%; /* Ekran genişliği */
+    height: 82.6vh; /* Ekran yüksekliğinin yüzde 60'ı */
+    width: 99.7%; /* Ekran genişliği */
     overflow: hidden;
+    padding: 20px 20px 20px 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    
+    
   }
   
   .slider-image-container {

@@ -28,7 +28,7 @@ const Main = () => {
   }, [currentImage]);
 
   return (
-    <div className="slider">
+    <div className="slidervisitor">
       <div className="slider-image-container">
         <img className="slider-image" src={images[currentImage]} alt="Resim" />
         <button className="slider-button left" onClick={prevImage}>◀</button>

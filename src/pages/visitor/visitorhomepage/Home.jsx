@@ -60,9 +60,14 @@ const Home = () => {
           <Widget type="total" />
           <Widget type="laik" />
         </div>*/}
+        <div className="aa">
+        <div className="bb">
         <Main/>
+        </div>
+        <div className="cc">
         <Footer/>
-        
+        </div>
+        </div>
        
         
       </div>

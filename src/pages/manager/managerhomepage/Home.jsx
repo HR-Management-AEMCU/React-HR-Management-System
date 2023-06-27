@@ -3,7 +3,7 @@ import Sidebar from "../../../components/managercomponent/sidebar/Sidebar";
 import Navbar from "../../../components/managercomponent/navbar/Navbar";
 import Widget from "../../../components/managercomponent/widgets/Widget";
 import Widget2 from "../../../components/managercomponent/widgets/Widget2"
-
+import ProjectList from "../../../components/managercomponent/projectlist/ProjectList";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import jwtDecode from "jwt-decode";
@@ -68,6 +68,7 @@ const Home = () => {
           <Widget2 type="active" />
           <Widget2 type="laik" />
         </div>
+        <ProjectList/>
       <div className="circ">
           {/* <div className="circ_left">
             <NewEmployee />

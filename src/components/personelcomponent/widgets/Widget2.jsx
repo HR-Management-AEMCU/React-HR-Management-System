@@ -13,6 +13,9 @@ import ProjectImage from "../../../assets/adminassets/assets/3d-casual-life-shee
 import WalletImage from "../../../assets/adminassets/assets/3d-casual-life-wallet-with-banknots-credit-card-and-coins.png";
 import MoneyImage from "../../../assets/adminassets/assets/3d-casual-life-open-safe-box-blue.png";
 import SickImage from "../../../assets/adminassets/assets/3d-casual-life-medical-history-pills.png";
+import Star from "../../../assets/adminassets/assets/3d-fluency-christmas-star.png"
+import Time from "../../../assets/adminassets/assets/assets/3d-casual-life-blue-stopwatch.png"
+import Complete from "../../../assets/adminassets/assets/3d-casual-life-sheets-of-documents.png"
 /*import WorkerService from "../../service/WorkerService";*/
 /*import PermissionService from "../../service/PermissionService";*/
 /*import AdvanceService from "../../service/AdvanceService";*/
@@ -77,7 +80,7 @@ const Widget = ({ type }) => {
         title: "TOTAL EMPLOYEE",
         link: "See all manager",
         class: "total",
-        count: 15,
+        count: 150,
         icon: <img className="widgetadmin-imga" src={ProjectImage} alt="" />,
         background: "#dad7f4",
       };
@@ -85,33 +88,33 @@ const Widget = ({ type }) => {
 
     case "retired":
       data = {
-        title: "TOTAL MANAGER",
+        title: "PENDING TASKS",
         link: "See all employee",
         class: "active",
-        count: 10,
+        count: 3,
         /*count: listAdvance.length,*/
-        icon: <img src={ManagerIcon} className="widgetadmin-img" />,
+        icon: <img src={Time} className="widgetadmin-img" />,
         background: "#fcd4c8",
       };
       break;
     case "laik":
       data = {
-        title: "TOTAL COMPANY",
+        title: "COMPLETED TASKS",
         link: "See all employee",
         class: "active",
-        count: 150,
+        count: 5,
         /*count: listPermission.length,*/
-        icon: <img src={MoneyImage} className="widgetadmin-img" />,
+        icon: <img src={Complete} className="widgetadmin-img" />,
         background: "#fef4de",
       };
       break;
     case "active":
       data = {
-        title: "TOTAL ADMIN",
+        title: "PERSONNEL SCORE",
         link: "See all total company",
-        count: 1,
+        count: "9/10",
         class: "active",
-        icon: <img src={AdminIcon} className="widgetadmin-img" alt="" />,
+        icon: <img src={Star} className="widgetadmin-img" alt="" />,
         background: "#d1eeea",
       };
       break;
@@ -123,8 +126,9 @@ const Widget = ({ type }) => {
     <div className="widgetadmin" style={{ backgroundColor: data.background }}>
       <div className="widget__rightadmin">{data.icon}</div>
       <div className="widget__leftadmin">
+      <span className="widget__titleadmin">{data.title}</span>
         <span className="widget__counteradmin">{data.count}</span>
-        <span className="widget__titleadmin">{data.title}</span>
+        
       </div>
     </div>
   );

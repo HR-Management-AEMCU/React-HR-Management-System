@@ -1,5 +1,6 @@
 .homevisitor {
   display: flex;
+  
   .homeContainervisitor {
     flex: 8;
     background-color: rgb(248, 249, 251);
@@ -47,4 +48,16 @@ $medium: 900px;
 
 .listTitle.dark {
   color: #a5a5a5;
+}
+.aa {
+  position: relative;
+  min-height: 100vh;
+}
+
+
+
+.cc {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }

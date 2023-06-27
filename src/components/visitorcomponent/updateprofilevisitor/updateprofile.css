@@ -1,6 +1,8 @@
 .containerupdate {
     max-width: 100%;
     height: 100%;
+     /*https://img.freepik.com/premium-vector/abstract-purple-white-geometric-background_249611-147.jpg?w=1060
+    https://img.freepik.com/free-vector/modern-sharp-abstract-shapes-background-purple_78370-719.jpg?w=996&t=st=1687870311~exp=1687870911~hmac=555c84e511dbdb32fda0ee357561ac2b62bc11176080fdbece28a79aa13c2cbe*/
     background: url("https://img.freepik.com/free-vector/white-background-with-wavy-lines_23-2149124448.jpg?w=996&t=st=1687082086~exp=1687082686~hmac=c350ef037951f11100c6b9da89ce52f97a91fe6573006d782343f54984b67665");
     padding: 50px;
     background-size: cover;
