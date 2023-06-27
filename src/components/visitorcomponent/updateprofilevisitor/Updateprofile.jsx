@@ -20,6 +20,18 @@ const Updateprofile = () => {
     const [postalCode, setPostalCode] = useState('');
     const token=localStorage.getItem('token');
 
+    /** For upload photofrom local driver */
+    const handlePhotoChange = (e) => {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onloadend = () => {
+          setPhoto(reader.result);
+        };
+      }
+    };
+
 
 
     const handleSave = () => {
@@ -28,6 +40,54 @@ const Updateprofile = () => {
         const selectedDate = new Date(birthDate);
         const unixTimestamp = selectedDate.getTime();
         console.log(unixTimestamp);
+
+        /* PHOTOUPDATE */
+        if (!photo) {
+          toast.error("Please select a photo.", { autoClose: 2000 });
+          return;
+        }
+      
+        // Base64 formatındaki fotoğrafı veritabanına kaydetme işlemi burada gerçekleştirilebilir
+      
+        // fetch isteği ve diğer işlemler...
+        fetch('http://localhost:8060/api/v1/user-profile/update-visitor', {
+          method: 'POST',
+          body: JSON.stringify({
+            token,
+            photo,
+            phone,
+            gender,
+            identificationNumber,
+            unixTimestamp,
+            birthPlace,
+            neighbourhood,
+            district,
+            province,
+            country,
+            apartmentNumber,
+            postalCode
+          }),
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        })
+          .then((response) => {
+            if (response.ok) {
+              toast.success("Update successful.", { autoClose: 2000 });
+              setTimeout(() => {
+                navigate("/visitorhome");
+              }, 4000);
+            } else {
+              toast.error("Update failed.", { autoClose: 5000 });
+              throw new Error("Failed to update"); // İstek başarısızsa hata fırlat
+            }
+          })
+          .catch((error) => {
+            toast.error("Update failed. Please try again later.", { autoClose: 5000 });
+            console.error(error);
+          });
+
+
 
         if (gender.trim() === "") {
             toast.error("Gender Not Empty.", { autoClose: 2000 });
@@ -98,7 +158,13 @@ const Updateprofile = () => {
     <form className="updateprofile">
       <div className="genelupdate">
       <div className="left">
-            <label className="updatelabel" htmlFor="name">Photo Url:</label>
+          <label className="updatelabel" htmlFor="photo">Photo:</label>
+          <input
+            type="file"
+            id="photo"
+            accept="image/*"
+            onChange={handlePhotoChange}
+          />
       <input
         className="updateinput"
         type="text"
