@@ -17,7 +17,10 @@ import { useEffect, useState, useContext } from "react";
 import Logout from "../logout/Logout";
 import ApartmentIcon from "@mui/icons-material/Apartment";
 import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined";
+import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
 import MailOutlinedIcon from "@mui/icons-material/MailOutlined";
+import AddCardIcon from '@mui/icons-material/AddCard';
+import MoneyIcon from '@mui/icons-material/Money';
 import arasımorb from "../../../assets/logo/arasımorb.png"
 const Sidebar = () => {
   const [admin, setAdmin] = useState({});
@@ -73,6 +76,12 @@ const Sidebar = () => {
             <li>
               <MailOutlinedIcon className="iconpersonel" />
               <span className="spn">Inbox</span>
+            </li>
+          </Link>
+          <Link to="/personelhome/personelavanspage" style={{ textDecoration: "none" }}>
+            <li>
+              <AddCardIcon className="iconpersonel" />
+              <span className="spn">Avans</span>
             </li>
           </Link>
           {/*<p className="title">LIST</p>*/}
