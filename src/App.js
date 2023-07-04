@@ -12,6 +12,7 @@ import ManagerProfilePage from "./pages/manager/managerprofile/ManagerProfilePag
 import ManagerUpdateProfile from "./pages/manager/managerprofileupdatepage/ManagerUpdateProfile";
 import CompanyProfilePage from "./pages/manager/companyprofile/CompanyProfilePage";
 import CompanyUpdateProfile from "./pages/manager/companyprofileupdatepage/CompanyUpdateProfile";
+import ManagerAvansListPage from "./pages/manager/manageravanslist/ManagerAvansListPage";
 /*Admin imports*/
 import AdminLoginPage from "./pages/admin/adminloginregister/LoginAdminPage";
 import AdminRegisterPage from "./pages/admin/adminloginregister/AdminRegisterPage";
@@ -75,6 +76,7 @@ function App() {
                 <Route path="managerupdatepage" element={<ManagerUpdateProfile />} />
                 <Route path="companyprofilepage" element={<CompanyProfilePage />} />
                 <Route path="companyupdatepage" element={<CompanyUpdateProfile />} />
+                <Route path="manageravanslist" element={<ManagerAvansListPage />} />
               </Route>
 
           <Route path="personelhome">
