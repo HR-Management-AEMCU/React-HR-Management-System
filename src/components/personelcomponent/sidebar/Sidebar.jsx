@@ -21,6 +21,7 @@ import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
 import MailOutlinedIcon from "@mui/icons-material/MailOutlined";
 import AddCardIcon from '@mui/icons-material/AddCard';
 import MoneyIcon from '@mui/icons-material/Money';
+import ExposureIcon from '@mui/icons-material/Exposure';
 import arasımorb from "../../../assets/logo/arasımorb.png"
 const Sidebar = () => {
   const [admin, setAdmin] = useState({});
@@ -82,6 +83,12 @@ const Sidebar = () => {
             <li>
               <AddCardIcon className="iconpersonel" />
               <span className="spn">Avans</span>
+            </li>
+          </Link>
+          <Link to="/personelhome/personelspendpage" style={{ textDecoration: "none" }}>
+            <li>
+              <ExposureIcon className="iconpersonel" />
+              <span className="spn">Spend</span>
             </li>
           </Link>
           {/*<p className="title">LIST</p>*/}

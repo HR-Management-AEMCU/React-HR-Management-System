@@ -1,0 +1,98 @@
+.containeravans {
+    max-width: 100%;
+    height: 100%;
+    /*https://img.freepik.com/free-vector/abstract-background_557339-350.jpg?w=996&t=st=1688415214~exp=1688415814~hmac=2dd551f09dc55c5bc47a575bcbeee895bef44987842ae56cff45abb58043a463*/
+    background: url("https://img.freepik.com/free-vector/background-with-abstract-waves-colorful_361591-3161.jpg?w=1380&t=st=1688415936~exp=1688416536~hmac=385a2b6cc9cf0de2ec2abf7d23c69ccafa9b71a5ab313fe106463ce0945863c1");
+    padding: 50px;
+    background-size: cover;
+  }
+  .genelupdate{
+    display: flex;
+  }
+  .leftavans{
+    width: 100%;
+    text-align: center;
+    margin-left: 6vh;
+    
+    
+  }
+  .updateprofile {
+    margin-top: 20px;
+    font-size: 3vh;
+    width: 100%;
+  }
+  
+  .avanslabel {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    padding: 1vh;
+  }
+  .avansinput{
+    width: 35%;
+    padding: 5px;
+    margin-bottom: 3vh;
+    border-radius: 3px;
+    border: 2px solid #000000;
+    font-size: 2.5vh;
+
+  }
+  .updatetextarea,.updateselect {
+    width: 70%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    border: 2px solid #000000;
+    font-size: 2.5vh;
+  }
+  .updateinputimg
+   {
+    width: 70%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    border: 2px solid #000000;
+    font-size: 2.5vh;
+  }
+  .button-container {
+    display: flex;
+    justify-content: end;
+  }
+  
+  .avansbutton {
+    margin: 10px;
+
+    background-color: rgb(120, 4, 197);
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  .saveavans{
+    margin-right: 5vh;
+    padding: 15px 50px;
+  }
+  .cancelavans{
+    background-color: rgb(223, 83, 28);
+    margin-right: 63vh;
+    padding: 15px 40px;
+  }
+  
+  .saveavans:hover {
+    background-color: #7926e6;
+  }
+  .cancelavans:hover{
+    background-color: rgb(253, 72, 0);
+  }
+  .baslikdiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .avansbaslik {
+    text-align: center;
+    margin-bottom: 2vh;
+    margin-left: 6vh;
+    color: #7926e6;
+    font-size: 6vh;
+  }

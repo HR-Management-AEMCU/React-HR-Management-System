@@ -1,14 +1,14 @@
-import "./manageravanslist.css";
+import "./managerspendlist.css";
 import React, { useEffect, useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-const ManagerAvansList = () => {
+const ManagerSpendList = () => {
     const [data, setData] = useState([]);
 
     // Backend'den verileri fetch etmek için kullanılacak fonksiyon
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:8060/api/v1/avans/avans-status-avans-pending'); // Backend URL'nizi buraya ekleyin
+        const response = await fetch('http://localhost:8060/api/v1/spend/spend-status-pending'); // Backend URL'nizi buraya ekleyin
         const data = await response.json();
         setData(data);
         console.log(data);
@@ -23,18 +23,18 @@ const ManagerAvansList = () => {
     }, []);
   
     // Onayla ve Reddet için fetch işlemleri
-    const handleApprove = async (avansId) => {
+    const handleApprove = async (spendId) => {
         try {
             const token = localStorage.getItem('token');
-            const params = new URLSearchParams({ token, avansId });
+            const params = new URLSearchParams({ token, spendId });
             const requestOptions = {
               method: 'PUT',
               headers: {
                 'Content-Type': 'application/json', // Gerekirse isteğinize uygun olarak güncelleyin
               },
             };
-        
-            await fetch(`http://localhost:8060/api/v1/avans/manager-avans-status-check?${params}`, requestOptions);
+            
+            await fetch(`http://localhost:8060/api/v1/spend/manager-spend-status-check?${params}`, requestOptions);
             // Backend'de reddetme işlemi başarılı olursa, verileri tekrar fetch edebilirsiniz.
             toast.info("Personel Avans Talebi Onaylanmıştır....", { autoClose: 2000 });
             setTimeout(() => {
@@ -46,10 +46,10 @@ const ManagerAvansList = () => {
           }
     };
   
-    const handleReject = async (avansId) => {
+    const handleReject = async (spendId) => {
         try {
           const token = localStorage.getItem('token');
-          const params = new URLSearchParams({ token, avansId });
+          const params = new URLSearchParams({ token, spendId });
           const requestOptions = {
             method: 'PUT',
             headers: {
@@ -57,7 +57,7 @@ const ManagerAvansList = () => {
             },
           };
       
-          await fetch(`http://localhost:8060/api/v1/avans/manager-avans-status-cross?${params}`, requestOptions);
+          await fetch(`http://localhost:8060/api/v1/spend/manager-spend-status-cross?${params}`, requestOptions);
           // Backend'de reddetme işlemi başarılı olursa, verileri tekrar fetch edebilirsiniz.
           toast.info("Personel Avans Talebi Reddedilmiştir....", { autoClose: 2000 });
           setTimeout(() => {
@@ -80,7 +80,7 @@ const ManagerAvansList = () => {
         <ToastContainer />
         {Array.isArray(data) && data.length > 0 ? (
           <>
-            <p className="avansdbaslik">Personnel Avans Request</p>
+            <p className="avansdbaslik">Personnel Spend Request</p>
             <div className="tableavans">
               <div className="table-headeravans">
                 <div className="indexx">Index</div>
@@ -99,12 +99,12 @@ const ManagerAvansList = () => {
                     <div className="columnavansname">{item.name}</div>
                     <div className="columnavansname">{item.surname}</div>
                     <div className="columnavansname">{item.phone}</div>
-                    <div className="columnavansname">{item.avansTotal}</div>
-                    <div className="columnavans">{item.avansDescription}</div>
-                    <div className="columnavans">{formatDate(item.avansDate)}</div>
+                    <div className="columnavansname">{item.spendTotal}</div>
+                    <div className="columnavans">{item.spendDescription}</div>
+                    <div className="columnavans">{formatDate(item.spendDate)}</div>
                     <div className="columnavans">
-                      <button className="avansbtn avanscheck" onClick={() => handleApprove(item.avansId)}>Onayla</button>
-                      <button className="avansbtn avanscross" onClick={() => handleReject(item.avansId)}>Reddet</button>
+                      <button className="avansbtn avanscheck" onClick={() => handleApprove(item.spendId)}>Onayla</button>
+                      <button className="avansbtn avanscross" onClick={() => handleReject(item.spendId)}>Reddet</button>
                     </div>
                   </div>
                 ))}
@@ -112,10 +112,10 @@ const ManagerAvansList = () => {
             </div>
           </>
         ) : (
-          <p className="avansddbaslik">Sistemde Avans Talebi bulunamamıştır.</p>
+          <p className="avansddbaslik">Sistemde Harcama Talebi bulunamamıştır.</p>
         )}
       </div>
       
       );
   };
-export default ManagerAvansList
+export default ManagerSpendList

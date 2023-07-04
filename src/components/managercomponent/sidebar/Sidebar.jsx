@@ -103,6 +103,12 @@ const Sidebar = () => {
               <span className="spnmanager">Avans Check</span>
             </li>
           </Link>
+          <Link to="/managerhome/managerspendlist" style={{ textDecoration: "none" }}>
+            <li>
+              <InsertChartOutlinedSharpIcon className="iconmanager" />
+              <span className="spnmanager">Spend Check</span>
+            </li>
+          </Link>
           <p className="titlemanager">COMPANY</p>
           <Link to="/managerhome/companyprofilepage" style={{ textDecoration: "none" }}>
           <li>

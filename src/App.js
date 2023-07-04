@@ -13,6 +13,7 @@ import ManagerUpdateProfile from "./pages/manager/managerprofileupdatepage/Manag
 import CompanyProfilePage from "./pages/manager/companyprofile/CompanyProfilePage";
 import CompanyUpdateProfile from "./pages/manager/companyprofileupdatepage/CompanyUpdateProfile";
 import ManagerAvansListPage from "./pages/manager/manageravanslist/ManagerAvansListPage";
+import ManagerSpendListPage from "./pages/manager/managerspendlist/ManagerSpendListPage";
 /*Admin imports*/
 import AdminLoginPage from "./pages/admin/adminloginregister/LoginAdminPage";
 import AdminRegisterPage from "./pages/admin/adminloginregister/AdminRegisterPage";
@@ -31,6 +32,7 @@ import PersonelHome from "./pages/personel/personelhomepage/Home";
 import TatilGunlerPersonel from "./pages/personel/personeltatilgunler/TatilGunler";
 import PersonelProfilePage from "./pages/personel/personelprofile/PersonelProfilePage";
 import PersonelAvansPage from "./pages/personel/personelavanspage/PersonelAvansPage";
+import PersonelSpendPage from "./pages/personel/personelspendpage/PersonelSpendPage";
 
 
 /*Company*/
@@ -77,6 +79,7 @@ function App() {
                 <Route path="companyprofilepage" element={<CompanyProfilePage />} />
                 <Route path="companyupdatepage" element={<CompanyUpdateProfile />} />
                 <Route path="manageravanslist" element={<ManagerAvansListPage />} />
+                <Route path="managerspendlist" element={<ManagerSpendListPage />} />
               </Route>
 
           <Route path="personelhome">
@@ -85,6 +88,7 @@ function App() {
                 <Route path="personelprofilepage" element={<PersonelProfilePage />} />
                 <Route path="personelupdatepage" element={<PersonelUpdateProfile />} />
                 <Route path="personelavanspage" element={<PersonelAvansPage />} />
+                <Route path="personelspendpage" element={<PersonelSpendPage />} />
               </Route>
 
           <Route path="adminhome">
